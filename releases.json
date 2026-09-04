@@ -2,6 +2,61 @@
   {
     "assets": [
       {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-bedb79f/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 31453255
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-bedb79f/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34042919
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/382468540/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Two changes, both on branch `relay-stale-peer-tick`.\n\n## The relay lockout\n\nThe relay claiming to be \"full\" with nobody connected was the client's own refusal, not the relay's. `RelayClient.HighestPeerTick` was a permanent high-water mark: the join screen reads it to ask *\"is a match under way?\"* but what it answered was *\"did a match ever run?\"* Watch one match from the join screen and every later lobby, empty relay included, is refused with MATCH ALREADY IN PROGRESS until you relaunch. `ForgetSlot` — the recovery path for a restarted relay — cleared everything except this, so the mechanism meant to heal it preserved the cause.\n\nIt is now evidence of *now*: stamped when raised, expired after 3s without confirmation, dropped with the slot it belonged to.\n\n## Lobby size 2-4 from the menu\n\nThe join screen's player count was a 2-or-4 toggle — digit `1` gave two, digit `2` gave four, and 3 was unreachable from the menu despite `-players 3` always having worked. The digit is now the count (`2`/`3`/`4`), the pad steps and wraps, and the label shows a filled track. Default unchanged at 2. Track and hints derive from `WorldState.MaxPlayers`, so raising the cap widens the control.\n\nNo wire or simulation change, so `LobbyConfig.Version` is unchanged.\n\n## Verified\n\n- Two new `RelayClientPeerTickTests` drive a real client from a fake relay over loopback; both fail against the old code, pass against the new.\n- `SessionDeterminismTests` was hardcoded to two peers, so no lobby larger than a duel had ever been run. Size is now threaded through, every peer is compared against the first, and `EveryLobbySizeStaysIdentical` covers 2/3/4 under uneven latency.\n- 130 headless tests pass, golden checksum unmoved. Unity compiles clean.\n\n## Not verified\n\n- No runtime test on the build machine: the Linux player segfaults at startup in every mode, including a local `-bots` game that never constructs a `RelayClient`. `si_code` is `SI_USER`, so the signal is sent rather than faulted, and a core with the same signature predates these changes. Separate issue, but it blocked the two-peer check here.\n- The join screen itself. No display and no input synthesis, so the track's layout and the pad stepping are unchecked.\n- A 3-player lobby is proven in sync headlessly but has never had three real clients on it.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01Eidq8PaPFBhYm4H2vctCyW\n",
+    "created_at": "2026-09-04T03:43:44Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-bedb79f",
+    "id": 382468540,
+    "immutable": false,
+    "name": "dev build - relay lockout fix + 2-4 player slider",
+    "node_id": "RE_kwDOUI8m0c4WzAG8",
+    "prerelease": true,
+    "published_at": "2026-09-04T03:59:02Z",
+    "tag_name": "dev-bedb79f",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-bedb79f",
+    "target_commitish": "relay-stale-peer-tick",
+    "updated_at": "2026-09-04T03:59:02Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/382468540/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/382468540",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-bedb79f"
+  },
+  {
+    "assets": [
+      {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-08f3cf7/shoosting-linux64.zip",
         "download_count": 1,
         "name": "shoosting-linux64.zip",
@@ -1281,7 +1336,7 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-127baf2/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 29685667
       }
