@@ -58,13 +58,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-40cf32d/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 32198339
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-40cf32d/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 3,
         "name": "shoosting-win64.zip",
         "size": 34862701
       }
@@ -108,6 +108,61 @@
     "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383131815/assets{?name,label}",
     "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383131815",
     "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-40cf32d"
+  },
+  {
+    "assets": [
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-0e58cc5/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 32198952
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-0e58cc5/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34863312
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383135654/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Windows and Linux from `main` at `0e58cc5`. **The relay on the LAN has been redeployed to match this build.**\n\n## What changed\n\n**Cards are no longer taken before you see them.** The pick screen opens the instant a round ends, and if you were firing - most rounds - you were still holding the button on that frame, so a press committed immediately and took whatever happened to be highlighted.\n\nTaking a card is now a one second hold. The part that actually fixes it is the arming rather than the duration: the hold refuses to start until the confirm has been *released* since the screen opened, so a button already down when the round ends counts for nothing.\n\n**Everyone watches the pick now.** The name and description used to appear for watchers only once a hover arrived, so until the picker moved everybody else was looking at three anonymous tiles. The hold bar is broadcast too, so the lobby watches it fill - that is the tensest moment in a round and it was invisible to all but one person.\n\n**Lobbies can be three.** The join screen offered 2 or 4 and nothing else; 2, 3 and 4 now select directly, and the pad steps through with a wrap. The relay needed no change for this - its capacity was already 4 and match size comes from the host.\n\n**The relay drops peers that talk without playing.** A stalled client used to hold a lobby against every join indefinitely, because silence was the only liveness test and a stuck lockstep peer keeps sending keepalives. It now watches whether the tick advances. This is live on the LAN relay as of this build.\n\n## Also since dev-40cf32d\n\nHover stopped being retransmitted - it is superseded by the next one, so repeating a lost one delivers something already stale. The card pick itself still retransmits, because losing *that* is what strands a lobby.\n\n## Not verified\n\nThe hold bar has not been seen on screen from this end - the bot fixture picks instantly, so every capture landed on a fight instead. It is simple UI and compiles clean, but you will see it before I do.\n\nNor has the mistimed-block punish or the shield retune from the previous build been played, and those are still the numbers most likely to be wrong.\n\n184 headless tests pass on Linux, Windows and macOS.",
+    "created_at": "2026-09-05T04:38:56Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-0e58cc5",
+    "id": 383135654,
+    "immutable": false,
+    "name": "dev build - hold to pick, spectated picks, 2-4 lobbies",
+    "node_id": "RE_kwDOUI8m0c4W1i-m",
+    "prerelease": true,
+    "published_at": "2026-09-05T04:41:14Z",
+    "tag_name": "dev-0e58cc5",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-0e58cc5",
+    "target_commitish": "main",
+    "updated_at": "2026-09-05T04:41:14Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383135654/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383135654",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-0e58cc5"
   },
   {
     "assets": [
