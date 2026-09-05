@@ -112,6 +112,61 @@
   {
     "assets": [
       {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-afd9fa1/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 32208827
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-afd9fa1/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34873629
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383193228/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Overnight session. Three things landed, and five issues closed that turned out to be already built.\n\n## This build can update itself\n\n`update.cmd` now ships next to `shoosting.exe` — double-click it and it fetches the newest release, keeps the build you were on in `previous_version_1` (three deep), installs the new one, and asks whether to launch. `update.sh` does the same on Linux.\n\n**This only works forward.** Your current install has no updater in it, so this one has to be unzipped by hand once. Every build after it updates itself.\n\nIt needs a credential, because the repo is private: it uses the GitHub CLI's login if you have one (you do, on the Windows box), otherwise a token in `github-token.txt` beside the script.\n\n## Cards say what they are\n\nEvery card now carries keywords, and the first one is its primary — which is what paints its tile. Sixteen cards change colour, all of them from \"whichever stat bucket its effects happened to fall in\" to a declared identity. Venom is a poison card now, not a bullet-stats card.\n\nThe pool hash covers keywords, so `LobbyConfig.Version` went 6 -> 7. **Everyone in a lobby needs this build.**\n\n## The announcer's script is a data file\n\nAll 199 written and 134 spoken lines moved out of C# into `script.json`. No lines changed — verified byte-for-byte — and no audio was re-baked. It is groundwork for player-submitted shit-talking (#72): a proposed line is now a one-line diff instead of C# a bot would have to write.\n\n## Closed as already done\n\n#22 (relay command reliability), #38 (card pick timer), #47 (Slipstream), #34 (match camera), #9 (visual identity). Each has a comment naming the code that proves it. Every remaining open issue was audited and the partly-done ones now say precisely which half exists.\n\n## Verified\n\n247 headless tests on Linux, Windows and macOS; a two-peer relay match where neither peer ever pressed a key held identical checksums for 99 SYNC ticks; the updater run end to end against the real release including four forced installs capping at `previous_version_3`; and a running player rendering an announcer line out of the new data file.\n\n**Not verified:** `update.sh` has never executed — no Linux box here. Impact damage tuning is still unplayed.\n",
+    "created_at": "2026-09-05T09:01:27Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-afd9fa1",
+    "id": 383193228,
+    "immutable": false,
+    "name": "dev build - it updates itself now, and cards say what they are",
+    "node_id": "RE_kwDOUI8m0c4W1xCM",
+    "prerelease": true,
+    "published_at": "2026-09-05T09:02:46Z",
+    "tag_name": "dev-afd9fa1",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-afd9fa1",
+    "target_commitish": "main",
+    "updated_at": "2026-09-05T09:02:46Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383193228/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383193228",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-afd9fa1"
+  },
+  {
+    "assets": [
+      {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-a868fa3/shoosting-linux64.zip",
         "download_count": 1,
         "name": "shoosting-linux64.zip",
@@ -223,13 +278,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-972d3d7/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 32204049
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-972d3d7/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-win64.zip",
         "size": 34867924
       }
