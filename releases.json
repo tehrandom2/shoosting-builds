@@ -57,6 +57,116 @@
   {
     "assets": [
       {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-e7c943d/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 32199020
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-e7c943d/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34863377
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383139576/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Windows and Linux from `main` at `e7c943d`. The LAN relay is already running this code.\n\n## The join screen actually works now\n\nThe lobby size could not be changed from that screen at all, and adding 3 to the range did not fix it because the range was never the problem: entering the screen focused the address field and nothing ever unfocused it. The settings keys are guarded against firing while you type - an address is mostly digits - so with the field permanently focused, every one of those keys went into the hostname. Players, length, stage and delay were all unreachable, not just the size.\n\n**TAB** now switches between the address and the settings, and the screen opens on the settings. Set the lobby with `2` / `3` / `4`, arrows for length and stage, and press enter without touching the address.\n\nOnly the **first player in** needs to set any of this. Slot zero broadcasts the whole lobby config and everyone else adopts it, so a joiner needs an address and nothing else.\n\n## Also in this build\n\n**Cards are no longer taken before you see them.** Taking a card is a one second hold, and the hold refuses to start until the confirm has been released since the screen opened - so a button held from the fight counts for nothing.\n\n**Everyone watches the pick**: the description shows immediately rather than only after the picker moves, and the hold bar is broadcast so the lobby watches it fill.\n\n**A mistimed block kills you.** A shot that reached you before the shield came up used to be trapped in the bubble costing nothing; every pass now deals its damage. A block made in time is still free. Window 0.30s, cooldown 1.8s.\n\n**The relay drops peers that talk without playing**, so a stalled client can no longer hold a lobby.\n\n## Known and not fixed\n\nThe join panel's lines overlap each other at higher resolutions. Ugly, blocks nothing, and has its own pass coming.\n\n## Not verified\n\nThe hold bar has not been seen from this end - the bot fixture picks instantly, so every capture landed on a fight. Nor have the block numbers been played.\n\n184 headless tests pass on Linux, Windows and macOS.",
+    "created_at": "2026-09-05T04:59:46Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-e7c943d",
+    "id": 383139576,
+    "immutable": false,
+    "name": "dev build - join screen settings reachable, hold to pick",
+    "node_id": "RE_kwDOUI8m0c4W1j74",
+    "prerelease": true,
+    "published_at": "2026-09-05T05:00:58Z",
+    "tag_name": "dev-e7c943d",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-e7c943d",
+    "target_commitish": "main",
+    "updated_at": "2026-09-05T05:00:58Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383139576/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383139576",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-e7c943d"
+  },
+  {
+    "assets": [
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-7bcbf5e/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 31453507
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-7bcbf5e/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34043175
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383137309/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Fixes the join screen taking every keypress into the hostname.\n\nDrawConnect focused the address field on entry and never blurred it, so the `!IsFocused` gate around every settings key was never true: the keys were dead, and pressing 3 for a three-player lobby typed a 3 into the address. **Tab** now switches between typing the address and changing the settings, and the panel says which one currently has the keys.\n\nThe pad was stuck behind the same gate despite being unable to type, so stage, length, size and delay were unreachable with a controller too. Pad input now runs regardless of focus.\n\nBackspace no longer edits the field while it is blurred.\n\nBuilt from 7bcbf5e. Includes the relay lockout fix and the 2-4 player range from dev-bedb79f.\n\nNot verified: no display or input synthesis on the build machine, so the Tab toggle, the pad paths and the hint text are reasoned from the code rather than pressed. Backspace may still delete two characters per press - that depends on the Input System backend and was left alone rather than guessed at.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01Eidq8PaPFBhYm4H2vctCyW",
+    "created_at": "2026-09-05T04:48:47Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-7bcbf5e",
+    "id": 383137309,
+    "immutable": false,
+    "name": "dev build - join screen keys work",
+    "node_id": "RE_kwDOUI8m0c4W1jYd",
+    "prerelease": true,
+    "published_at": "2026-09-05T04:49:48Z",
+    "tag_name": "dev-7bcbf5e",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-7bcbf5e",
+    "target_commitish": "relay-stale-peer-tick",
+    "updated_at": "2026-09-05T04:49:48Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383137309/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383137309",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-7bcbf5e"
+  },
+  {
+    "assets": [
+      {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-40cf32d/shoosting-linux64.zip",
         "download_count": 1,
         "name": "shoosting-linux64.zip",
@@ -113,13 +223,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-0e58cc5/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 32198952
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-0e58cc5/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 7,
         "name": "shoosting-win64.zip",
         "size": 34863312
       }
