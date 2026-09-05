@@ -277,6 +277,61 @@
   {
     "assets": [
       {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-5c4547f/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 32203533
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-5c4547f/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34867423
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383169689/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Everyone needs this build: **the protocol byte moved to 5**, so a peer on an older build is refused rather than desyncing.\n\n## What changed\n\nThe lobby's card configuration was a 64-bit mask indexed by each card's *position* in the library. That capped the game at 64 cards with 59 written, and inserting or removing a card silently changed what an existing selection meant.\n\nThat is gone. A match now holds a card pool, and a card that is not in the pool is not in the match — so the ceiling does not exist any more rather than having been raised.\n\nThe wire carries the set selection plus a hash of the pool it builds. If two builds would play with different cards, the join is refused up front instead of the match quietly coming apart minutes later.\n\n## What to look for\n\nNothing should feel different. Card offers *are* different — the pool is now sorted by id, which changes what any given seed deals — but the distribution and the set toggles behave as before.\n\nWorth a look:\n- card sets on and off from the setup menu, and the count it reports\n- a three-player online round, since the pick queue is where card changes surface\n- `-cards core,chaos` on the command line still filters\n\n## Verified\n\n210 headless tests pass on Linux, Windows and macOS, including the golden checksum, which was regenerated deliberately for the new pool order. Unity compiles clean and the player runs for 40 seconds with bots and no exceptions.\n\n**Not verified:** nothing was played by hand, and no two real peers were put on the relay — the join-refusal path has only been tested in-process.\n",
+    "created_at": "2026-09-05T07:26:12Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-5c4547f",
+    "id": 383169689,
+    "immutable": false,
+    "name": "dev build - card pool replaces the 64-card mask",
+    "node_id": "RE_kwDOUI8m0c4W1rSZ",
+    "prerelease": true,
+    "published_at": "2026-09-05T07:29:34Z",
+    "tag_name": "dev-5c4547f",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-5c4547f",
+    "target_commitish": "main",
+    "updated_at": "2026-09-05T07:29:34Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383169689/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383169689",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-5c4547f"
+  },
+  {
+    "assets": [
+      {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-4df3318/shoosting-linux64.zip",
         "download_count": 0,
         "name": "shoosting-linux64.zip",
