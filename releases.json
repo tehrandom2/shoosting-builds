@@ -387,6 +387,55 @@
   {
     "assets": [
       {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-7a89daa/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34885275
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383321342/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "**The card editor.** Main menu → **Custom cards**, third entry.\n\n## Writing a card\n\nTwo ways in: **Write a new card** from nothing, or **Start from a built-in card** and change it — copying Bouncy and turning it into something worse is the fastest way to see how the pieces fit.\n\nYou get name, description, rarity, set, the two-letter code, and the smallest lobby it may appear in. Then a **keyword picker** over the whole vocabulary, with the primary one distinguished — the primary is what paints the tile, so making something primary moves it to the front. Then an **effect composer** over the full trigger / action / stat / operation vocabulary, with a footer that says what the two numbers mean for whichever action you picked.\n\nA **live preview** sits beside the form, drawn with the same code the pick screen uses, in the colour its primary keyword gives it. What you see there is exactly what you will see mid-match.\n\nValues are authored as a ratio, never a decimal, so copying a built-in hands you back `13/10` rather than `1395864371/1073741824`.\n\n## Two things to know\n\n**Offline only, for now.** A card you write joins every offline match. It cannot cross the wire yet: online, peers rebuild the pool from a set byte and refuse the join unless the pool hash matches, so a host holding cards nobody else has would advertise a hash no one can reproduce. Sending the pool is the other half of #66 and that issue stays open.\n\n**Not reachable during a match**, deliberately. The pool is simulation input — a card added mid-match would change every later draw on your machine and on nobody else's.\n\nCards live in `customcards.json` under the persistent data path, not in the install, so updating the game does not eat them.\n\n## Also fixed\n\n**Menus only ever drew five rows and silently dropped the rest.** \"Quit to desktop\" on the pause menu and \"Back\" on the card sets screen were selectable but invisible the whole time. They scroll now, which is also why \"Custom cards\" can exist as a fifth main-menu entry at all.\n\n## Everything from dev-131005b\n\nThruster sticks to what it hits and keeps pushing, stacking per hit. The card offer panel no longer draws through its own footer. An MCP server that hosts the simulation with no Unity. The announcer script round-trip.\n\n## Verified\n\n319 headless tests on all three platforms. Unity compiles clean. The editor was launched from this exact build and photographed at the list and the card form, with no exceptions in the log.\n\n**Nobody has typed into it with a controller.** There is no reliable input synthesis here, so the field-by-field editing, the keyword picker's primary binding, and the value nudging are unproven by keypress. That is the first thing to shake out.\n\nWindows only again - the Linux player still segfaults in headless startup, see #80.\n",
+    "created_at": "2026-09-05T17:11:00Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-7a89daa",
+    "id": 383321342,
+    "immutable": false,
+    "name": "dev build - write your own cards",
+    "node_id": "RE_kwDOUI8m0c4W2QT-",
+    "prerelease": true,
+    "published_at": "2026-09-05T17:37:10Z",
+    "tag_name": "dev-7a89daa",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-7a89daa",
+    "target_commitish": "main",
+    "updated_at": "2026-09-05T17:37:10Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383321342/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383321342",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-7a89daa"
+  },
+  {
+    "assets": [
+      {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-5c4547f/shoosting-linux64.zip",
         "download_count": 1,
         "name": "shoosting-linux64.zip",
@@ -553,7 +602,7 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-131005b/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-win64.zip",
         "size": 34874957
       }
