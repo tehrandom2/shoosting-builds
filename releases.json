@@ -3,13 +3,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-f0260e0/shoosting-web.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-web.zip",
         "size": 11424705
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-f0260e0/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-win64.zip",
         "size": 34914294
       }
@@ -108,6 +108,61 @@
     "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383503627/assets{?name,label}",
     "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383503627",
     "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-bee7cde"
+  },
+  {
+    "assets": [
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-ab8cede/shoosting-web.zip",
+        "download_count": 0,
+        "name": "shoosting-web.zip",
+        "size": 11424067
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-ab8cede/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 53808526
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383757373/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "The soundtrack. Ten instrumental dubstep tracks, generated locally with ACE-Step 1.5 (Apache 2.0), play under the menus and the fights, ducked under the announcer.\n\n**Turn it down.** Settings has three sliders now: **Volume**, **Music**, and **Announcer volume**. Left and right slide them a tenth at a time; zero is off. `-nomusic` on the command line skips the soundtrack entirely.\n\nAlso in this build: the arena rotates every round, bots in online lobbies (`-bots N` on the host), five cards on offer with every hand visible, the health pool as a number on each bar, and custom cards with a family, version and author.\n\nSame protocol byte as `dev-f0260e0`, so this build plays with that one. Windows build is about 51 MB now; the browser preview is unchanged in size.\n",
+    "created_at": "2026-09-06T23:47:30Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-ab8cede",
+    "id": 383757373,
+    "immutable": false,
+    "name": "dev build - the soundtrack, with sliders for music and the announcer",
+    "node_id": "RE_kwDOUI8m0c4W36w9",
+    "prerelease": true,
+    "published_at": "2026-09-06T23:47:36Z",
+    "tag_name": "dev-ab8cede",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-ab8cede",
+    "target_commitish": "main",
+    "updated_at": "2026-09-06T23:47:36Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383757373/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383757373",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-ab8cede"
   },
   {
     "assets": [
@@ -1091,7 +1146,7 @@
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-0e58cc5/shoosting-win64.zip",
-        "download_count": 7,
+        "download_count": 8,
         "name": "shoosting-win64.zip",
         "size": 34863312
       }
