@@ -93,11 +93,14 @@
 
   // Where the WebGL player's files live.
   //
-  // Beside this page by default, which is exactly how BuildScript.BuildWebGL lays a build
-  // out - drop this file into Build/web/ and it replaces Unity's own index.html. It is a
-  // separate parameter at all because the page is a few kilobytes and belongs in the
-  // repository while the player is eleven megabytes and probably does not; ?build=<url>
-  // points it at wherever the build was actually published.
+  // Beside this page by default - "." - because that is where the `pages` workflow's
+  // Tools/unpack-web-preview.py drops the newest release's shoosting-web.zip: its Build/
+  // and StreamingAssets/ directories land straight into this page's own folder, so
+  // "./Build/..." resolves with no configuration. The player itself is never committed
+  // (see CLAUDE.md, "Size, and where the build should live") - it is a release asset next
+  // to the desktop zips, built by Tools/package-web.py from BuildScript.BuildWebGL's
+  // Build/web output. ?build=<url> overrides this, for a build published somewhere else
+  // entirely.
   const params = new URLSearchParams(location.search);
   const base = (params.get("build") || ".").replace(/\/$/, "");
 
