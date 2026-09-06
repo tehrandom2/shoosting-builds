@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shoosting &mdash; preview</title>
+<meta name="description" content="Runs a shoosting card or stage in the browser, straight from a JSON payload.">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #e8ecf4;
+    --dim: #8a93a6;
+    --ground: #05060a;
+    --panel: #0d1018;
+    --line: #1e2432;
+    --live: #4ade80;
+    --warn: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 14px/1.5 ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    align-items: baseline;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  h1 { font-size: 14px; margin: 0; letter-spacing: .04em; }
+  h1 span { color: var(--dim); font-weight: 400; }
+  .facts { display: flex; gap: 18px; flex-wrap: wrap; color: var(--dim); font-size: 12px; }
+  .facts b { color: var(--ink); font-weight: 500; }
+  main { flex: 1; display: flex; min-height: 0; }
+  #frame { flex: 1; position: relative; background: #000; min-height: 60vh; }
+  #canvas { width: 100%; height: 100%; display: block; }
+  #status {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 24px;
+    color: var(--dim);
+    background: var(--ground);
+  }
+  #status.gone { display: none; }
+  #status strong { color: var(--ink); display: block; font-size: 15px; }
+  #status code { color: var(--warn); }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 10px 18px;
+    color: var(--dim);
+    font-size: 12px;
+  }
+  .dot { color: var(--live); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>shoosting <span>/ preview</span></h1>
+  <div class="facts">
+    <span>checksum <b id="checksum">&mdash;</b></span>
+    <span>cards <b id="cards">&mdash;</b></span>
+    <span>state <b id="state">loading</b></span>
+  </div>
+</header>
+
+<main>
+  <div id="frame">
+    <canvas id="canvas" tabindex="-1"></canvas>
+    <div id="status"><strong id="status-title">Loading the preview</strong><span id="status-detail"></span></div>
+  </div>
+</main>
+
+<footer id="note">
+  Offline preview. Two bots play the pool this payload describes &mdash; there is no online play in the browser.
+</footer>
+
+<script>
+(() => {
+  "use strict";
+
+  // Where the WebGL player's files live.
+  //
+  // Beside this page by default, which is exactly how BuildScript.BuildWebGL lays a build
+  // out - drop this file into Build/web/ and it replaces Unity's own index.html. It is a
+  // separate parameter at all because the page is a few kilobytes and belongs in the
+  // repository while the player is eleven megabytes and probably does not; ?build=<url>
+  // points it at wherever the build was actually published.
+  const params = new URLSearchParams(location.search);
+  const base = (params.get("build") || ".").replace(/\/$/, "");
+
+  const el = (id) => document.getElementById(id);
+  const say = (title, detail) => {
+    el("status-title").textContent = title;
+    el("status-detail").innerHTML = detail || "";
+    el("status").classList.remove("gone");
+  };
+
+  // The player reports what it loaded and, more importantly, the checksum of a fixed
+  // scripted match. That number is pinned by the headless suite on Linux, Windows and
+  // macOS, so a mismatch here is a browser that does not simulate the same game.
+  const onReady = (detail) => {
+    el("checksum").textContent = detail.checksum || "?";
+    el("cards").textContent = detail.cards != null ? detail.cards : "?";
+    el("state").innerHTML = '<span class="dot">running</span>';
+    if (detail.error) {
+      el("note").innerHTML = "Payload problem: <code>" + detail.error + "</code>";
+    }
+  };
+
+  window.addEventListener("shoostingPreviewReady", (e) => onReady(e.detail || {}));
+
+  // "web" is the output folder BuildScript.BuildWebGL names, and Unity names every file
+  // after it. The .unityweb extension is what Brotli-with-a-decompression-fallback
+  // produces: the bytes are Brotli, and the name deliberately does not say so, because a
+  // host that cannot send Content-Encoding - GitHub Pages, which is where this lives -
+  // would otherwise hand the browser a stream it was never told to decompress.
+  const name = "web";
+
+  function start() {
+    const script = document.createElement("script");
+    script.src = base + "/Build/" + name + ".loader.js";
+
+    script.onerror = () => say(
+      "No build here yet",
+      "Expected the player under <code>" + base + "/Build/</code>. "
+      + "Build it with <code>BuildScript.BuildWebGL</code> and unpack it there, "
+      + "or pass <code>?build=&lt;url&gt;</code>.");
+
+    script.onload = () => {
+      createUnityInstance(el("canvas"), {
+        dataUrl: base + "/Build/" + name + ".data.unityweb",
+        frameworkUrl: base + "/Build/" + name + ".framework.js.unityweb",
+        codeUrl: base + "/Build/" + name + ".wasm.unityweb",
+        streamingAssetsUrl: base + "/StreamingAssets",
+        companyName: "shoosting",
+        productName: "shoosting preview",
+        productVersion: "preview",
+      }, (progress) => {
+        el("status-detail").textContent = Math.round(progress * 100) + "%";
+      }).then(() => {
+        el("status").classList.add("gone");
+      }).catch((err) => {
+        say("The player did not start", String(err));
+      });
+    };
+
+    document.body.appendChild(script);
+  }
+
+  // The payload the player reads. Set before the loader runs, so it is there by the time
+  // the bootstrap asks - a card handed over after the scene loaded would arrive after the
+  // decisions it is meant to make.
+  //
+  // A page embedding this in an iframe can set it on itself instead; the bridge reads the
+  // parent when this window has none of its own.
+  if (!window.shoostingPreviewPayload && params.has("payload")) {
+    window.shoostingPreviewPayload = params.get("payload");
+  }
+
+  start();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,891 @@
+/* ---------------------------------------------------------------------- */
+/* tokens                                                                  */
+/*                                                                         */
+/* The studio borrows the build archive's chrome deliberately - same fonts, */
+/* same violet and orange, same near-black - so the two pages read as one   */
+/* site. What it does not borrow is where colour goes: here the app is grey */
+/* and every accent comes from the card being looked at, because a card's   */
+/* colour is derived from what it does and that is information rather than  */
+/* decoration.                                                             */
+/* ---------------------------------------------------------------------- */
+:root {
+  --bg:        #0a0b10;
+  --bg-raised: #12141d;
+  --bg-card:   #14161f;
+  --bg-sunk:   #0d0e15;
+  --line:      #23273a;
+  --line-soft: #1a1d2b;
+
+  --text:      #e9e9f2;
+  --text-dim:  #9497ab;
+  --text-faint:#5f6377;
+
+  --p1: #7c5cff;
+  --p2: #ff7a3c;
+  --p1-soft: rgba(124, 92, 255, 0.14);
+  --p2-soft: rgba(255, 122, 60, 0.14);
+
+  --good: #5cffb0;
+  --bad:  #ff6b6b;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Unity's legacy Text draws in the engine's built-in Arial, and the whole
+     point of the panel replica is that it agrees with the game about width. */
+  --font-game: Arial, "Liberation Sans", Helvetica, sans-serif;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:        #f4f4f7;
+    --bg-raised: #ffffff;
+    --bg-card:   #ffffff;
+    --bg-sunk:   #ebebf1;
+    --line:      #dedee8;
+    --line-soft: #ececf2;
+    --text:      #14151d;
+    --text-dim:  #55586b;
+    --text-faint:#8b8ea0;
+    --p1: #5b34e8;
+    --p2: #d4560d;
+    --p1-soft: rgba(91, 52, 232, 0.08);
+    --p2-soft: rgba(212, 86, 13, 0.08);
+    --good: #0f9d5c;
+    --bad:  #cf2f2f;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg:        #f4f4f7;
+  --bg-raised: #ffffff;
+  --bg-card:   #ffffff;
+  --bg-sunk:   #ebebf1;
+  --line:      #dedee8;
+  --line-soft: #ececf2;
+  --text:      #14151d;
+  --text-dim:  #55586b;
+  --text-faint:#8b8ea0;
+  --p1: #5b34e8;
+  --p2: #d4560d;
+  --p1-soft: rgba(91, 52, 232, 0.08);
+  --p2-soft: rgba(212, 86, 13, 0.08);
+  --good: #0f9d5c;
+  --bad:  #cf2f2f;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--p1);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.booting {
+  text-align: center;
+  padding: 120px 24px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* ambient background                                                     */
+/* ---------------------------------------------------------------------- */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 75%);
+  opacity: 0.6;
+}
+.bg-glow {
+  position: fixed;
+  z-index: 0;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.14;
+}
+.bg-glow--a { top: -24vmax; left: -12vmax; background: var(--p1); }
+.bg-glow--b { top: 6vmax; right: -22vmax; background: var(--p2); }
+
+#studio { position: relative; z-index: 1; }
+
+/* ---------------------------------------------------------------------- */
+/* nav                                                                    */
+/* ---------------------------------------------------------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom: 1px solid var(--line-soft);
+}
+.nav__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.nav__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-display);
+}
+.nav__mark {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--p1);
+  background: var(--p1-soft);
+  border: 1px solid color-mix(in srgb, var(--p1) 40%, transparent);
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-family: var(--font-mono);
+}
+.nav__name { font-weight: 700; font-size: 17px; }
+.nav__tag { font-size: 13px; color: var(--text-faint); font-weight: 500; }
+
+.tabs { display: flex; gap: 4px; flex: 1; flex-wrap: wrap; }
+
+.tab {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-dim);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+.tab:hover { color: var(--text); background: var(--bg-raised); }
+.tab.is-on {
+  color: var(--text);
+  background: var(--p1-soft);
+  border-color: color-mix(in srgb, var(--p1) 45%, transparent);
+}
+.tab--soon { cursor: default; color: var(--text-faint); }
+.tab--soon:hover { background: none; color: var(--text-faint); }
+.tab--soon em {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-left: 7px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--bg-sunk);
+  border: 1px solid var(--line);
+}
+
+.theme {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  min-width: 66px;
+}
+.theme:hover { border-color: var(--p1); color: var(--text); }
+
+/* ---------------------------------------------------------------------- */
+/* hero and the disclosure                                                */
+/* ---------------------------------------------------------------------- */
+/* Compact on purpose. Everything below it is the app, and on the editor the panel is
+   what somebody came for - a hero that pushed it below the fold would be the same
+   mistake the in-game editor made. */
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 400px);
+  gap: 12px 32px;
+  align-items: center;
+}
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  margin: 0;
+  grid-column: 1;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.5vw, 44px);
+  line-height: 1.05;
+  margin: 2px 0 0;
+  grid-column: 1;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--text) 30%, var(--p1) 65%, var(--p2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.01em;
+}
+.hero__sub {
+  margin: 8px 0 0;
+  max-width: 560px;
+  color: var(--text-dim);
+  font-size: 14.5px;
+  grid-column: 1;
+}
+
+/* Said before anyone types, and not dismissible. It is a fine bargain and it
+   only stays fine while it is plainly visible. */
+.deal {
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--p2);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.deal strong { color: var(--text); }
+
+/* ---------------------------------------------------------------------- */
+/* sections                                                               */
+/* ---------------------------------------------------------------------- */
+.panel-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.notice {
+  max-width: 640px;
+  margin: 100px auto;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+.notice h2 { font-family: var(--font-display); font-size: 19px; margin: 0 0 12px; }
+.notice p { color: var(--text-dim); font-size: 14px; }
+.notice--bad { border-left: 3px solid var(--bad); }
+.notice__detail { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); }
+
+/* ---------------------------------------------------------------------- */
+/* filters                                                                */
+/* ---------------------------------------------------------------------- */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 14px;
+}
+.filters__row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filters__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-left: 6px;
+}
+.filters__row > .filters__label:first-child { margin-left: 0; }
+.search {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+}
+.search::placeholder { color: var(--text-faint); }
+
+.chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+.chip {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.chip:hover { border-color: var(--p1); color: var(--text); }
+.chip.is-on {
+  color: var(--text);
+  background: var(--p1-soft);
+  border-color: color-mix(in srgb, var(--p1) 55%, transparent);
+}
+.chip.is-primary { border-color: var(--p2); background: var(--p2-soft); }
+.chip.is-primary::after {
+  content: "primary";
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-left: 7px;
+  color: var(--p2);
+}
+.chip--ghost { background: none; color: var(--text-faint); }
+.chip--tiny { font-size: 11px; padding: 4px 9px; }
+.chip-pair { display: inline-flex; gap: 3px; align-items: center; }
+
+.select {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+select {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 8px 10px;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 0 0 14px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* the card grid                                                          */
+/* ---------------------------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.sheet-card {
+  display: flex;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.sheet-card:hover {
+  border-color: color-mix(in srgb, var(--ink) 60%, transparent);
+  transform: translateY(-1px);
+}
+
+/* The tile, at the size a list can carry it. Same object as the one on the
+   pick screen: dark slab, hairline edge in the card's own ink, code cut
+   into the face. */
+.sheet-card__slab {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 62px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, #1b1e29, #0c0d13);
+  border: 1px solid color-mix(in srgb, var(--ink) 55%, transparent);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06);
+}
+.sheet-card__slab span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--ink);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 0.7);
+}
+
+.sheet-card__body { min-width: 0; }
+.sheet-card__name {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  margin: 0 0 3px;
+  font-weight: 600;
+}
+.sheet-card__desc {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.sheet-card__effects {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sheet-card__effects li {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The inks are the game's own, chosen to glow on near-black, and the movement green in
+   particular is unreadable on paper. Darkened for light backgrounds rather than replaced,
+   so a card is still recognisably the same colour it is in the arena. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .sheet-card__effects li {
+    color: color-mix(in srgb, var(--ink) 58%, #000);
+  }
+}
+:root[data-theme="light"] .sheet-card__effects li {
+  color: color-mix(in srgb, var(--ink) 58%, #000);
+}
+.sheet-card__tags {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+  text-transform: lowercase;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-faint);
+  padding: 48px 0;
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* the pick-screen replica                                                */
+/*                                                                        */
+/* Everything below is in the game's canvas units and scaled as a whole,   */
+/* so the relationship between the text and the footer survives. Change a  */
+/* number here and the studio stops agreeing with the game.               */
+/* ---------------------------------------------------------------------- */
+.panel-host {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: #06070b;
+  border: 1px solid var(--line);
+}
+
+.panel-stage {
+  position: relative;
+  transform-origin: top left;
+  background:
+    radial-gradient(120% 90% at 50% 0%, #101320 0%, #06070b 70%);
+  font-family: var(--font-game);
+  color: #fff;
+}
+
+.panel-line {
+  position: absolute;
+  left: 40px;
+  width: 1100px;
+  text-align: center;
+  line-height: 1.16;
+}
+
+.panel-title { color: rgb(133 145 173); }
+.panel-name { color: #fff; font-weight: 400; }
+.panel-description { color: rgb(148 163 189); }
+.panel-footer { color: rgb(87 97 120); }
+
+.panel-effects__line {
+  white-space: pre;
+  overflow: visible;
+}
+.panel-effects__line.is-overflowing {
+  color: var(--bad);
+  text-decoration: underline wavy currentColor;
+}
+
+/* Where the footer's own text begins. Anything drawn past this line is not
+   truncated in game - it is printed on top of the footer. */
+.panel-overflow-mark {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-top: 1px dashed color-mix(in srgb, var(--bad) 70%, transparent);
+}
+
+.panel-tile {
+  position: absolute;
+  border-radius: 12px;
+  background: linear-gradient(165deg, #22262f 0%, #0e1017 55%, #14161d 100%);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 55%, transparent);
+  box-shadow: inset 0 2px 0 rgb(255 255 255 / 0.05);
+  filter: brightness(0.72);
+}
+.panel-tile.is-picked {
+  filter: none;
+  border-color: var(--ink);
+  box-shadow:
+    inset 0 2px 0 rgb(255 255 255 / 0.08),
+    0 0 90px 10px color-mix(in srgb, var(--ink) 40%, transparent);
+}
+.panel-tile__code {
+  position: absolute;
+  inset: 0 0 auto 0;
+  top: 36px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 92px;
+  line-height: 1;
+  color: color-mix(in srgb, var(--ink) 78%, #0b1020);
+  text-shadow: 0 2px 0 rgb(0 0 0 / 0.85), 0 -1px 0 rgb(255 255 255 / 0.10);
+}
+.panel-tile.is-picked .panel-tile__code {
+  color: var(--ink);
+  text-shadow: 0 2px 0 rgb(0 0 0 / 0.9), 0 0 22px color-mix(in srgb, var(--ink) 60%, transparent);
+}
+.panel-tile__points {
+  position: absolute;
+  inset: auto 0 26px 0;
+  text-align: center;
+  font-family: var(--font-game);
+  font-size: 24px;
+  color: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+.panel-tile.is-picked .panel-tile__points {
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+}
+
+/* ---------------------------------------------------------------------- */
+/* editor                                                                 */
+/* ---------------------------------------------------------------------- */
+.editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.editor__preview { position: sticky; top: 72px; }
+
+.preview {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.preview__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.preview__bar h2 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  margin: 0;
+  font-weight: 600;
+}
+.preview__stack, .sheet__stack {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+.preview__stack output, .sheet__stack output {
+  font-family: var(--font-mono);
+  color: var(--text);
+  min-width: 14px;
+}
+input[type="range"] { accent-color: var(--p1); width: 120px; }
+
+/* The line budget, as pips. Six of them, because six is the number. */
+.budget { margin-top: 14px; }
+.budget__meter { display: flex; gap: 4px; margin-bottom: 8px; }
+.budget__pip {
+  height: 5px;
+  flex: 1;
+  border-radius: 3px;
+  background: var(--bg-sunk);
+  border: 1px solid var(--line);
+}
+.budget__pip.is-used { background: var(--p1); border-color: var(--p1); }
+.budget__pip.is-shrunk.is-used { background: var(--p2); border-color: var(--p2); }
+.budget.is-over .budget__pip.is-used { background: var(--bad); border-color: var(--bad); }
+
+.budget__words { margin: 0; font-size: 12.5px; color: var(--text-dim); }
+.budget.is-over .budget__words { color: var(--bad); }
+.budget__cut {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  list-style: none;
+  border: 1px dashed color-mix(in srgb, var(--bad) 60%, transparent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--bad);
+}
+
+.problems { margin-top: 12px; font-size: 12.5px; }
+.problems ul { margin: 0; padding-left: 18px; color: var(--bad); }
+.problems li { margin-bottom: 3px; }
+.problems p { margin: 0; color: var(--good); }
+
+/* ---------------------------------------------------------------------- */
+/* the form                                                               */
+/* ---------------------------------------------------------------------- */
+.drafts { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+
+.field-set {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  padding: 16px;
+  margin: 0 0 14px;
+}
+.field-set legend {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 0 8px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.field--wide { grid-column: 1 / -1; }
+.field > span {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  text-transform: lowercase;
+}
+.field input, .field select {
+  background: var(--bg-sunk);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  min-width: 0;
+}
+.field__exact {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+}
+.field__exact.is-bad { color: var(--bad); }
+
+.hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--text-faint);
+  line-height: 1.55;
+}
+.hint--inline { margin: 0; align-self: end; }
+
+.effect {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  background: var(--bg-sunk);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.effect__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.effect__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.effect__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.compare {
+  margin: 10px 0 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-dim);
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+  border-left: 2px solid var(--line);
+}
+.compare--good { color: var(--good); border-left-color: var(--good); }
+.compare--bad { color: var(--bad); border-left-color: var(--bad); }
+.compare--flat { color: var(--text-faint); }
+
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.button {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--bg-sunk);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 9px 14px;
+  cursor: pointer;
+}
+.button:hover { border-color: var(--p1); background: var(--p1-soft); }
+.button--primary {
+  background: var(--p1);
+  border-color: var(--p1);
+  color: #fff;
+  font-weight: 600;
+}
+.button--primary:hover { filter: brightness(1.1); background: var(--p1); }
+
+/* ---------------------------------------------------------------------- */
+/* card sheet dialog                                                      */
+/* ---------------------------------------------------------------------- */
+.sheet {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  color: var(--text);
+  padding: 0;
+  max-width: min(940px, 94vw);
+  width: 100%;
+}
+.sheet::backdrop { background: rgb(4 5 9 / 0.72); backdrop-filter: blur(3px); }
+.sheet__inner { padding: 22px; position: relative; }
+.sheet__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.sheet__close:hover { color: var(--text); }
+.sheet__name { font-family: var(--font-display); font-size: 22px; margin: 0 0 4px; }
+.sheet__meta {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  margin: 0 0 16px;
+}
+.sheet__stack { margin: 14px 0; }
+.sheet__note { font-size: 12px; color: var(--text-faint); margin: 10px 0 0; }
+
+/* ---------------------------------------------------------------------- */
+/* footer                                                                 */
+/* ---------------------------------------------------------------------- */
+.footer {
+  max-width: 1280px;
+  margin: 40px auto 0;
+  padding: 20px 24px 60px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--text-faint);
+  font-size: 12.5px;
+  position: relative;
+  z-index: 1;
+}
+.footer p { margin: 0 0 8px; max-width: 720px; }
+.footer--warn { color: var(--bad); }
+.footer__meta a { color: var(--text-dim); text-decoration: none; }
+.footer__meta a:hover { text-decoration: underline; }
+
+/* ---------------------------------------------------------------------- */
+/* narrow                                                                 */
+/* ---------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .deal { grid-column: 1; grid-row: auto; margin-top: 6px; }
+}
+
+@media (max-width: 1000px) {
+  .editor { grid-template-columns: minmax(0, 1fr); }
+  /* The preview goes above the form and stays put, because "watch it as you
+     type" is the entire app and scrolling away from it breaks the promise. */
+  .editor__preview {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--bg);
+    padding-bottom: 8px;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav__tag, .tab--soon { display: none; }
+  .nav__inner { padding: 10px 16px; gap: 10px; }
+  /* Both tabs onto their own row rather than one of them wrapping alone. */
+  .tabs { flex: 1 0 100%; order: 3; }
+  .nav__brand { flex: 1; }
+  .panel-section { padding: 16px; }
+  .hero { padding: 32px 16px 20px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  input[type="range"] { width: 88px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  html { scroll-behavior: auto; }
+}
