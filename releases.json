@@ -3,13 +3,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-bee7cde/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 2,
         "name": "shoosting-linux64.zip",
         "size": 32957870
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-bee7cde/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 4,
         "name": "shoosting-win64.zip",
         "size": 34908130
       }
