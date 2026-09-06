@@ -84,6 +84,28 @@ function normaliseCard(raw) {
     };
 }
 
+/**
+ * The stat's default as a number.
+ *
+ * The generator writes a ratio object - num, den, raw, decimal - because a decimal alone
+ * cannot be turned back into the exact Fix64. Reading it with Number() gave NaN, which
+ * fixedFormat printed as "0", so every compare line in the editor read "0 -> 0" and
+ * nothing threw. The bare "value" field is deliberately not a fallback: in the current
+ * shape it is the StatId ordinal, which would produce a wrong number that looks right.
+ */
+function defaultOf(raw) {
+    const d = pick(raw, "default", "defaultValue");
+
+    if (d && typeof d === "object") {
+        if (typeof d.num === "number" && typeof d.den === "number" && d.den !== 0) return d.num / d.den;
+        if (typeof d.decimal === "number") return d.decimal;
+        return 0;
+    }
+
+    const n = Number(d);
+    return Number.isFinite(n) ? n : 0;
+}
+
 function normaliseStat(raw, index) {
     const id = String(pick(raw, "id", "stat", "name") ?? "");
     const higher = pick(raw, "higherIsBetter", "higherBetter", "better", "direction");
@@ -92,8 +114,8 @@ function normaliseStat(raw, index) {
         id,
         index,
         label: String(pick(raw, "label") || titled(id)),
-        meaning: String(pick(raw, "meaning", "description", "summary") ?? ""),
-        default: Number(pick(raw, "default", "defaultValue", "value") ?? 0),
+        meaning: String(pick(raw, "meaning", "blurb", "description", "summary") ?? ""),
+        default: defaultOf(raw),
         unit: String(pick(raw, "unit", "units") ?? ""),
         operations: (pick(raw, "operations", "ops") ?? OPS).slice(),
         // "higher is worse" has to survive being written three different ways, because
