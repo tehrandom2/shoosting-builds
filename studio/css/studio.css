@@ -84,6 +84,14 @@
 
 * { box-sizing: border-box; }
 
+/* Any element given its own `display` (`.editor` is `display: grid`, and it is not the
+   only one) otherwise wins the cascade over the browser's own `[hidden] { display: none }`
+   rule - author styles beat the user-agent stylesheet regardless of selector specificity,
+   so a plain `.editor { display: grid }` silently defeats `setView`'s `el.hidden = true`.
+   The three top-level sections stack instead of switching. This restores what `hidden` is
+   supposed to mean. */
+[hidden] { display: none !important; }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -212,6 +220,34 @@ a { color: inherit; }
   background: var(--bg-sunk);
   border: 1px solid var(--line);
 }
+
+/* ---------------------------------------------------------------------- */
+/* account (Discord sign-in)                                              */
+/* ---------------------------------------------------------------------- */
+.account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+}
+.account__note {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  cursor: help;
+}
+.account__handle {
+  font-weight: 600;
+  color: var(--text);
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account__signin, .account__signout { font-size: 12.5px; padding: 7px 13px; }
 
 .theme {
   font-family: var(--font-mono);
@@ -680,9 +716,73 @@ input[type="range"] { accent-color: var(--p1); width: 120px; }
 .problems p { margin: 0; color: var(--good); }
 
 /* ---------------------------------------------------------------------- */
+/* the mod diff                                                           */
+/* ---------------------------------------------------------------------- */
+.diff { margin-top: 14px; border-top: 1px solid var(--line-soft); padding-top: 12px; }
+.diff__empty { margin: 0; font-size: 12.5px; color: var(--text-faint); }
+.diff__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-family: var(--font-mono);
+}
+.diff__table caption {
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding-bottom: 8px;
+}
+.diff__table th {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 8px 5px 0;
+  color: var(--text-faint);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.diff__table td {
+  vertical-align: top;
+  padding: 5px 8px;
+  white-space: pre-wrap;
+  border-radius: 4px;
+}
+.diff__before { color: var(--bad); background: color-mix(in srgb, var(--bad) 8%, transparent); }
+.diff__after { color: var(--good); background: color-mix(in srgb, var(--good) 8%, transparent); }
+
+/* ---------------------------------------------------------------------- */
 /* the form                                                               */
 /* ---------------------------------------------------------------------- */
-.drafts { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.drafts { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+
+.editor__kind {
+  margin: 0 0 14px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--p2-soft);
+  border-left: 2px solid var(--p2);
+}
+.editor__kind:empty { display: none; }
+
+/* A draft chip carries its kind as a small second line, so "mod of Bullet Time" reads at
+   a glance without a separate list. */
+.chip--draft {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 5px 12px;
+}
+.chip--draft.is-mod { border-color: color-mix(in srgb, var(--p2) 55%, transparent); }
+.chip__kind {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--text-faint);
+  text-transform: lowercase;
+}
+.chip--draft.is-on .chip__kind { color: color-mix(in srgb, var(--text) 70%, transparent); }
 
 .field-set {
   border: 1px solid var(--line);
@@ -713,7 +813,7 @@ input[type="range"] { accent-color: var(--p1); width: 120px; }
   color: var(--text-faint);
   text-transform: lowercase;
 }
-.field input, .field select {
+.field input, .field select, .field textarea {
   background: var(--bg-sunk);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -723,6 +823,7 @@ input[type="range"] { accent-color: var(--p1); width: 120px; }
   font-size: 13.5px;
   min-width: 0;
 }
+.field textarea { resize: vertical; font-family: var(--font-body); }
 .field__exact {
   font-family: var(--font-mono);
   font-size: 10.5px;
@@ -799,6 +900,159 @@ input[type="range"] { accent-color: var(--p1); width: 120px; }
 .button--primary:hover { filter: brightness(1.1); background: var(--p1); }
 
 /* ---------------------------------------------------------------------- */
+/* your submissions                                                       */
+/* ---------------------------------------------------------------------- */
+.submissions { margin-top: 18px; }
+.submissions h3 {
+  font-family: var(--font-display);
+  font-size: 13px;
+  margin: 0 0 8px;
+  color: var(--text-dim);
+}
+.submissions ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.submissions li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+.submissions li a { text-decoration: none; color: var(--p1); }
+.submissions li a:hover { text-decoration: underline; }
+.submissions__meta {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+  text-transform: lowercase;
+}
+
+/* ---------------------------------------------------------------------- */
+/* the run-it preview dialog                                              */
+/* ---------------------------------------------------------------------- */
+.run-dialog {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  padding: 0;
+  width: min(1100px, 96vw);
+  max-width: 96vw;
+}
+.run-dialog::backdrop { background: rgb(4 5 9 / 0.8); backdrop-filter: blur(3px); }
+.run-dialog__inner { position: relative; padding: 0; }
+.run-dialog__inner .sheet__close { top: 8px; right: 10px; z-index: 2; color: var(--text); }
+.run-dialog__frame {
+  display: block;
+  width: 100%;
+  height: min(72vh, 700px);
+  border: none;
+  border-radius: var(--radius);
+  background: #000;
+}
+
+/* ---------------------------------------------------------------------- */
+/* announcer view                                                         */
+/* ---------------------------------------------------------------------- */
+.announcer__intro { max-width: 760px; margin-bottom: 18px; }
+.announcer__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: 20px;
+  align-items: start;
+}
+.announcer__groups { display: grid; gap: 10px; }
+.announcer__form-host { position: sticky; top: 72px; }
+
+.announcer-group {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  padding: 4px 16px 14px;
+}
+.announcer-group.is-open { border-color: color-mix(in srgb, var(--p1) 55%, transparent); }
+.announcer-group__head {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 12px 0;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+}
+.announcer-group__name { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+.announcer-group__meta {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+.announcer-group__trigger { margin: 0 0 8px; font-size: 12.5px; color: var(--text-dim); }
+.announcer-group__gate {
+  margin: 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.announcer-group__shown, .announcer-group__spoken {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.announcer-group__shown li, .announcer-group__spoken li {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  padding: 4px 8px;
+  background: var(--bg-sunk);
+  border-radius: 5px;
+}
+.announcer-group__spoken-label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.announcer-form {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  padding: 16px;
+}
+.announcer-form h3 { font-family: var(--font-display); font-size: 15px; margin: 0 0 8px; }
+.announcer-form .field { margin-bottom: 10px; }
+.announcer-form textarea { min-height: 52px; }
+.house-rule {
+  font-size: 12px;
+  color: var(--text-dim);
+  background: var(--p2-soft);
+  border-left: 2px solid var(--p2);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin: 4px 0 12px;
+}
+.announcer-form__problems ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  color: var(--bad);
+  font-size: 12px;
+}
+
+/* ---------------------------------------------------------------------- */
 /* card sheet dialog                                                      */
 /* ---------------------------------------------------------------------- */
 .sheet {
@@ -832,6 +1086,7 @@ input[type="range"] { accent-color: var(--p1); width: 120px; }
   margin: 0 0 16px;
 }
 .sheet__stack { margin: 14px 0; }
+.sheet__actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .sheet__note { font-size: 12px; color: var(--text-faint); margin: 10px 0 0; }
 
 /* ---------------------------------------------------------------------- */
@@ -862,6 +1117,8 @@ input[type="range"] { accent-color: var(--p1); width: 120px; }
 
 @media (max-width: 1000px) {
   .editor { grid-template-columns: minmax(0, 1fr); }
+  .announcer__layout { grid-template-columns: minmax(0, 1fr); }
+  .announcer__form-host { position: static; }
   /* The preview goes above the form and stays put, because "watch it as you
      type" is the entire app and scrolling away from it breaks the promise. */
   .editor__preview {

@@ -169,19 +169,49 @@ function truthFromDescribe(raw) {
     return byId;
 }
 
+/**
+ * Reshapes announcer.json into the shape the announcer view reads.
+ *
+ * The generator's own shape is already close to right - it exists for a person to read -
+ * so this mostly passes groups through and normalises the one thing a form needs that a
+ * report does not: a plain array of spoken *text*, since `submit/announcer` and the
+ * client-side checks both want strings, not `{index, text, clipKey, hasClip}` records.
+ */
+function normaliseAnnouncer(raw) {
+    if (!raw || !Array.isArray(raw.groups)) return null;
+
+    return {
+        placeholders: raw.placeholders || {},
+        groups: raw.groups.map((group) => ({
+            name: group.name,
+            trigger: group.trigger || "",
+            priority: group.priority ?? 0,
+            intensity: group.intensity ?? 0,
+            minChattiness: group.minChattiness || "",
+            category: group.category || "",
+            shown: Array.isArray(group.shown) ? group.shown.slice() : [],
+            spoken: Array.isArray(group.spoken)
+                ? group.spoken.map((entry) => entry.text).filter(Boolean)
+                : [],
+        })),
+    };
+}
+
 export async function loadStudioData() {
     const problems = [];
 
-    const [cardsRaw, statsRaw, describeRaw] = await Promise.all([
+    const [cardsRaw, statsRaw, describeRaw, announcerRaw] = await Promise.all([
         load("data/cards.json"),
         load("data/stats.json").catch((error) => { problems.push(error.message); return null; }),
         load("data/describe.json").catch((error) => { problems.push(error.message); return null; }),
+        load("data/announcer.json").catch((error) => { problems.push(error.message); return null; }),
     ]);
 
     const cards = asArray(cardsRaw, "cards").map(normaliseCard);
     const stats = asArray(statsRaw, "stats").map(normaliseStat);
 
     const statById = new Map(stats.map((stat) => [stat.id, stat]));
+    const cardById = new Map(cards.map((card) => [card.id, card]));
 
     const panel = { ...PANEL };
     for (const key of Object.keys(PANEL)) {
@@ -219,9 +249,11 @@ export async function loadStudioData() {
         cards,
         stats,
         statById,
+        cardById,
         panel,
         ordinals,
         vocabulary,
+        announcer: normaliseAnnouncer(announcerRaw),
         // Ground truth: the lines the game itself printed for each built-in card, keyed by
         // id and then by how many copies were held. selftest.js checks the port against it.
         truth: truthFromDescribe(describeRaw),

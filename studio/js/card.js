@@ -279,6 +279,34 @@ export function validate(card, panel = PANEL) {
     return problems;
 }
 
+/**
+ * A card as `CustomCardFile.Parse` actually reads one - `value`/`value2` as `[n, d]` pairs,
+ * because that is the only shape `CustomCardFile.ReadRatio` accepts (a bare `{num, den}`
+ * object is not; see `Assets/Game/Cards/CustomCardFile.cs`). This is what the submission
+ * routes want inside `card`/`cards`, and what the preview payload wants inside `cards` -
+ * one function so a shape the real reader would reject cannot drift in from either.
+ */
+export function toDocument(card, ordinals) {
+    return {
+        id: card.id ?? mint(card, ordinals),
+        name: card.name,
+        description: card.description,
+        rarity: card.rarity,
+        set: card.set,
+        code: card.code,
+        minPlayers: card.minPlayers,
+        keywords: (card.keywords || []).slice(),
+        effects: (card.effects || []).map((effect) => ({
+            trigger: effect.trigger,
+            action: effect.action,
+            stat: effect.stat,
+            op: effect.op,
+            value: [effect.value.numerator, effect.value.denominator],
+            value2: [effect.value2.numerator, effect.value2.denominator],
+        })),
+    };
+}
+
 // ------------------------------------------------------------------ CustomCardFile.Write
 
 function quote(text) {

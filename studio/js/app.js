@@ -10,23 +10,19 @@
 import { loadStudioData } from "./data.js";
 import { runSelfTest, worstBuiltIn } from "./selftest.js";
 import { renderPanel } from "./panel.js";
-import { describe, validate, writeFile, mint, effectValue, LIMITS } from "./card.js";
+import { describe, validate, writeFile, toDocument, mint, effectValue, LIMITS, FILE_VERSION } from "./card.js";
 import { ratioFromDecimal, reduce, ratioToNumber, fixedFormat } from "./fixed.js";
 import { domainOf, inkCss, titled, DOMAINS } from "./vocab.js";
+import { diffCard, hasChanges } from "./diff.js";
+import { renderAnnouncerView } from "./announcer.js";
 import * as store from "./store.js";
+import * as service from "./service.js";
 
-/**
- * Where a submitted card goes.
- *
- * The public build mirror rather than the source repo, and that is the whole point: this
- * app has no sign-in and the source repo is private, so an issue link there would 404 for
- * exactly the people the button exists for. GitHub handles their sign-in, and only for the
- * ones who choose to use it.
- */
-const SUBMIT_REPO = "tehrandom2/shoosting-builds";
+/** Where the browser preview lives, relative to this page - see `runInPreview` below. */
+const PREVIEW_URL = "../preview/index.html";
 
-/** Past this a URL stops being reliable across browsers, so the body is copied instead. */
-const MAX_URL_LENGTH = 6000;
+/** The note field on both submission kinds. Kept in one place so the limit agrees everywhere. */
+const MAX_NOTE_LENGTH = 500;
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -38,6 +34,11 @@ const state = {
     drafts: [],
     selected: 0,
     held: 1,
+    // null = not checked yet, true/false once `health()` has answered.
+    serviceUp: null,
+    // null = signed out or not checked; an object once `/me` answers.
+    session: null,
+    submissions: [],
 };
 
 // ------------------------------------------------------------------------------ drafts
@@ -51,6 +52,12 @@ const state = {
  */
 function blankCard() {
     return {
+        // "new" writes a fresh Custom card; "mod" suggests a change to a built-in and
+        // remembers which one in baseId. The two are separate entry points on purpose -
+        // see suggestChange below - and this is what the drafts list reads to label each.
+        kind: "new",
+        baseId: null,
+        note: "",
         name: "Nitro",
         description: "Bullets fly much faster. They also hit softer.",
         rarity: "Common",
@@ -73,6 +80,47 @@ function blankCard() {
     };
 }
 
+function cloneEffects(effects) {
+    return (effects || []).map((effect) => ({
+        trigger: effect.trigger,
+        action: effect.action,
+        stat: effect.stat,
+        op: effect.op,
+        value: { ...effect.value },
+        value2: { ...effect.value2 },
+    }));
+}
+
+/**
+ * Opens the editor on a change to a built-in card, rather than a new one.
+ *
+ * The distinct entry point from "Start a new card from this" is the point: this keeps the
+ * card's own id and set, tracks baseId so the diff panel and the submit route both know
+ * what it is a change to, and never gets offered "Custom" as a set - it is still whichever
+ * built-in set the card belongs to, because the submission is a mod of that card, not a
+ * new one that merely resembles it.
+ */
+function suggestChange(card) {
+    state.drafts.push({
+        kind: "mod",
+        baseId: card.id,
+        note: "",
+        name: card.name,
+        description: card.description,
+        rarity: card.rarity,
+        set: card.set,
+        code: card.code,
+        minPlayers: card.minPlayers,
+        keywords: card.keywords.slice(),
+        effects: cloneEffects(card.effects),
+    });
+
+    state.selected = state.drafts.length - 1;
+    save();
+    setView("editor");
+    location.hash = "#make";
+}
+
 function newEffect() {
     return {
         trigger: "Passive",
@@ -86,6 +134,12 @@ function newEffect() {
 
 function current() {
     return state.drafts[state.selected];
+}
+
+/** The built-in a "mod" draft is a change to, or undefined for a "new" draft. */
+function baseCardFor(card) {
+    if (card.kind !== "mod" || card.baseId == null) return undefined;
+    return state.data.cardById.get(card.baseId);
 }
 
 function save() {
@@ -112,14 +166,19 @@ async function boot() {
     const test = runSelfTest(data);
     const restored = store.read();
 
+    // A draft saved before "suggest a change" existed has none of kind/baseId/note - it is
+    // always a "new" draft, since that was the only kind the editor could make then.
     state.drafts = Array.isArray(restored?.drafts) && restored.drafts.length
-        ? restored.drafts
+        ? restored.drafts.map((card) => ({
+            kind: "new", baseId: null, note: "", ...card,
+        }))
         : [blankCard()];
     state.selected = Math.min(restored?.selected ?? 0, state.drafts.length - 1);
 
     buildChrome(root);
     buildLibrary(root);
     buildEditor(root);
+    buildAnnouncer(root);
     buildFooter(root, test);
 
     setView(location.hash === "#make" ? "editor" : "library");
@@ -131,6 +190,43 @@ async function boot() {
     // link pasted into a tab that is already open changes nothing else.
     openAsked();
     addEventListener("hashchange", openAsked);
+
+    checkService();
+}
+
+/**
+ * Whether the service answers at all, then who (if anybody) is signed in.
+ *
+ * Per the API contract this is the only unsolicited call the page makes on load - `/me` is
+ * "only called when a cookie might exist", which in a static page with no server-rendered
+ * hint means "after health() says the service exists at all". Both failures are read-only,
+ * not fatal: a dead service degrades the submit buttons to downloads, and a live service
+ * with nobody signed in just shows the sign-in button.
+ */
+async function checkService() {
+    state.serviceUp = await service.health();
+    if (state.serviceUp) {
+        try {
+            state.session = await service.me();
+        } catch {
+            state.session = null;
+        }
+    }
+    renderAccount();
+    renderEditor();
+    renderAnnouncer();
+    if (state.session) refreshSubmissions();
+}
+
+async function refreshSubmissions() {
+    if (!state.session) return;
+    try {
+        state.submissions = await service.mySubmissions();
+    } catch {
+        // A failed refresh leaves the last known list up rather than blanking it - the
+        // submissions themselves are unaffected by this call failing.
+    }
+    renderSubmissions();
 }
 
 function openAsked() {
@@ -169,9 +265,10 @@ function buildChrome(root) {
         <nav class="tabs" aria-label="Studio sections">
           <button class="tab" type="button" data-view="library">Cards</button>
           <button class="tab" type="button" data-view="editor">Make a card</button>
+          <button class="tab" type="button" data-view="announcer">Voice lines</button>
           <span class="tab tab--soon" aria-disabled="true">Levels<em>soon</em></span>
-          <span class="tab tab--soon" aria-disabled="true">Voice lines<em>soon</em></span>
         </nav>
+        <div class="account" id="account"></div>
         <button class="theme" type="button" id="theme" aria-label="Colour theme"></button>
       </div>`;
 
@@ -191,10 +288,11 @@ function buildChrome(root) {
       watch the pick screen draw it as you type &mdash; the same lines, the same six-line
       budget, the same font it shrinks to.</p>
       <p class="deal">
-        <strong>The deal.</strong> Nothing you write here is sent anywhere &mdash; there is
-        no server, and your work stays in this browser until you export it. If you choose to
-        submit a card, mh keeps a copy and may put it in the game, changed or unchanged,
-        with no promise either way.
+        <strong>The deal.</strong> A draft stays in this browser until you export it,
+        download it, or submit it. Submitting sends it to the studio service, which opens a
+        pull request credited to your Discord handle for the vote &mdash; mh may put it in
+        the game, changed or unchanged, with no promise either way. Sign-in is required only
+        to submit; browsing and drafting need nothing from you.
       </p>`;
     root.append(hero);
 
@@ -242,7 +340,69 @@ function setView(view) {
     });
     $("#library").hidden = view !== "library";
     $("#editor").hidden = view !== "editor";
+    $("#announcer").hidden = view !== "announcer";
     if (view === "editor") renderEditor();
+}
+
+// ----------------------------------------------------------------------------- account
+
+/**
+ * Discord sign-in and sign-out.
+ *
+ * Three states, and the account slot in the header shows exactly one of them: still
+ * checking (nothing, briefly), the service is unreachable (a plain note - the button
+ * would only fail), or a sign-in link / handle-and-sign-out pair. `loginUrl` is handed the
+ * current path so the callback returns here rather than to the service's own origin.
+ */
+function renderAccount() {
+    const host = $("#account");
+    if (!host) return;
+    host.textContent = "";
+
+    if (state.serviceUp === false) {
+        const note = document.createElement("span");
+        note.className = "account__note";
+        note.textContent = "submissions offline";
+        note.title = "The studio service did not answer, so signing in and submitting "
+            + "are unavailable. Browsing and drafting still work.";
+        host.append(note);
+        return;
+    }
+
+    if (state.serviceUp === null) return;
+
+    if (state.session) {
+        const handle = document.createElement("span");
+        handle.className = "account__handle";
+        handle.textContent = state.session.handle;
+
+        const signOut = document.createElement("button");
+        signOut.type = "button";
+        signOut.className = "button account__signout";
+        signOut.textContent = "Sign out";
+        signOut.addEventListener("click", async () => {
+            signOut.disabled = true;
+            try {
+                await service.logout();
+            } catch {
+                // Clearing local state regardless: a sign-out that failed server-side
+                // still means this page should stop offering to submit as that person.
+            }
+            state.session = null;
+            state.submissions = [];
+            renderAccount();
+            renderEditor();
+            renderAnnouncer();
+        });
+
+        host.append(handle, signOut);
+    } else {
+        const link = document.createElement("a");
+        link.className = "button button--primary account__signin";
+        link.href = service.loginUrl(location.pathname + location.search + location.hash);
+        link.textContent = "Sign in with Discord";
+        host.append(link);
+    }
 }
 
 // ----------------------------------------------------------------------------- library
@@ -437,12 +597,18 @@ function openSheet(card) {
         <input type="range" id="sheetHeld" min="1" max="8" value="1">
         <output id="sheetHeldOut">1</output>
       </div>
-      <button class="button button--primary" type="button" id="sheetCopy">
-        Start a new card from this
-      </button>
+      <div class="sheet__actions">
+        <button class="button button--primary" type="button" id="sheetCopy">
+          Start a new card from this
+        </button>
+        ${card.builtIn ? `<button class="button" type="button" id="sheetSuggest">
+          Suggest a change
+        </button>` : ""}
+      </div>
       <p class="sheet__note">Copying makes a new card with its own id. The original is
       untouched &mdash; a card's id is a hash of what it does, so a changed card is a
-      different card by construction.</p>`;
+      different card by construction. Suggesting a change edits <em>this</em> card in
+      place and tracks it as a mod, with a before/after diff of what you changed.</p>`;
 
     $(".sheet__name", wrap).textContent = card.name;
     $(".sheet__meta", wrap).textContent =
@@ -475,6 +641,13 @@ function openSheet(card) {
         startFrom(card);
     });
 
+    if (card.builtIn) {
+        $("#sheetSuggest", wrap).addEventListener("click", () => {
+            dialog.close();
+            suggestChange(card);
+        });
+    }
+
     dialog.showModal();
 }
 
@@ -484,6 +657,9 @@ function openSheet(card) {
  */
 function startFrom(card) {
     state.drafts.push({
+        kind: "new",
+        baseId: null,
+        note: "",
         name: card.name.slice(0, LIMITS.maxNameLength),
         description: card.description.slice(0, LIMITS.maxDescriptionLength),
         rarity: card.rarity,
@@ -491,14 +667,7 @@ function startFrom(card) {
         code: card.code,
         minPlayers: card.minPlayers,
         keywords: card.keywords.slice(),
-        effects: card.effects.map((effect) => ({
-            trigger: effect.trigger,
-            action: effect.action,
-            stat: effect.stat,
-            op: effect.op,
-            value: { ...effect.value },
-            value2: { ...effect.value2 },
-        })),
+        effects: cloneEffects(card.effects),
     });
 
     state.selected = state.drafts.length - 1;
@@ -539,7 +708,7 @@ function buildEditor(root) {
       <div class="editor__preview">
         <div class="preview">
           <div class="preview__bar">
-            <h2>As it will be dealt</h2>
+            <h2 id="previewTitle">As it will be dealt</h2>
             <div class="preview__stack">
               <label for="held">Holding</label>
               <input type="range" id="held" min="1" max="8" value="1">
@@ -549,11 +718,13 @@ function buildEditor(root) {
           <div class="panel-host" id="panel"></div>
           <div class="budget" id="budget"></div>
           <div class="problems" id="problems"></div>
+          <div class="diff" id="diff" hidden></div>
         </div>
       </div>
 
       <div class="editor__form">
         <div class="drafts" id="drafts"></div>
+        <p class="hint editor__kind" id="editorKind"></p>
 
         <fieldset class="field-set">
           <legend>The card</legend>
@@ -591,16 +762,26 @@ function buildEditor(root) {
         </fieldset>
 
         <fieldset class="field-set">
+          <legend>Note to the reviewer</legend>
+          <label class="field field--wide"><span>Optional, under ${MAX_NOTE_LENGTH} characters</span>
+            <textarea id="f-note" maxlength="${MAX_NOTE_LENGTH}" rows="3"
+              placeholder="Why this change, or what this card is for."></textarea></label>
+        </fieldset>
+
+        <fieldset class="field-set">
           <legend>Take it away</legend>
           <div class="actions">
+            <button class="button" type="button" id="runIt">Run it</button>
             <button class="button button--primary" type="button" id="download">
               Download customcards.json
             </button>
             <button class="button" type="button" id="copy">Copy the JSON</button>
-            <button class="button" type="button" id="submit">Submit it to the game</button>
+            <button class="button button--primary" type="button" id="submit"></button>
           </div>
           <p class="hint" id="exportNote"></p>
         </fieldset>
+
+        <div class="submissions" id="submissions" hidden></div>
       </div>`;
 
     root.append(section);
@@ -624,6 +805,11 @@ function buildEditor(root) {
     bind("#f-rarity", "rarity");
     bind("#f-minPlayers", "minPlayers", Number);
 
+    $("#f-note", section).addEventListener("input", (event) => {
+        current().note = event.target.value;
+        save();
+    });
+
     $("#held", section).addEventListener("input", (event) => {
         state.held = Number(event.target.value);
         $("#heldOut", section).textContent = event.target.value;
@@ -639,6 +825,7 @@ function buildEditor(root) {
     $("#download", section).addEventListener("click", download);
     $("#copy", section).addEventListener("click", copyJson);
     $("#submit", section).addEventListener("click", submit);
+    $("#runIt", section).addEventListener("click", runInPreview);
 }
 
 function renderEditor(options = {}) {
@@ -659,11 +846,29 @@ function renderEditor(options = {}) {
     setValue("#f-set", card.set);
     setValue("#f-rarity", card.rarity);
     setValue("#f-minPlayers", card.minPlayers);
+    setValue("#f-note", card.note || "");
 
+    const base = baseCardFor(card);
+    const kindNote = $("#editorKind");
+    if (card.kind === "mod") {
+        kindNote.textContent = base
+            ? `Suggesting a change to ${base.name} (#${base.id}, ${base.set}). `
+              + "This submits as a mod, not a new card - the id stays the built-in's."
+            : `This was a suggested change to card #${card.baseId}, which is no longer in `
+              + "the library - it may have been renamed or removed since. Submitting will "
+              + "fail; start a new card instead.";
+    } else {
+        kindNote.textContent = "";
+    }
+
+    $("#previewTitle").textContent = card.kind === "mod" ? "As it will be, changed" : "As it will be dealt";
+
+    renderSubmitButton();
     renderDrafts();
     renderKeywords();
     if (!options.keepFocus || !$("#f-effects").children.length) renderEffects();
     renderPreview();
+    renderSubmissions();
 }
 
 function renderDrafts() {
@@ -673,8 +878,17 @@ function renderDrafts() {
     state.drafts.forEach((card, index) => {
         const chip = document.createElement("button");
         chip.type = "button";
-        chip.className = "chip" + (index === state.selected ? " is-on" : "");
+        chip.className = "chip chip--draft" + (index === state.selected ? " is-on" : "")
+            + (card.kind === "mod" ? " is-mod" : "");
         chip.textContent = card.name || "untitled";
+
+        const kind = document.createElement("small");
+        kind.className = "chip__kind";
+        kind.textContent = card.kind === "mod"
+            ? `mod of ${baseCardFor(card)?.name ?? `#${card.baseId}`}`
+            : "new card";
+        chip.append(kind);
+
         chip.addEventListener("click", () => {
             state.selected = index;
             save();
@@ -970,6 +1184,32 @@ function showComparison(node, effect) {
     if (stat.meaning) node.title = stat.meaning;
 }
 
+// ---------------------------------------------------------------------------- announcer
+
+function buildAnnouncer(root) {
+    const section = document.createElement("section");
+    section.id = "announcer";
+    section.className = "panel-section announcer";
+    root.append(section);
+    renderAnnouncer();
+}
+
+/**
+ * `false` means the service is unreachable (offline, download instead); `null`/`undefined`
+ * means it is up but nobody is signed in; an object is the signed-in session. Matches what
+ * `announcer.js`'s form already branches on for the card submit buttons.
+ */
+function announcerSessionArg() {
+    return state.serviceUp === false ? false : state.session;
+}
+
+function renderAnnouncer() {
+    const section = $("#announcer");
+    if (!section || !state.data) return;
+    renderAnnouncerView(section, state.data, announcerSessionArg(), service.submitAnnouncer,
+        refreshSubmissions);
+}
+
 // ----------------------------------------------------------------------------- preview
 
 function renderPreview() {
@@ -987,6 +1227,62 @@ function renderPreview() {
 
     renderBudget(result);
     renderProblems();
+    renderDiff();
+}
+
+/**
+ * The before/after table for a "suggest a change" draft, next to the preview it changes.
+ *
+ * Hidden entirely for a "new" draft - there is no base to diff against, and an empty diff
+ * panel next to every card would read as a feature nobody explained.
+ */
+function renderDiff() {
+    const host = $("#diff");
+    const card = current();
+
+    if (card.kind !== "mod") {
+        host.hidden = true;
+        return;
+    }
+
+    const base = baseCardFor(card);
+    host.hidden = false;
+    host.textContent = "";
+
+    if (!base) {
+        const note = document.createElement("p");
+        note.className = "diff__empty";
+        note.textContent = `Card #${card.baseId} is not in the current library, so there `
+            + "is nothing to compare against.";
+        host.append(note);
+        return;
+    }
+
+    const rows = diffCard(base, card);
+
+    if (!rows.length) {
+        const note = document.createElement("p");
+        note.className = "diff__empty";
+        note.textContent = "Nothing changed yet. Edit a field and the difference from "
+            + `${base.name} as it ships today shows up here.`;
+        host.append(note);
+        return;
+    }
+
+    const table = document.createElement("table");
+    table.className = "diff__table";
+    table.innerHTML = "<caption>Changed from the shipped card</caption>";
+
+    for (const row of rows) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<th></th><td class="diff__before"></td><td class="diff__after"></td>`;
+        tr.children[0].textContent = row.label;
+        tr.children[1].textContent = row.before;
+        tr.children[2].textContent = row.after;
+        table.append(tr);
+    }
+
+    host.append(table);
 }
 
 function renderBudget({ lines, size, overflowing }) {
@@ -1046,16 +1342,21 @@ function renderBudget({ lines, size, overflowing }) {
 
 function renderProblems() {
     const host = $("#problems");
-    const problems = validate(current(), state.data.panel);
+    const card = current();
+    const problems = validate(card, state.data.panel);
 
     host.textContent = "";
     host.classList.toggle("is-clear", !problems.length);
 
     if (!problems.length) {
         const ok = document.createElement("p");
-        const id = mint(current(), state.data.ordinals);
-        ok.textContent = `Ready. This card's id is ${id} - a hash of what it does, so `
-            + "nobody else's card can collide with it.";
+        // A mod keeps the built-in's id - minting a new one here would describe a card
+        // that submitting will never actually produce.
+        ok.textContent = card.kind === "mod"
+            ? `Ready. This keeps id #${card.baseId} - a mod changes what the card does, `
+              + "never which card it is."
+            : `Ready. This card's id is ${mint(card, state.data.ordinals)} - a hash of what `
+              + "it does, so nobody else's card can collide with it.";
         host.append(ok);
         return;
     }
@@ -1125,56 +1426,255 @@ async function copyJson() {
 }
 
 /**
- * Opens a prefilled issue on the public build repo.
- *
- * No sign-in of ours anywhere: the URL carries the card and GitHub asks for the account,
- * which means authoring here stays anonymous and only the people who want their card
- * considered ever identify themselves to anyone.
+ * What the current draft submits as: a new custom card, or a change to the built-in it
+ * tracks. Both use `toDocument`, the shape `CustomCardFile.Parse` actually reads.
  */
-function submit() {
-    const cards = exportable();
-    if (!cards.length) {
-        noteExport("Nothing to submit yet - fix the problems listed beside the preview first.");
-        return;
-    }
+function cardDocument(card) {
+    return {
+        version: FILE_VERSION,
+        cards: [toDocument(card, state.data.ordinals)],
+        note: card.note || "",
+    };
+}
 
-    // The one being edited if it is fit to submit, otherwise the first that is.
+function modDocument(card, base) {
+    const document_ = toDocument(card, state.data.ordinals);
+    document_.id = base.id;
+    return {
+        version: FILE_VERSION,
+        baseId: base.id,
+        card: document_,
+        note: card.note || "",
+    };
+}
+
+function downloadDocument(document_, filename) {
+    const blob = new Blob([JSON.stringify(document_, null, 1) + "\n"], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+}
+
+function renderSubmitButton() {
+    const button = $("#submit");
+    if (!button) return;
     const card = current();
-    const subject = validate(card, state.data.panel).length ? cards[0] : card;
 
-    const body = [
-        `**${subject.name}** - ${subject.description}`,
-        "",
-        "```",
-        describe(subject, 1),
-        "```",
-        "",
-        "<details><summary>customcards.json</summary>",
-        "",
-        "```json",
-        writeFile([{ ...subject, id: mint(subject, state.data.ordinals) }], state.data.ordinals),
-        "```",
-        "",
-        "</details>",
-        "",
-        "Made in the card studio. Submitting means mh may put this in the game, changed or",
-        "unchanged, with no promise either way.",
-    ].join("\n");
-
-    const url = `https://github.com/${SUBMIT_REPO}/issues/new?`
-        + new URLSearchParams({ title: `Card: ${subject.name}`, body, labels: "card" });
-
-    if (url.length > MAX_URL_LENGTH) {
-        copyJson();
-        noteExport("That card is too long to carry in a link, so the JSON is on your "
-            + "clipboard instead. Open an issue and paste it in.");
-        window.open(`https://github.com/${SUBMIT_REPO}/issues/new`, "_blank", "noopener");
+    if (state.serviceUp === false) {
+        button.disabled = false;
+        button.textContent = "Download the file";
         return;
     }
 
-    window.open(url, "_blank", "noopener");
-    noteExport("GitHub will ask you to sign in - that is between you and them, and it is "
-        + "the only place this app ever sends anything.");
+    if (state.serviceUp === null) {
+        button.disabled = true;
+        button.textContent = "Checking the submission service...";
+        return;
+    }
+
+    button.disabled = false;
+    button.textContent = state.session
+        ? (card.kind === "mod" ? "Submit this change" : "Submit as a new card")
+        : "Sign in to submit";
+}
+
+/**
+ * Everything wrong with submitting *this* draft, beyond the panel's own `validate` - the
+ * things specific to being a mod: no base to diff against, or nothing actually changed.
+ * `validate`'s own problems are still checked first by the caller, since a card that does
+ * not fit the panel is not fit to submit either way.
+ */
+function submitProblems(card) {
+    if (card.kind !== "mod") return [];
+
+    const base = baseCardFor(card);
+    if (!base) {
+        return [`card #${card.baseId} is not in the current library, so there is nothing `
+            + "to suggest a change to"];
+    }
+    if (!hasChanges(base, card)) {
+        return ["nothing has changed from the shipped card yet"];
+    }
+    return [];
+}
+
+function submitErrorMessage(error) {
+    if (error.status === 401) {
+        state.session = null;
+        renderAccount();
+        return "Signed out, or the session expired. Sign in again and submit again - "
+            + "nothing was lost.";
+    }
+    if (error.status === 422 && error.problems) {
+        return "The service refused it: " + error.problems.join(" ");
+    }
+    return error.message || "Something went wrong sending this. Nothing was sent twice.";
+}
+
+/**
+ * Sends the current draft to the studio service, or - when that is not possible - hands
+ * the same document back as a download.
+ *
+ * The same validation runs whichever way this ends: a card that does not fit the panel or
+ * a mod that changed nothing is refused here, before a network call, because "the service
+ * said no" is a worse way to learn that than the diff panel already showing it.
+ */
+async function submit() {
+    const card = current();
+    const button = $("#submit");
+
+    const problems = [...validate(card, state.data.panel), ...submitProblems(card)];
+    if (problems.length) {
+        noteExport("Nothing was sent - " + problems.join("; ") + ".");
+        return;
+    }
+
+    const base = baseCardFor(card);
+    const document_ = card.kind === "mod" ? modDocument(card, base) : cardDocument(card);
+
+    if (state.serviceUp === false) {
+        downloadDocument(document_, card.kind === "mod"
+            ? `mod-${card.baseId}.json` : "card-submission.json");
+        noteExport("The submission service is unreachable, so this was downloaded instead "
+            + "of sent - it is the exact document the service would have received.");
+        return;
+    }
+
+    if (!state.session) {
+        noteExport("Sign in with Discord first - the button is in the top corner - then "
+            + "submit again. Nothing was sent.");
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    try {
+        const result = card.kind === "mod"
+            ? await service.submitMod(document_)
+            : await service.submitCard(document_);
+
+        noteExportLink(`Sent. Pull request #${result.number} is open for the vote:`, result.pr);
+        await refreshSubmissions();
+    } catch (error) {
+        noteExport(submitErrorMessage(error));
+    } finally {
+        renderSubmitButton();
+    }
+}
+
+// -------------------------------------------------------------------------- submissions
+
+function renderSubmissions() {
+    const host = $("#submissions");
+    if (!host) return;
+
+    host.textContent = "";
+
+    if (!state.session || !state.submissions.length) {
+        host.hidden = true;
+        return;
+    }
+
+    host.hidden = false;
+
+    const heading = document.createElement("h3");
+    heading.textContent = "Your submissions";
+    host.append(heading);
+
+    const list = document.createElement("ul");
+    for (const item of state.submissions) {
+        const li = document.createElement("li");
+
+        const link = document.createElement("a");
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = `#${item.number} ${item.title}`;
+
+        const meta = document.createElement("span");
+        meta.className = "submissions__meta";
+        meta.textContent = `${item.kind} · ${item.state}`;
+
+        li.append(link, document.createTextNode(" "), meta);
+        list.append(li);
+    }
+    host.append(list);
+}
+
+/**
+ * Opens the browser preview with the current draft, in an iframe over this page.
+ *
+ * An iframe rather than a new tab because that is what the bridge actually reads:
+ * `Assets/Plugins/WebGL/PreviewBridge.jslib` checks `window.shoostingPreviewPayload` on
+ * its own window, then falls back to its *parent* frame's - never `window.opener`. Setting
+ * the payload here, on this window, before the iframe loads is therefore the whole
+ * handshake; a new tab would have no parent to read from and would need a protocol this
+ * bridge does not speak.
+ */
+function runInPreview() {
+    const card = current();
+    const problems = validate(card, state.data.panel);
+    if (problems.length) {
+        noteExport("Fix the problems listed beside the preview first - there is nothing "
+            + "playable yet.");
+        return;
+    }
+
+    const cardDoc = toDocument(card, state.data.ordinals);
+    const base = baseCardFor(card);
+    if (card.kind === "mod" && base) cardDoc.id = base.id;
+
+    window.shoostingPreviewPayload = JSON.stringify({
+        version: FILE_VERSION,
+        stage: 0,
+        bots: 2,
+        cards: [cardDoc],
+    });
+
+    const dialog = document.createElement("dialog");
+    dialog.className = "run-dialog";
+    dialog.innerHTML = `
+      <div class="run-dialog__inner">
+        <button class="sheet__close" type="button" aria-label="Close">&times;</button>
+        <iframe class="run-dialog__frame" title="Card preview"></iframe>
+      </div>`;
+
+    document.body.append(dialog);
+    // Set after the dialog (and therefore the iframe) exists in the document, so the frame
+    // does not start loading before window.shoostingPreviewPayload is there for it to read.
+    $(".run-dialog__frame", dialog).src = PREVIEW_URL;
+
+    // Cleanup is called from both the close button and the dialog's own "close" event
+    // (Escape, or a future change that closes it some other way) rather than relying on
+    // either alone - a dialog that closes without deleting the payload would leave the
+    // next thing that reads window.shoostingPreviewPayload seeing a stale card.
+    let cleaned = false;
+    const cleanup = () => {
+        if (cleaned) return;
+        cleaned = true;
+        delete window.shoostingPreviewPayload;
+        dialog.remove();
+    };
+
+    $(".sheet__close", dialog).addEventListener("click", () => { dialog.close(); cleanup(); });
+    dialog.addEventListener("close", cleanup, { once: true });
+
+    dialog.showModal();
+}
+
+function noteExportLink(message, href) {
+    const node = $("#exportNote");
+    node.textContent = message + " ";
+    const link = document.createElement("a");
+    link.href = href;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = href;
+    node.append(link);
 }
 
 // ------------------------------------------------------------------------------ footer
@@ -1196,7 +1696,7 @@ function buildFooter(root, test) {
       screen at the size the game draws it. ${checked}</p>
       <p class="footer__meta">
         <a href="../">build archive</a> &middot;
-        <a href="https://github.com/${SUBMIT_REPO}" target="_blank" rel="noopener">builds repo</a>
+        <a href="${service.SERVICE_URL}" target="_blank" rel="noopener">submission service</a>
       </p>`;
 
     // A missing companion file is a degraded page rather than a broken one - no stat
