@@ -3,13 +3,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-a48359c/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 32270491
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-a48359c/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-win64.zip",
         "size": 34900211
       }
@@ -53,6 +53,61 @@
     "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383468047/assets{?name,label}",
     "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383468047",
     "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-a48359c"
+  },
+  {
+    "assets": [
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-9f5fc5e/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 32953232
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-9f5fc5e/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 34903385
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383480848/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Card picks stopped working after 24 of them. The hand held 24, the 25th was\nsilently thrown away, and people kept picking projectile modifiers that did\nnothing. The cap is 64 now, which is more than the whole card pool, and a\ndropped pick says so instead of vanishing.\n\nTHE BOX is redrawn: rounded corners, thinner light, walls and floor you can\nactually see. The upper ledges are narrower, flush against the wall, and a\nlittle higher.\n\nSpawns are spread across every tier and shuffled every round, so nobody starts\nthe round standing on somebody else.\n\nGrenadier is Uncommon instead of Rare, so it turns up about twice as often.\n\nPlayer 3 is purple, player 4 is neon green. Rounds count themselves in - ding,\nding, DONG. Online, people are called by their real names. Backspace stopped\ndeleting two characters at a time.\n\n**Everyone needs this build.** The lobby protocol moved, so an older build is\nrefused rather than quietly playing a different game.\n\n**The updater works for everybody now.** It was asking the private repo for\nreleases, which only ever worked for mh; it reads the public build mirror\nanonymously. Run update.cmd next to shoosting.exe.\n",
+    "created_at": "2026-09-06T05:53:34Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-9f5fc5e",
+    "id": 383480848,
+    "immutable": false,
+    "name": "dev build - THE BOX, spawns, and cards that keep working",
+    "node_id": "RE_kwDOUI8m0c4W23QQ",
+    "prerelease": true,
+    "published_at": "2026-09-06T05:54:44Z",
+    "tag_name": "dev-9f5fc5e",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-9f5fc5e",
+    "target_commitish": "main",
+    "updated_at": "2026-09-06T05:54:44Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383480848/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383480848",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-9f5fc5e"
   },
   {
     "assets": [
