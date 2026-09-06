@@ -1,0 +1,17 @@
+{
+ "schema": "shoosting.index",
+ "schemaVersion": 1,
+ "generator": "Tools/StudioData",
+ "note": "Generated from the game's own C# during the pages workflow. Nothing here is hand-edited; edit the game and regenerate.",
+ "files": [
+  "announcer.json",
+  "cards.json",
+  "describe.json",
+  "stages.json",
+  "stats.json"
+ ],
+ "cardCount": 59,
+ "cardPoolHash": "0x860608737d3e3dfa",
+ "statCount": 45,
+ "stageCount": 11
+}

@@ -1,0 +1,1101 @@
+{
+ "schema": "shoosting.stats",
+ "schemaVersion": 1,
+ "ops": [
+  {
+   "name": "Add",
+   "value": 0,
+   "summary": "Adds. Stacks linearly, so ten copies are ten times the effect."
+  },
+  {
+   "name": "Multiply",
+   "value": 1,
+   "summary": "Multiplies. Stacks geometrically - two copies of 1.6x is 2.56x, not 3.2x."
+  },
+  {
+   "name": "Set",
+   "value": 2,
+   "summary": "Overrides outright. Extra copies do nothing, because the last one applied wins."
+  }
+ ],
+ "directions": [
+  "better",
+  "worse",
+  "neutral"
+ ],
+ "stats": [
+  {
+   "name": "MoveSpeed",
+   "value": 0,
+   "label": "Move speed",
+   "blurb": "Top speed you can reach running under your own power.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 11,
+    "den": 1,
+    "raw": 47244640256,
+    "decimal": 11
+   },
+   "clamp": {
+    "min": 0,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "Acceleration",
+   "value": 1,
+   "label": "Acceleration",
+   "blurb": "How hard you push toward top speed while on the ground.",
+   "unit": "units/s2",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 90,
+    "den": 1,
+    "raw": 386547056640,
+    "decimal": 90
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "AirControl",
+   "value": 2,
+   "label": "Air control",
+   "blurb": "The fraction of your ground acceleration that still works in mid-air.",
+   "unit": "fraction",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 11,
+    "den": 20,
+    "raw": 2362232012,
+    "decimal": 0.55000000000000004
+   },
+   "clamp": {
+    "min": 0,
+    "max": 3
+   },
+   "ops": [
+    "Multiply",
+    "Set"
+   ]
+  },
+  {
+   "name": "TurnBoost",
+   "value": 3,
+   "label": "Turn boost",
+   "blurb": "Extra acceleration when you steer against your own momentum, so speed does not feel like ice.",
+   "unit": "multiplier",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 19,
+    "den": 10,
+    "raw": 8160437862,
+    "decimal": 1.8999999999999999
+   },
+   "clamp": {
+    "min": 1,
+    "max": 8
+   },
+   "ops": [
+    "Multiply",
+    "Set"
+   ]
+  },
+  {
+   "name": "GroundFriction",
+   "value": 4,
+   "label": "Ground friction",
+   "blurb": "How fast the ground bleeds off speed above your top speed. Stops you quickly and takes momentum away.",
+   "unit": "units/s2",
+   "direction": "neutral",
+   "integer": false,
+   "default": {
+    "num": 58,
+    "den": 1,
+    "raw": 249108103168,
+    "decimal": 58
+   },
+   "clamp": {
+    "min": 0,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "AirDrag",
+   "value": 5,
+   "label": "Air drag",
+   "blurb": "How fast the air bleeds off speed. Low drag is what keeps a launch worth having.",
+   "unit": "units/s2",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 9,
+    "den": 10,
+    "raw": 3865470566,
+    "decimal": 0.90000000000000002
+   },
+   "clamp": {
+    "min": 0,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "JumpSpeed",
+   "value": 6,
+   "label": "Jump speed",
+   "blurb": "How fast you leave the ground, and therefore how high you get.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 19,
+    "den": 1,
+    "raw": 81604378624,
+    "decimal": 19
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "GravityScale",
+   "value": 7,
+   "label": "Gravity",
+   "blurb": "Multiplier on the gravity that pulls you down.",
+   "unit": "multiplier",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 1,
+    "den": 1,
+    "raw": 4294967296,
+    "decimal": 1
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Set"
+   ]
+  },
+  {
+   "name": "Radius",
+   "value": 8,
+   "label": "Body size",
+   "blurb": "How big you are. Bigger is easier to hit and harder to fit through gaps.",
+   "unit": "units",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 29,
+    "den": 50,
+    "raw": 2491081031,
+    "decimal": 0.57999999999999996
+   },
+   "clamp": {
+    "min": 0.099999999860301614,
+    "max": 5.7999999998137355
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "ExtraJumps",
+   "value": 9,
+   "label": "Extra jumps",
+   "blurb": "Jumps you get in mid-air before touching the ground again.",
+   "unit": "jumps",
+   "direction": "better",
+   "integer": true,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": 0,
+    "max": 16
+   },
+   "ops": [
+    "Add",
+    "Set",
+    "Multiply"
+   ]
+  },
+  {
+   "name": "BlinkCharges",
+   "value": 10,
+   "label": "Blink charges",
+   "blurb": "How many blinks you hold at once.",
+   "unit": "charges",
+   "direction": "better",
+   "integer": true,
+   "default": {
+    "num": 1,
+    "den": 1,
+    "raw": 4294967296,
+    "decimal": 1
+   },
+   "clamp": {
+    "min": 0,
+    "max": 16
+   },
+   "ops": [
+    "Add",
+    "Set",
+    "Multiply"
+   ]
+  },
+  {
+   "name": "BlinkSpeed",
+   "value": 11,
+   "label": "Blink speed",
+   "blurb": "How fast a blink throws you, which is how far it takes you.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 90,
+    "den": 1,
+    "raw": 386547056640,
+    "decimal": 90
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BlinkCooldown",
+   "value": 12,
+   "label": "Blink cooldown",
+   "blurb": "Wait before a spent blink comes back.",
+   "unit": "seconds",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 8,
+    "den": 5,
+    "raw": 6871947673,
+    "decimal": 1.6000000000000001
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "WallSlideSpeed",
+   "value": 13,
+   "label": "Wall slide speed",
+   "blurb": "How fast you slide down a wall once the cling has run out.",
+   "unit": "units/s",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 6,
+    "den": 1,
+    "raw": 25769803776,
+    "decimal": 6
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "WallKickSpeed",
+   "value": 14,
+   "label": "Wall kick speed",
+   "blurb": "The shove away from a wall when you jump off it.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 17,
+    "den": 1,
+    "raw": 73014444032,
+    "decimal": 17
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "WallClingTime",
+   "value": 15,
+   "label": "Wall cling time",
+   "blurb": "How long you stay stuck to a wall before gravity takes over.",
+   "unit": "seconds",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 3,
+    "den": 4,
+    "raw": 3221225472,
+    "decimal": 0.75
+   },
+   "clamp": {
+    "min": 0,
+    "max": 10
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "WallClimbSpeed",
+   "value": 16,
+   "label": "Wall climb speed",
+   "blurb": "How fast you go up a wall while clinging and pressing into it.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 13,
+    "den": 2,
+    "raw": 27917287424,
+    "decimal": 6.5
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BlockWindow",
+   "value": 17,
+   "label": "Block window",
+   "blurb": "How long a block stays live after you press it. This is the size of the read.",
+   "unit": "seconds",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 9,
+    "den": 20,
+    "raw": 1932735283,
+    "decimal": 0.45000000000000001
+   },
+   "clamp": {
+    "min": 0,
+    "max": 5
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BlockCooldown",
+   "value": 18,
+   "label": "Block cooldown",
+   "blurb": "Wait before you can block again, measured from the press.",
+   "unit": "seconds",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 4,
+    "den": 1,
+    "raw": 17179869184,
+    "decimal": 4
+   },
+   "clamp": {
+    "min": 0,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BlockReflectScale",
+   "value": 19,
+   "label": "Reflect speed",
+   "blurb": "Speed multiplier on a shot you deflect back at whoever sent it.",
+   "unit": "multiplier",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 23,
+    "den": 20,
+    "raw": 4939212390,
+    "decimal": 1.1499999999999999
+   },
+   "clamp": {
+    "min": 0.099999999860301614,
+    "max": 6
+   },
+   "ops": [
+    "Multiply",
+    "Set"
+   ]
+  },
+  {
+   "name": "MaxHealth",
+   "value": 20,
+   "label": "Max health",
+   "blurb": "How much damage you can absorb before dying.",
+   "unit": "health",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 100,
+    "den": 1,
+    "raw": 429496729600,
+    "decimal": 100
+   },
+   "clamp": {
+    "min": 1,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "Regeneration",
+   "value": 21,
+   "label": "Regeneration",
+   "blurb": "Health that comes back on its own, every second.",
+   "unit": "health/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "LifeSteal",
+   "value": 22,
+   "label": "Life steal",
+   "blurb": "The fraction of damage you deal that comes back to you as health.",
+   "unit": "fraction",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "DamageTakenScale",
+   "value": 23,
+   "label": "Damage taken",
+   "blurb": "Multiplier on every point of damage that reaches you.",
+   "unit": "multiplier",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 1,
+    "den": 1,
+    "raw": 4294967296,
+    "decimal": 1
+   },
+   "clamp": {
+    "min": 0,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Set"
+   ]
+  },
+  {
+   "name": "SelfDamageScale",
+   "value": 24,
+   "label": "Self damage",
+   "blurb": "Multiplier on damage you do to yourself, with your own bounces and blasts.",
+   "unit": "multiplier",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 1,
+    "den": 1,
+    "raw": 4294967296,
+    "decimal": 1
+   },
+   "clamp": {
+    "min": 0,
+    "max": 4
+   },
+   "ops": [
+    "Multiply",
+    "Set"
+   ]
+  },
+  {
+   "name": "BoundsBounceDamage",
+   "value": 25,
+   "label": "Out-of-bounds damage",
+   "blurb": "Flat health lost when the arena throws you back in.",
+   "unit": "health",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 25,
+    "den": 1,
+    "raw": 107374182400,
+    "decimal": 25
+   },
+   "clamp": {
+    "min": 0,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BoundsBounceSpeed",
+   "value": 26,
+   "label": "Out-of-bounds throw",
+   "blurb": "How hard the arena throws you back in. It is a repositioning either way.",
+   "unit": "units/s",
+   "direction": "neutral",
+   "integer": false,
+   "default": {
+    "num": 26,
+    "den": 1,
+    "raw": 111669149696,
+    "decimal": 26
+   },
+   "clamp": {
+    "min": 5,
+    "max": 80
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "Damage",
+   "value": 27,
+   "label": "Damage",
+   "blurb": "Health removed by one bullet that lands.",
+   "unit": "health",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 19,
+    "den": 1,
+    "raw": 81604378624,
+    "decimal": 19
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BulletSpeed",
+   "value": 28,
+   "label": "Bullet speed",
+   "blurb": "How fast a bullet travels, and therefore how much lead a target needs.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 58,
+    "den": 1,
+    "raw": 249108103168,
+    "decimal": 58
+   },
+   "clamp": {
+    "min": 1,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BulletGravityScale",
+   "value": 29,
+   "label": "Bullet drop",
+   "blurb": "How much gravity pulls on a bullet in flight. Zero flies flat.",
+   "unit": "multiplier",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Set"
+   ]
+  },
+  {
+   "name": "BulletRadius",
+   "value": 30,
+   "label": "Bullet size",
+   "blurb": "How fat a bullet is, which is how forgiving a near miss becomes.",
+   "unit": "units",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 3,
+    "den": 25,
+    "raw": 515396075,
+    "decimal": 0.12
+   },
+   "clamp": {
+    "min": 0.0099999997764825821,
+    "max": 3
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "BulletLifetime",
+   "value": 31,
+   "label": "Bullet lifetime",
+   "blurb": "How long a bullet lives before it gives up, which sets its range.",
+   "unit": "seconds",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 6,
+    "den": 1,
+    "raw": 25769803776,
+    "decimal": 6
+   },
+   "clamp": {
+    "min": 0.099999999860301614,
+    "max": 20
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "ReloadTime",
+   "value": 32,
+   "label": "Reload time",
+   "blurb": "How long you spend getting the magazine back.",
+   "unit": "seconds",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 11,
+    "den": 10,
+    "raw": 4724464025,
+    "decimal": 1.1000000000000001
+   },
+   "clamp": {
+    "min": 0.049999999813735485,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "AttackCooldown",
+   "value": 33,
+   "label": "Attack cooldown",
+   "blurb": "The gap between shots. Smaller is a faster gun.",
+   "unit": "seconds",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 3,
+    "den": 10,
+    "raw": 1288490188,
+    "decimal": 0.29999999999999999
+   },
+   "clamp": {
+    "min": 0.016666666604578495,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "Spread",
+   "value": 34,
+   "label": "Spread",
+   "blurb": "Half-angle of the cone a shot can come out in.",
+   "unit": "radians",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 1,
+    "den": 25,
+    "raw": 171798691,
+    "decimal": 0.040000000000000001
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "Recoil",
+   "value": 35,
+   "label": "Recoil",
+   "blurb": "The shove firing gives you. A cost most of the time and a movement tool occasionally.",
+   "unit": "units/s",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 4,
+    "den": 1,
+    "raw": 17179869184,
+    "decimal": 4
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "Knockback",
+   "value": 36,
+   "label": "Knockback",
+   "blurb": "The shove a landed bullet gives whoever it hit.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 6,
+    "den": 1,
+    "raw": 25769803776,
+    "decimal": 6
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "MagazineSize",
+   "value": 37,
+   "label": "Magazine size",
+   "blurb": "Shots before you have to reload.",
+   "unit": "shots",
+   "direction": "better",
+   "integer": true,
+   "default": {
+    "num": 3,
+    "den": 1,
+    "raw": 12884901888,
+    "decimal": 3
+   },
+   "clamp": {
+    "min": 1,
+    "max": 200
+   },
+   "ops": [
+    "Add",
+    "Set",
+    "Multiply"
+   ]
+  },
+  {
+   "name": "BulletsPerShot",
+   "value": 38,
+   "label": "Bullets per shot",
+   "blurb": "How many projectiles leave the barrel per trigger pull.",
+   "unit": "bullets",
+   "direction": "better",
+   "integer": true,
+   "default": {
+    "num": 1,
+    "den": 1,
+    "raw": 4294967296,
+    "decimal": 1
+   },
+   "clamp": {
+    "min": 1,
+    "max": 64
+   },
+   "ops": [
+    "Add",
+    "Set",
+    "Multiply"
+   ]
+  },
+  {
+   "name": "Bounces",
+   "value": 39,
+   "label": "Bounces",
+   "blurb": "How many times a bullet comes off the world before it dies. Yours can come back at you.",
+   "unit": "bounces",
+   "direction": "better",
+   "integer": true,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": 0,
+    "max": 32
+   },
+   "ops": [
+    "Add",
+    "Set",
+    "Multiply"
+   ]
+  },
+  {
+   "name": "BlastRadius",
+   "value": 40,
+   "label": "Blast radius",
+   "blurb": "How far a bullet's explosion reaches. Zero is no explosion at all.",
+   "unit": "units",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": null,
+    "max": null
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "ImpactDamageSpeed",
+   "value": 41,
+   "label": "Impact threshold",
+   "blurb": "How fast you have to meet a surface before it hurts. Below this, terrain is scenery.",
+   "unit": "units/s",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 36,
+    "den": 1,
+    "raw": 154618822656,
+    "decimal": 36
+   },
+   "clamp": {
+    "min": 20,
+    "max": 400
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "ImpactDamageScale",
+   "value": 42,
+   "label": "Impact damage",
+   "blurb": "Damage per unit of speed above the impact threshold.",
+   "unit": "health per unit/s",
+   "direction": "worse",
+   "integer": false,
+   "default": {
+    "num": 13,
+    "den": 10,
+    "raw": 5583457484,
+    "decimal": 1.3
+   },
+   "clamp": {
+    "min": 0,
+    "max": 20
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "ThrusterForce",
+   "value": 43,
+   "label": "Thruster force",
+   "blurb": "Acceleration a landed shot attaches to whatever it hit. Zero on a stock gun.",
+   "unit": "units/s2",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": 0,
+    "max": 400
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  },
+  {
+   "name": "ThrusterTime",
+   "value": 44,
+   "label": "Thruster burn",
+   "blurb": "How long an attached thruster keeps pushing.",
+   "unit": "seconds",
+   "direction": "better",
+   "integer": false,
+   "default": {
+    "num": 0,
+    "den": 1,
+    "raw": 0,
+    "decimal": 0
+   },
+   "clamp": {
+    "min": 0,
+    "max": 4
+   },
+   "ops": [
+    "Multiply",
+    "Add",
+    "Set"
+   ]
+  }
+ ]
+}

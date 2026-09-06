@@ -1,0 +1,3871 @@
+{
+ "schema": "shoosting.cards",
+ "schemaVersion": 1,
+ "sets": [
+  "Core",
+  "Gunplay",
+  "Movement",
+  "Defence",
+  "Chaos"
+ ],
+ "rarities": [
+  "Common",
+  "Uncommon",
+  "Rare"
+ ],
+ "keywords": [
+  {
+   "name": "Projectile",
+   "value": 1,
+   "label": "Projectile",
+   "domain": "Offence"
+  },
+  {
+   "name": "Explosive",
+   "value": 2,
+   "label": "Explosive",
+   "domain": "Offence"
+  },
+  {
+   "name": "Multishot",
+   "value": 3,
+   "label": "Multishot",
+   "domain": "Offence"
+  },
+  {
+   "name": "Ricochet",
+   "value": 4,
+   "label": "Ricochet",
+   "domain": "Offence"
+  },
+  {
+   "name": "Rapid",
+   "value": 5,
+   "label": "Rapid",
+   "domain": "Offence"
+  },
+  {
+   "name": "Precision",
+   "value": 6,
+   "label": "Precision",
+   "domain": "Offence"
+  },
+  {
+   "name": "Heavy",
+   "value": 7,
+   "label": "Heavy",
+   "domain": "Offence"
+  },
+  {
+   "name": "Reload",
+   "value": 8,
+   "label": "Reload",
+   "domain": "Offence"
+  },
+  {
+   "name": "Execute",
+   "value": 9,
+   "label": "Execute",
+   "domain": "Offence"
+  },
+  {
+   "name": "Knockback",
+   "value": 10,
+   "label": "Knockback",
+   "domain": "Control"
+  },
+  {
+   "name": "Slow",
+   "value": 11,
+   "label": "Slow",
+   "domain": "Control"
+  },
+  {
+   "name": "Stun",
+   "value": 12,
+   "label": "Stun",
+   "domain": "Control"
+  },
+  {
+   "name": "Poison",
+   "value": 13,
+   "label": "Poison",
+   "domain": "Control"
+  },
+  {
+   "name": "Aura",
+   "value": 14,
+   "label": "Aura",
+   "domain": "Control"
+  },
+  {
+   "name": "Vitality",
+   "value": 15,
+   "label": "Vitality",
+   "domain": "Protection"
+  },
+  {
+   "name": "Regeneration",
+   "value": 16,
+   "label": "Regeneration",
+   "domain": "Protection"
+  },
+  {
+   "name": "Lifesteal",
+   "value": 17,
+   "label": "Lifesteal",
+   "domain": "Protection"
+  },
+  {
+   "name": "Shield",
+   "value": 18,
+   "label": "Shield",
+   "domain": "Protection"
+  },
+  {
+   "name": "Block",
+   "value": 19,
+   "label": "Block",
+   "domain": "Protection"
+  },
+  {
+   "name": "Thorns",
+   "value": 20,
+   "label": "Thorns",
+   "domain": "Protection"
+  },
+  {
+   "name": "Mobility",
+   "value": 21,
+   "label": "Mobility",
+   "domain": "Movement"
+  },
+  {
+   "name": "Teleport",
+   "value": 22,
+   "label": "Teleport",
+   "domain": "Movement"
+  },
+  {
+   "name": "Momentum",
+   "value": 23,
+   "label": "Momentum",
+   "domain": "Movement"
+  },
+  {
+   "name": "Drawback",
+   "value": 24,
+   "label": "Drawback",
+   "domain": "Neutral"
+  }
+ ],
+ "triggers": [
+  {
+   "name": "Passive",
+   "value": 0,
+   "summary": "Always on. Folded into your stats once at round start, so it costs nothing per tick."
+  },
+  {
+   "name": "OnFire",
+   "value": 1,
+   "summary": "You fired a shot."
+  },
+  {
+   "name": "OnHitPlayer",
+   "value": 2,
+   "summary": "One of your projectiles hit somebody."
+  },
+  {
+   "name": "OnBlock",
+   "value": 3,
+   "summary": "You pressed block, whether or not anything was deflected."
+  },
+  {
+   "name": "OnBlockSuccess",
+   "value": 4,
+   "summary": "You actually deflected a shot."
+  },
+  {
+   "name": "OnKill",
+   "value": 5,
+   "summary": "You killed somebody."
+  },
+  {
+   "name": "OnTakeDamage",
+   "value": 6,
+   "summary": "You took damage."
+  },
+  {
+   "name": "OnReload",
+   "value": 7,
+   "summary": "Your magazine came back."
+  }
+ ],
+ "actions": [
+  {
+   "name": "StatMod",
+   "value": 0,
+   "label": "Change a stat",
+   "summary": "Modifies one stat. The only action that reads the stat and operation fields.",
+   "valueMeans": "The amount, meaning whatever the operation makes it mean.",
+   "value2Means": null
+  },
+  {
+   "name": "Heal",
+   "value": 1,
+   "label": "Heal",
+   "summary": "Restores health immediately.",
+   "valueMeans": "Health restored.",
+   "value2Means": null
+  },
+  {
+   "name": "ReloadNow",
+   "value": 2,
+   "label": "Reload now",
+   "summary": "Refills the magazine on the spot.",
+   "valueMeans": null,
+   "value2Means": null
+  },
+  {
+   "name": "RefreshBlock",
+   "value": 3,
+   "label": "Refresh block",
+   "summary": "Clears the block cooldown so it can be used again straight away.",
+   "valueMeans": null,
+   "value2Means": null
+  },
+  {
+   "name": "PushNearby",
+   "value": 4,
+   "label": "Push nearby",
+   "summary": "Shoves everyone within a radius away from you.",
+   "valueMeans": "Force.",
+   "value2Means": "Radius, in units."
+  },
+  {
+   "name": "PullNearby",
+   "value": 5,
+   "label": "Pull nearby",
+   "summary": "Drags everyone within a radius toward you.",
+   "valueMeans": "Force.",
+   "value2Means": "Radius, in units."
+  },
+  {
+   "name": "DamageNearby",
+   "value": 6,
+   "label": "Damage nearby",
+   "summary": "Hurts everyone within a radius.",
+   "valueMeans": "Damage.",
+   "value2Means": "Radius, in units."
+  },
+  {
+   "name": "SlowNearby",
+   "value": 7,
+   "label": "Slow nearby",
+   "summary": "Slows everyone within a radius.",
+   "valueMeans": "Strength, 0 to 1.",
+   "value2Means": "Radius, in units."
+  },
+  {
+   "name": "SpawnRing",
+   "value": 8,
+   "label": "Spawn a ring",
+   "summary": "Fires projectiles outward in every direction at once.",
+   "valueMeans": "How many projectiles.",
+   "value2Means": "Their speed."
+  },
+  {
+   "name": "Blink",
+   "value": 9,
+   "label": "Blink",
+   "summary": "Moves you instantly in the direction you are aiming.",
+   "valueMeans": "Distance, in units.",
+   "value2Means": null
+  },
+  {
+   "name": "SlowTarget",
+   "value": 10,
+   "label": "Slow the target",
+   "summary": "Slows whoever was hit.",
+   "valueMeans": "Strength, 0 to 1.",
+   "value2Means": "Duration, in seconds."
+  },
+  {
+   "name": "StunTarget",
+   "value": 11,
+   "label": "Stun the target",
+   "summary": "Takes everything away from whoever was hit, briefly.",
+   "valueMeans": "Duration, in seconds.",
+   "value2Means": null
+  },
+  {
+   "name": "PoisonTarget",
+   "value": 12,
+   "label": "Poison the target",
+   "summary": "Damage that arrives after the hit does.",
+   "valueMeans": "Damage per second.",
+   "value2Means": "Duration, in seconds."
+  },
+  {
+   "name": "HasteSelf",
+   "value": 13,
+   "label": "Haste yourself",
+   "summary": "Temporary movement speed for you.",
+   "valueMeans": "Speed multiplier.",
+   "value2Means": "Duration, in seconds."
+  },
+  {
+   "name": "ShieldSelf",
+   "value": 14,
+   "label": "Shield yourself",
+   "summary": "Temporary extra health that expires.",
+   "valueMeans": "Amount.",
+   "value2Means": "Duration, in seconds."
+  },
+  {
+   "name": "CostHealth",
+   "value": 15,
+   "label": "Cost health",
+   "summary": "Takes health off you. For cards that charge you to use them.",
+   "valueMeans": "Health lost.",
+   "value2Means": null
+  }
+ ],
+ "defaultPool": {
+  "hash": "0x860608737d3e3dfa",
+  "hashDecimal": "9657415743058099706",
+  "count": 59,
+  "cardIds": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   9,
+   10,
+   11,
+   12,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89,
+   90,
+   91,
+   92,
+   100,
+   101,
+   102,
+   103,
+   104,
+   105,
+   106
+  ]
+ },
+ "cards": [
+  {
+   "id": 1,
+   "name": "Bullet Time",
+   "description": "Bullets fly much faster.",
+   "rarity": "Common",
+   "set": "Core",
+   "code": "Bt",
+   "minPlayers": 2,
+   "primaryKeyword": "Projectile",
+   "domain": "Offence",
+   "keywords": [
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 8,
+      "den": 5,
+      "raw": 6871947673,
+      "decimal": 1.6000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Buckshot",
+   "description": "Three bullets, wider spread, less damage each.",
+   "rarity": "Uncommon",
+   "set": "Core",
+   "code": "Bk",
+   "minPlayers": 2,
+   "primaryKeyword": "Multishot",
+   "domain": "Offence",
+   "keywords": [
+    "Multishot",
+    "Projectile",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletsPerShot",
+     "op": "Add",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Spread",
+     "op": "Multiply",
+     "value": {
+      "num": 16,
+      "den": 5,
+      "raw": 13743895347,
+      "decimal": 3.2000000000000002
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 11,
+      "den": 20,
+      "raw": 2362232012,
+      "decimal": 0.55000000000000004
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Bouncy",
+   "description": "Bullets bounce off the world twice.",
+   "rarity": "Uncommon",
+   "set": "Core",
+   "code": "Bo",
+   "minPlayers": 2,
+   "primaryKeyword": "Ricochet",
+   "domain": "Offence",
+   "keywords": [
+    "Ricochet",
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Bounces",
+     "op": "Add",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletLifetime",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 5,
+      "raw": 6012954214,
+      "decimal": 1.3999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Overcharge",
+   "description": "Much more damage. Much more recoil.",
+   "rarity": "Rare",
+   "set": "Core",
+   "code": "Oc",
+   "minPlayers": 2,
+   "primaryKeyword": "Heavy",
+   "domain": "Offence",
+   "keywords": [
+    "Heavy",
+    "Momentum",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 9,
+      "den": 5,
+      "raw": 7730941132,
+      "decimal": 1.8
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Recoil",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 5,
+      "raw": 11166914969,
+      "decimal": 2.6000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Feather",
+   "description": "Lighter, floatier, easier to steer in the air.",
+   "rarity": "Common",
+   "set": "Movement",
+   "code": "Fe",
+   "minPlayers": 2,
+   "primaryKeyword": "Mobility",
+   "domain": "Movement",
+   "keywords": [
+    "Mobility"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "GravityScale",
+     "op": "Multiply",
+     "value": {
+      "num": 18,
+      "den": 25,
+      "raw": 3092376453,
+      "decimal": 0.71999999999999997
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AirControl",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 5,
+      "raw": 6012954214,
+      "decimal": 1.3999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "Double Jump",
+   "description": "One extra jump in the air.",
+   "rarity": "Uncommon",
+   "set": "Movement",
+   "code": "Dj",
+   "minPlayers": 2,
+   "primaryKeyword": "Mobility",
+   "domain": "Movement",
+   "keywords": [
+    "Mobility"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ExtraJumps",
+     "op": "Add",
+     "value": {
+      "num": 1,
+      "den": 1,
+      "raw": 4294967296,
+      "decimal": 1
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "Dasher",
+   "description": "An extra dash, and it recharges faster.",
+   "rarity": "Uncommon",
+   "set": "Movement",
+   "code": "Da",
+   "minPlayers": 2,
+   "primaryKeyword": "Teleport",
+   "domain": "Movement",
+   "keywords": [
+    "Teleport",
+    "Mobility"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlinkCharges",
+     "op": "Add",
+     "value": {
+      "num": 1,
+      "den": 1,
+      "raw": 4294967296,
+      "decimal": 1
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlinkCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 20,
+      "raw": 2791728742,
+      "decimal": 0.65000000000000002
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Parry",
+   "description": "Block recovers twice as fast and reflects harder.",
+   "rarity": "Rare",
+   "set": "Defence",
+   "code": "Pa",
+   "minPlayers": 2,
+   "primaryKeyword": "Block",
+   "domain": "Protection",
+   "keywords": [
+    "Block"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 1,
+      "den": 2,
+      "raw": 2147483648,
+      "decimal": 0.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockWindow",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 5,
+      "raw": 6012954214,
+      "decimal": 1.3999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockReflectScale",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 5,
+      "raw": 6012954214,
+      "decimal": 1.3999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Vampire",
+   "description": "Heal for a third of the damage you deal.",
+   "rarity": "Rare",
+   "set": "Core",
+   "code": "Vm",
+   "minPlayers": 2,
+   "primaryKeyword": "Lifesteal",
+   "domain": "Protection",
+   "keywords": [
+    "Lifesteal"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "LifeSteal",
+     "op": "Add",
+     "value": {
+      "num": 33,
+      "den": 100,
+      "raw": 1417339207,
+      "decimal": 0.33000000000000002
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 17,
+      "den": 20,
+      "raw": 3650722201,
+      "decimal": 0.84999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Glass",
+   "description": "Far more damage, but you take much more too.",
+   "rarity": "Rare",
+   "set": "Core",
+   "code": "Gl",
+   "minPlayers": 2,
+   "primaryKeyword": "Heavy",
+   "domain": "Offence",
+   "keywords": [
+    "Heavy",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 17,
+      "den": 10,
+      "raw": 7301444403,
+      "decimal": 1.7
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "DamageTakenScale",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 4,
+      "raw": 7516192768,
+      "decimal": 1.75
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "name": "Grenadier",
+   "description": "Bullets arc and explode on impact.",
+   "rarity": "Uncommon",
+   "set": "Chaos",
+   "code": "Gr",
+   "minPlayers": 2,
+   "primaryKeyword": "Explosive",
+   "domain": "Offence",
+   "keywords": [
+    "Explosive",
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletGravityScale",
+     "op": "Add",
+     "value": {
+      "num": 17,
+      "den": 20,
+      "raw": 3650722201,
+      "decimal": 0.84999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlastRadius",
+     "op": "Add",
+     "value": {
+      "num": 3,
+      "den": 1,
+      "raw": 12884901888,
+      "decimal": 3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 39,
+      "den": 50,
+      "raw": 3350074490,
+      "decimal": 0.78000000000000003
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 5,
+      "raw": 6012954214,
+      "decimal": 1.3999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "name": "Barrage",
+   "description": "A wall of weak bullets.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Ba",
+   "minPlayers": 2,
+   "primaryKeyword": "Multishot",
+   "domain": "Offence",
+   "keywords": [
+    "Multishot",
+    "Rapid",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletsPerShot",
+     "op": "Add",
+     "value": {
+      "num": 4,
+      "den": 1,
+      "raw": 17179869184,
+      "decimal": 4
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MagazineSize",
+     "op": "Add",
+     "value": {
+      "num": 5,
+      "den": 1,
+      "raw": 21474836480,
+      "decimal": 5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 10,
+      "raw": 1288490188,
+      "decimal": 0.29999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 5,
+      "den": 4,
+      "raw": 5368709120,
+      "decimal": 1.25
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Combine",
+   "description": "Twice the damage from half the magazine.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Cb",
+   "minPlayers": 2,
+   "primaryKeyword": "Heavy",
+   "domain": "Offence",
+   "keywords": [
+    "Heavy",
+    "Reload",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MagazineSize",
+     "op": "Add",
+     "value": {
+      "num": -2,
+      "den": 1,
+      "raw": -8589934592,
+      "decimal": -2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Fastball",
+   "description": "Bullets like lightning, but slow to fire.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Fb",
+   "minPlayers": 2,
+   "primaryKeyword": "Projectile",
+   "domain": "Offence",
+   "keywords": [
+    "Projectile",
+    "Precision",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 2,
+      "raw": 15032385536,
+      "decimal": 3.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Spray",
+   "description": "Absurd rate of fire. Wildly inaccurate.",
+   "rarity": "Rare",
+   "set": "Gunplay",
+   "code": "Sp",
+   "minPlayers": 2,
+   "primaryKeyword": "Rapid",
+   "domain": "Offence",
+   "keywords": [
+    "Rapid",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 9,
+      "den": 50,
+      "raw": 773094113,
+      "decimal": 0.17999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MagazineSize",
+     "op": "Add",
+     "value": {
+      "num": 12,
+      "den": 1,
+      "raw": 51539607552,
+      "decimal": 12
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 1,
+      "den": 4,
+      "raw": 1073741824,
+      "decimal": 0.25
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Spread",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 5,
+      "raw": 11166914969,
+      "decimal": 2.6000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "name": "Careful Planning",
+   "description": "One heavy, slow, deliberate shot.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Cp",
+   "minPlayers": 2,
+   "primaryKeyword": "Precision",
+   "domain": "Offence",
+   "keywords": [
+    "Precision",
+    "Heavy",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "name": "Big Bullet",
+   "description": "Much larger bullets, much harder to dodge.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Bb",
+   "minPlayers": 2,
+   "primaryKeyword": "Projectile",
+   "domain": "Offence",
+   "keywords": [
+    "Projectile",
+    "Heavy"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletRadius",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 5,
+      "raw": 11166914969,
+      "decimal": 2.6000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 6,
+      "den": 5,
+      "raw": 5153960755,
+      "decimal": 1.2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Quick Reload",
+   "description": "Back in the fight far sooner.",
+   "rarity": "Common",
+   "set": "Gunplay",
+   "code": "Qr",
+   "minPlayers": 2,
+   "primaryKeyword": "Reload",
+   "domain": "Offence",
+   "keywords": [
+    "Reload"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 20,
+      "raw": 1503238553,
+      "decimal": 0.34999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "name": "Mayhem",
+   "description": "Bullets ricochet everywhere.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "My",
+   "minPlayers": 2,
+   "primaryKeyword": "Ricochet",
+   "domain": "Offence",
+   "keywords": [
+    "Ricochet",
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Bounces",
+     "op": "Add",
+     "value": {
+      "num": 5,
+      "den": 1,
+      "raw": 21474836480,
+      "decimal": 5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 17,
+      "den": 20,
+      "raw": 3650722201,
+      "decimal": 0.84999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletLifetime",
+     "op": "Multiply",
+     "value": {
+      "num": 9,
+      "den": 5,
+      "raw": 7730941132,
+      "decimal": 1.8
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "name": "Thruster",
+   "description": "Bullets stick on and keep pushing. Land more, push harder.",
+   "rarity": "Common",
+   "set": "Gunplay",
+   "code": "Th",
+   "minPlayers": 2,
+   "primaryKeyword": "Knockback",
+   "domain": "Control",
+   "keywords": [
+    "Knockback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ThrusterForce",
+     "op": "Add",
+     "value": {
+      "num": 45,
+      "den": 1,
+      "raw": 193273528320,
+      "decimal": 45
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ThrusterTime",
+     "op": "Set",
+     "value": {
+      "num": 4,
+      "den": 5,
+      "raw": 3435973836,
+      "decimal": 0.80000000000000004
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "name": "Sniper",
+   "description": "One slow, heavy, perfectly straight shot.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Sn",
+   "minPlayers": 2,
+   "primaryKeyword": "Precision",
+   "domain": "Offence",
+   "keywords": [
+    "Precision",
+    "Heavy"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 21,
+      "den": 10,
+      "raw": 9019431321,
+      "decimal": 2.1000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Spread",
+     "op": "Multiply",
+     "value": {
+      "num": 1,
+      "den": 10,
+      "raw": 429496729,
+      "decimal": 0.10000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 23,
+      "den": 10,
+      "raw": 9878424780,
+      "decimal": 2.2999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MagazineSize",
+     "op": "Multiply",
+     "value": {
+      "num": 2,
+      "den": 5,
+      "raw": 1717986918,
+      "decimal": 0.40000000000000002
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "name": "Flak",
+   "description": "A wall of weak shots at close range.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Fk",
+   "minPlayers": 2,
+   "primaryKeyword": "Multishot",
+   "domain": "Offence",
+   "keywords": [
+    "Multishot",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletsPerShot",
+     "op": "Add",
+     "value": {
+      "num": 5,
+      "den": 1,
+      "raw": 21474836480,
+      "decimal": 5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 20,
+      "raw": 1503238553,
+      "decimal": 0.34999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Spread",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 5,
+      "raw": 11166914969,
+      "decimal": 2.6000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletLifetime",
+     "op": "Multiply",
+     "value": {
+      "num": 9,
+      "den": 20,
+      "raw": 1932735283,
+      "decimal": 0.45000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Heavy Rounds",
+   "description": "Fat, slow bullets that hit like a truck.",
+   "rarity": "Uncommon",
+   "set": "Gunplay",
+   "code": "Hr",
+   "minPlayers": 2,
+   "primaryKeyword": "Heavy",
+   "domain": "Offence",
+   "keywords": [
+    "Heavy",
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletRadius",
+     "op": "Multiply",
+     "value": {
+      "num": 11,
+      "den": 5,
+      "raw": 9448928051,
+      "decimal": 2.2000000000000002
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 27,
+      "den": 20,
+      "raw": 5798205849,
+      "decimal": 1.3500000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Knockback",
+     "op": "Multiply",
+     "value": {
+      "num": 8,
+      "den": 5,
+      "raw": 6871947673,
+      "decimal": 1.6000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 5,
+      "raw": 2576980377,
+      "decimal": 0.59999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Homewrecker",
+   "description": "Every shot detonates.",
+   "rarity": "Rare",
+   "set": "Gunplay",
+   "code": "Hw",
+   "minPlayers": 2,
+   "primaryKeyword": "Explosive",
+   "domain": "Offence",
+   "keywords": [
+    "Explosive"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlastRadius",
+     "op": "Add",
+     "value": {
+      "num": 9,
+      "den": 5,
+      "raw": 7730941132,
+      "decimal": 1.8
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 4,
+      "den": 5,
+      "raw": 3435973836,
+      "decimal": 0.80000000000000004
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "SelfDamageScale",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 5,
+      "raw": 6012954214,
+      "decimal": 1.3999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Yeeeuge",
+   "description": "A great deal more health, and a great deal more you.",
+   "rarity": "Common",
+   "set": "Core",
+   "code": "Hu",
+   "minPlayers": 2,
+   "primaryKeyword": "Vitality",
+   "domain": "Protection",
+   "keywords": [
+    "Vitality",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 9,
+      "den": 5,
+      "raw": 7730941132,
+      "decimal": 1.8
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Radius",
+     "op": "Multiply",
+     "value": {
+      "num": 5,
+      "den": 4,
+      "raw": 5368709120,
+      "decimal": 1.25
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Tank",
+   "description": "Enormous health, sluggish gun.",
+   "rarity": "Uncommon",
+   "set": "Core",
+   "code": "Tk",
+   "minPlayers": 2,
+   "primaryKeyword": "Vitality",
+   "domain": "Protection",
+   "keywords": [
+    "Vitality",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 5,
+      "den": 4,
+      "raw": 5368709120,
+      "decimal": 1.25
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MoveSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 22,
+      "den": 25,
+      "raw": 3779571220,
+      "decimal": 0.88
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Glass Cannon",
+   "description": "Devastating, and made of paper.",
+   "rarity": "Rare",
+   "set": "Core",
+   "code": "Gc",
+   "minPlayers": 2,
+   "primaryKeyword": "Heavy",
+   "domain": "Offence",
+   "keywords": [
+    "Heavy",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 9,
+      "den": 20,
+      "raw": 1932735283,
+      "decimal": 0.45000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 6,
+      "den": 5,
+      "raw": 5153960755,
+      "decimal": 1.2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Regrowth",
+   "description": "Slowly knit yourself back together.",
+   "rarity": "Uncommon",
+   "set": "Defence",
+   "code": "Rg",
+   "minPlayers": 2,
+   "primaryKeyword": "Regeneration",
+   "domain": "Protection",
+   "keywords": [
+    "Regeneration"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Regeneration",
+     "op": "Add",
+     "value": {
+      "num": 4,
+      "den": 1,
+      "raw": 17179869184,
+      "decimal": 4
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 23,
+      "den": 20,
+      "raw": 4939212390,
+      "decimal": 1.1499999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "name": "Sprinter",
+   "description": "Faster on the ground, worse in the air.",
+   "rarity": "Common",
+   "set": "Movement",
+   "code": "Sr",
+   "minPlayers": 2,
+   "primaryKeyword": "Mobility",
+   "domain": "Movement",
+   "keywords": [
+    "Mobility",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MoveSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 5,
+      "raw": 6012954214,
+      "decimal": 1.3999999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Acceleration",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AirControl",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 10,
+      "raw": 3006477107,
+      "decimal": 0.69999999999999996
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "name": "Anvil",
+   "description": "You fall like one. Nothing shifts you.",
+   "rarity": "Uncommon",
+   "set": "Movement",
+   "code": "An",
+   "minPlayers": 2,
+   "primaryKeyword": "Heavy",
+   "domain": "Offence",
+   "keywords": [
+    "Heavy",
+    "Mobility"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "GravityScale",
+     "op": "Multiply",
+     "value": {
+      "num": 31,
+      "den": 20,
+      "raw": 6657199308,
+      "decimal": 1.55
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 6,
+      "den": 5,
+      "raw": 5153960755,
+      "decimal": 1.2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "JumpSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 23,
+      "den": 20,
+      "raw": 4939212390,
+      "decimal": 1.1499999999999999
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "name": "Slipstream",
+   "description": "Firing shoves you along. Ride it.",
+   "rarity": "Rare",
+   "set": "Movement",
+   "code": "Ss",
+   "minPlayers": 2,
+   "primaryKeyword": "Momentum",
+   "domain": "Movement",
+   "keywords": [
+    "Momentum",
+    "Mobility"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Recoil",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 2,
+      "raw": 15032385536,
+      "decimal": 3.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AirControl",
+     "op": "Multiply",
+     "value": {
+      "num": 27,
+      "den": 20,
+      "raw": 5798205849,
+      "decimal": 1.3500000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "GroundFriction",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 5,
+      "raw": 2576980377,
+      "decimal": 0.59999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 60,
+   "name": "Scavenger",
+   "description": "Landing a hit reloads your weapon.",
+   "rarity": "Rare",
+   "set": "Gunplay",
+   "code": "Sc",
+   "minPlayers": 2,
+   "primaryKeyword": "Reload",
+   "domain": "Offence",
+   "keywords": [
+    "Reload"
+   ],
+   "effects": [
+    {
+     "trigger": "OnHitPlayer",
+     "action": "ReloadNow",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "ReloadTime",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 61,
+   "name": "Taste Of Blood",
+   "description": "Drawing blood makes you fast.",
+   "rarity": "Uncommon",
+   "set": "Movement",
+   "code": "Tb",
+   "minPlayers": 2,
+   "primaryKeyword": "Momentum",
+   "domain": "Movement",
+   "keywords": [
+    "Momentum",
+    "Mobility"
+   ],
+   "effects": [
+    {
+     "trigger": "OnHitPlayer",
+     "action": "HasteSelf",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 1,
+      "den": 2,
+      "raw": 2147483648,
+      "decimal": 0.5
+     },
+     "value2": {
+      "num": 3,
+      "den": 1,
+      "raw": 12884901888,
+      "decimal": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": 62,
+   "name": "Brawler",
+   "description": "A hit grants a burst of temporary health.",
+   "rarity": "Rare",
+   "set": "Defence",
+   "code": "Bw",
+   "minPlayers": 2,
+   "primaryKeyword": "Shield",
+   "domain": "Protection",
+   "keywords": [
+    "Shield"
+   ],
+   "effects": [
+    {
+     "trigger": "OnHitPlayer",
+     "action": "ShieldSelf",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 40,
+      "den": 1,
+      "raw": 171798691840,
+      "decimal": 40
+     },
+     "value2": {
+      "num": 3,
+      "den": 1,
+      "raw": 12884901888,
+      "decimal": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": 63,
+   "name": "Refresh",
+   "description": "Dealing damage readies your block again.",
+   "rarity": "Rare",
+   "set": "Defence",
+   "code": "Rf",
+   "minPlayers": 2,
+   "primaryKeyword": "Block",
+   "domain": "Protection",
+   "keywords": [
+    "Block",
+    "Reload"
+   ],
+   "effects": [
+    {
+     "trigger": "OnHitPlayer",
+     "action": "RefreshBlock",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 64,
+   "name": "Venom",
+   "description": "Bullets poison for several seconds.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Vn",
+   "minPlayers": 2,
+   "primaryKeyword": "Poison",
+   "domain": "Control",
+   "keywords": [
+    "Poison",
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "OnHitPlayer",
+     "action": "PoisonTarget",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 9,
+      "den": 1,
+      "raw": 38654705664,
+      "decimal": 9
+     },
+     "value2": {
+      "num": 3,
+      "den": 1,
+      "raw": 12884901888,
+      "decimal": 3
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 10,
+      "raw": 3006477107,
+      "decimal": 0.69999999999999996
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 65,
+   "name": "Cold Bullets",
+   "description": "Bullets chill whoever they hit.",
+   "rarity": "Uncommon",
+   "set": "Chaos",
+   "code": "Cd",
+   "minPlayers": 2,
+   "primaryKeyword": "Slow",
+   "domain": "Control",
+   "keywords": [
+    "Slow",
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "OnHitPlayer",
+     "action": "SlowTarget",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 9,
+      "den": 20,
+      "raw": 1932735283,
+      "decimal": 0.45000000000000001
+     },
+     "value2": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     }
+    }
+   ]
+  },
+  {
+   "id": 66,
+   "name": "Dazzle",
+   "description": "Bullets briefly stun.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Dz",
+   "minPlayers": 2,
+   "primaryKeyword": "Stun",
+   "domain": "Control",
+   "keywords": [
+    "Stun",
+    "Projectile"
+   ],
+   "effects": [
+    {
+     "trigger": "OnHitPlayer",
+     "action": "StunTarget",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 7,
+      "den": 20,
+      "raw": 1503238553,
+      "decimal": 0.34999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 4,
+      "den": 5,
+      "raw": 3435973836,
+      "decimal": 0.80000000000000004
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 67,
+   "name": "Executioner",
+   "description": "A kill heals you handsomely.",
+   "rarity": "Uncommon",
+   "set": "Core",
+   "code": "Ex",
+   "minPlayers": 3,
+   "primaryKeyword": "Execute",
+   "domain": "Offence",
+   "keywords": [
+    "Execute",
+    "Regeneration"
+   ],
+   "effects": [
+    {
+     "trigger": "OnKill",
+     "action": "Heal",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 45,
+      "den": 1,
+      "raw": 193273528320,
+      "decimal": 45
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 80,
+   "name": "Shock Wave",
+   "description": "Blocking hurls everyone away from you.",
+   "rarity": "Uncommon",
+   "set": "Defence",
+   "code": "Sw",
+   "minPlayers": 2,
+   "primaryKeyword": "Knockback",
+   "domain": "Control",
+   "keywords": [
+    "Knockback",
+    "Block",
+    "Aura"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "PushNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 34,
+      "den": 1,
+      "raw": 146028888064,
+      "decimal": 34
+     },
+     "value2": {
+      "num": 7,
+      "den": 1,
+      "raw": 30064771072,
+      "decimal": 7
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 81,
+   "name": "Implode",
+   "description": "Blocking drags everyone towards you.",
+   "rarity": "Rare",
+   "set": "Defence",
+   "code": "Im",
+   "minPlayers": 2,
+   "primaryKeyword": "Knockback",
+   "domain": "Control",
+   "keywords": [
+    "Knockback",
+    "Block",
+    "Aura"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "PullNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 30,
+      "den": 1,
+      "raw": 128849018880,
+      "decimal": 30
+     },
+     "value2": {
+      "num": 9,
+      "den": 1,
+      "raw": 38654705664,
+      "decimal": 9
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 82,
+   "name": "Overpower",
+   "description": "Blocking hurts everyone standing near you.",
+   "rarity": "Rare",
+   "set": "Defence",
+   "code": "Op",
+   "minPlayers": 2,
+   "primaryKeyword": "Aura",
+   "domain": "Control",
+   "keywords": [
+    "Aura",
+    "Block"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "DamageNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 22,
+      "den": 1,
+      "raw": 94489280512,
+      "decimal": 22
+     },
+     "value2": {
+      "num": 6,
+      "den": 1,
+      "raw": 25769803776,
+      "decimal": 6
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 83,
+   "name": "Frost Slam",
+   "description": "Blocking freezes everyone around you.",
+   "rarity": "Uncommon",
+   "set": "Defence",
+   "code": "Fs",
+   "minPlayers": 2,
+   "primaryKeyword": "Slow",
+   "domain": "Control",
+   "keywords": [
+    "Slow",
+    "Block",
+    "Aura"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "SlowNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 3,
+      "den": 5,
+      "raw": 2576980377,
+      "decimal": 0.59999999999999998
+     },
+     "value2": {
+      "num": 8,
+      "den": 1,
+      "raw": 34359738368,
+      "decimal": 8
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 84,
+   "name": "Tactical Reload",
+   "description": "Blocking reloads your weapon.",
+   "rarity": "Common",
+   "set": "Defence",
+   "code": "Tr",
+   "minPlayers": 2,
+   "primaryKeyword": "Reload",
+   "domain": "Offence",
+   "keywords": [
+    "Reload",
+    "Block"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "ReloadNow",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 6,
+      "den": 5,
+      "raw": 5153960755,
+      "decimal": 1.2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 85,
+   "name": "Teleport",
+   "description": "Blocking flings you where you are looking.",
+   "rarity": "Rare",
+   "set": "Movement",
+   "code": "Tp",
+   "minPlayers": 2,
+   "primaryKeyword": "Teleport",
+   "domain": "Movement",
+   "keywords": [
+    "Teleport",
+    "Block",
+    "Mobility"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "Blink",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 7,
+      "den": 1,
+      "raw": 30064771072,
+      "decimal": 7
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 10,
+      "raw": 3006477107,
+      "decimal": 0.69999999999999996
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 86,
+   "name": "Bombs Away",
+   "description": "Blocking scatters a ring of shots.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Bm",
+   "minPlayers": 2,
+   "primaryKeyword": "Multishot",
+   "domain": "Offence",
+   "keywords": [
+    "Multishot",
+    "Block"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "SpawnRing",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 8,
+      "den": 1,
+      "raw": 34359738368,
+      "decimal": 8
+     },
+     "value2": {
+      "num": 16,
+      "den": 1,
+      "raw": 68719476736,
+      "decimal": 16
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 87,
+   "name": "Healing Field",
+   "description": "Blocking mends you.",
+   "rarity": "Uncommon",
+   "set": "Defence",
+   "code": "Hf",
+   "minPlayers": 2,
+   "primaryKeyword": "Regeneration",
+   "domain": "Protection",
+   "keywords": [
+    "Regeneration",
+    "Block"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "Heal",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 28,
+      "den": 1,
+      "raw": 120259084288,
+      "decimal": 28
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 5,
+      "den": 4,
+      "raw": 5368709120,
+      "decimal": 1.25
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 88,
+   "name": "Counterstrike",
+   "description": "A successful deflection fires back at them.",
+   "rarity": "Rare",
+   "set": "Defence",
+   "code": "Cs",
+   "minPlayers": 2,
+   "primaryKeyword": "Block",
+   "domain": "Protection",
+   "keywords": [
+    "Block",
+    "Multishot"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlockSuccess",
+     "action": "SpawnRing",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 6,
+      "den": 1,
+      "raw": 25769803776,
+      "decimal": 6
+     },
+     "value2": {
+      "num": 22,
+      "den": 1,
+      "raw": 94489280512,
+      "decimal": 22
+     }
+    }
+   ]
+  },
+  {
+   "id": 89,
+   "name": "Defender",
+   "description": "Block far more often, and take more punishment.",
+   "rarity": "Common",
+   "set": "Defence",
+   "code": "Df",
+   "minPlayers": 2,
+   "primaryKeyword": "Block",
+   "domain": "Protection",
+   "keywords": [
+    "Block",
+    "Vitality"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 5,
+      "raw": 2576980377,
+      "decimal": 0.59999999999999998
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "name": "Second Wind",
+   "description": "Near death, you come back swinging.",
+   "rarity": "Rare",
+   "set": "Defence",
+   "code": "Sd",
+   "minPlayers": 2,
+   "primaryKeyword": "Regeneration",
+   "domain": "Protection",
+   "keywords": [
+    "Regeneration"
+   ],
+   "effects": [
+    {
+     "trigger": "OnTakeDamage",
+     "action": "HasteSelf",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 9,
+      "den": 20,
+      "raw": 1932735283,
+      "decimal": 0.45000000000000001
+     },
+     "value2": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Regeneration",
+     "op": "Add",
+     "value": {
+      "num": 9,
+      "den": 5,
+      "raw": 7730941132,
+      "decimal": 1.8
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 91,
+   "name": "Bulwark",
+   "description": "Slow, heavy, and very hard to remove.",
+   "rarity": "Uncommon",
+   "set": "Defence",
+   "code": "Bu",
+   "minPlayers": 2,
+   "primaryKeyword": "Vitality",
+   "domain": "Protection",
+   "keywords": [
+    "Vitality",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 2,
+      "raw": 6442450944,
+      "decimal": 1.5
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "DamageTakenScale",
+     "op": "Multiply",
+     "value": {
+      "num": 3,
+      "den": 4,
+      "raw": 3221225472,
+      "decimal": 0.75
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MoveSpeed",
+     "op": "Multiply",
+     "value": {
+      "num": 4,
+      "den": 5,
+      "raw": 3435973836,
+      "decimal": 0.80000000000000004
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 92,
+   "name": "Thornmail",
+   "description": "Hurting you costs them.",
+   "rarity": "Uncommon",
+   "set": "Defence",
+   "code": "Tm",
+   "minPlayers": 2,
+   "primaryKeyword": "Thorns",
+   "domain": "Protection",
+   "keywords": [
+    "Thorns"
+   ],
+   "effects": [
+    {
+     "trigger": "OnTakeDamage",
+     "action": "DamageNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 12,
+      "den": 1,
+      "raw": 51539607552,
+      "decimal": 12
+     },
+     "value2": {
+      "num": 5,
+      "den": 1,
+      "raw": 21474836480,
+      "decimal": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "name": "Demonic Pact",
+   "description": "Shoot constantly. It costs you blood.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Dp",
+   "minPlayers": 2,
+   "primaryKeyword": "Rapid",
+   "domain": "Offence",
+   "keywords": [
+    "Rapid",
+    "Drawback"
+   ],
+   "effects": [
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 1,
+      "den": 4,
+      "raw": 1073741824,
+      "decimal": 0.25
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BulletsPerShot",
+     "op": "Add",
+     "value": {
+      "num": 2,
+      "den": 1,
+      "raw": 8589934592,
+      "decimal": 2
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "OnFire",
+     "action": "CostHealth",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 4,
+      "den": 1,
+      "raw": 17179869184,
+      "decimal": 4
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 101,
+   "name": "Radiance",
+   "description": "Reloading sends a burst of shots outward.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Ra",
+   "minPlayers": 2,
+   "primaryKeyword": "Multishot",
+   "domain": "Offence",
+   "keywords": [
+    "Multishot",
+    "Reload",
+    "Aura"
+   ],
+   "effects": [
+    {
+     "trigger": "OnReload",
+     "action": "SpawnRing",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 10,
+      "den": 1,
+      "raw": 42949672960,
+      "decimal": 10
+     },
+     "value2": {
+      "num": 18,
+      "den": 1,
+      "raw": 77309411328,
+      "decimal": 18
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 13,
+      "den": 10,
+      "raw": 5583457484,
+      "decimal": 1.3
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "name": "Retaliation",
+   "description": "Being hurt shoves your attacker back.",
+   "rarity": "Uncommon",
+   "set": "Defence",
+   "code": "Rt",
+   "minPlayers": 2,
+   "primaryKeyword": "Thorns",
+   "domain": "Protection",
+   "keywords": [
+    "Thorns",
+    "Knockback"
+   ],
+   "effects": [
+    {
+     "trigger": "OnTakeDamage",
+     "action": "PushNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 26,
+      "den": 1,
+      "raw": 111669149696,
+      "decimal": 26
+     },
+     "value2": {
+      "num": 6,
+      "den": 1,
+      "raw": 25769803776,
+      "decimal": 6
+     }
+    }
+   ]
+  },
+  {
+   "id": 103,
+   "name": "Chilling Presence",
+   "description": "Everyone near you moves like treacle.",
+   "rarity": "Uncommon",
+   "set": "Chaos",
+   "code": "Cl",
+   "minPlayers": 2,
+   "primaryKeyword": "Aura",
+   "domain": "Control",
+   "keywords": [
+    "Aura",
+    "Slow"
+   ],
+   "effects": [
+    {
+     "trigger": "OnFire",
+     "action": "SlowNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 7,
+      "den": 20,
+      "raw": 1503238553,
+      "decimal": 0.34999999999999998
+     },
+     "value2": {
+      "num": 9,
+      "den": 1,
+      "raw": 38654705664,
+      "decimal": 9
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "MaxHealth",
+     "op": "Multiply",
+     "value": {
+      "num": 5,
+      "den": 4,
+      "raw": 5368709120,
+      "decimal": 1.25
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 104,
+   "name": "Bloodlust",
+   "description": "A kill leaves you fast and shielded.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Bl",
+   "minPlayers": 2,
+   "primaryKeyword": "Execute",
+   "domain": "Offence",
+   "keywords": [
+    "Execute",
+    "Momentum",
+    "Shield"
+   ],
+   "effects": [
+    {
+     "trigger": "OnKill",
+     "action": "HasteSelf",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 4,
+      "den": 5,
+      "raw": 3435973836,
+      "decimal": 0.80000000000000004
+     },
+     "value2": {
+      "num": 5,
+      "den": 1,
+      "raw": 21474836480,
+      "decimal": 5
+     }
+    },
+    {
+     "trigger": "OnKill",
+     "action": "ShieldSelf",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 50,
+      "den": 1,
+      "raw": 214748364800,
+      "decimal": 50
+     },
+     "value2": {
+      "num": 5,
+      "den": 1,
+      "raw": 21474836480,
+      "decimal": 5
+     }
+    }
+   ]
+  },
+  {
+   "id": 105,
+   "name": "Swarm",
+   "description": "A ring of shots every time you fire.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Sm",
+   "minPlayers": 2,
+   "primaryKeyword": "Multishot",
+   "domain": "Offence",
+   "keywords": [
+    "Multishot",
+    "Aura"
+   ],
+   "effects": [
+    {
+     "trigger": "OnFire",
+     "action": "SpawnRing",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 5,
+      "den": 1,
+      "raw": 21474836480,
+      "decimal": 5
+     },
+     "value2": {
+      "num": 12,
+      "den": 1,
+      "raw": 51539607552,
+      "decimal": 12
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "AttackCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 4,
+      "raw": 7516192768,
+      "decimal": 1.75
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "Damage",
+     "op": "Multiply",
+     "value": {
+      "num": 7,
+      "den": 10,
+      "raw": 3006477107,
+      "decimal": 0.69999999999999996
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 106,
+   "name": "Event Horizon",
+   "description": "Blocking drags the world in and crushes it.",
+   "rarity": "Rare",
+   "set": "Chaos",
+   "code": "Eh",
+   "minPlayers": 2,
+   "primaryKeyword": "Knockback",
+   "domain": "Control",
+   "keywords": [
+    "Knockback",
+    "Block",
+    "Aura"
+   ],
+   "effects": [
+    {
+     "trigger": "OnBlock",
+     "action": "PullNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 30,
+      "den": 1,
+      "raw": 128849018880,
+      "decimal": 30
+     },
+     "value2": {
+      "num": 9,
+      "den": 1,
+      "raw": 38654705664,
+      "decimal": 9
+     }
+    },
+    {
+     "trigger": "OnBlock",
+     "action": "DamageNearby",
+     "stat": null,
+     "op": null,
+     "value": {
+      "num": 18,
+      "den": 1,
+      "raw": 77309411328,
+      "decimal": 18
+     },
+     "value2": {
+      "num": 4,
+      "den": 1,
+      "raw": 17179869184,
+      "decimal": 4
+     }
+    },
+    {
+     "trigger": "Passive",
+     "action": "StatMod",
+     "stat": "BlockCooldown",
+     "op": "Multiply",
+     "value": {
+      "num": 8,
+      "den": 5,
+      "raw": 6871947673,
+      "decimal": 1.6000000000000001
+     },
+     "value2": {
+      "num": 0,
+      "den": 1,
+      "raw": 0,
+      "decimal": 0
+     }
+    }
+   ]
+  }
+ ]
+}
