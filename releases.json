@@ -223,13 +223,19 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-2e36cd5/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 32958244
       },
       {
-        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-2e36cd5/shoosting-win64.zip",
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-2e36cd5/shoosting-web.zip",
         "download_count": 0,
+        "name": "shoosting-web.zip",
+        "size": 11452835
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-2e36cd5/shoosting-win64.zip",
+        "download_count": 2,
         "name": "shoosting-win64.zip",
         "size": 34908482
       }
@@ -269,7 +275,7 @@
     "tag_name": "dev-2e36cd5",
     "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-2e36cd5",
     "target_commitish": "main",
-    "updated_at": "2026-09-06T18:43:36Z",
+    "updated_at": "2026-09-06T19:07:00Z",
     "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/383681574/assets{?name,label}",
     "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/383681574",
     "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-2e36cd5"
