@@ -111,6 +111,42 @@ function extend(known, seen) {
     return list;
 }
 
+/**
+ * Reshapes describe.json's card list into the id -> held -> text map the self test reads.
+ *
+ * The generator emits `cards[]` as a list of `{id, name, renders[{held, lines[], fontSize}]}`,
+ * which is the right shape for a file a person might read; the self test wants to look a
+ * card up by id and a depth by number. Passing the list straight through was the shape this
+ * page first shipped with, and it did not fail loudly - `truth["12"]` on an array is simply
+ * the thirteenth element, so every comparison ran against a neighbouring card's fields and
+ * the footer reported ninety-three disagreements out of ninety-three checks.
+ *
+ * The self test caught it on the live page within a minute of the data landing, which is
+ * exactly what it is for. The adapter is the part that was missing.
+ *
+ * Lines are joined with newlines because that is what `describe` returns and what
+ * `countLines` splits on.
+ */
+function truthFromDescribe(raw) {
+    if (!raw || !Array.isArray(raw.cards)) return null;
+
+    const byId = {};
+
+    for (const entry of raw.cards) {
+        if (entry?.id === undefined || !Array.isArray(entry.renders)) continue;
+
+        const byHeld = {};
+        for (const render of entry.renders) {
+            if (!Array.isArray(render?.lines)) continue;
+            byHeld[String(render.held)] = render.lines.join("\n");
+        }
+
+        byId[String(entry.id)] = byHeld;
+    }
+
+    return byId;
+}
+
 export async function loadStudioData() {
     const problems = [];
 
@@ -166,7 +202,7 @@ export async function loadStudioData() {
         vocabulary,
         // Ground truth: the lines the game itself printed for each built-in card, keyed by
         // id and then by how many copies were held. selftest.js checks the port against it.
-        truth: describeRaw?.cards ?? null,
+        truth: truthFromDescribe(describeRaw),
         problems,
     };
 }
