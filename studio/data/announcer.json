@@ -364,103 +364,19 @@
    "minChattiness": "BigMoments",
    "category": "Humiliation",
    "shown": [
-    "{0} has killed {0}. Nobody helped.",
-    "{0} shoots {0}. Take a moment with that.",
-    "{0} found the one person on this map they could reliably hit.",
-    "Own goal from {0}. Spectacular.",
-    "{0} eats their own ordnance. No notes.",
-    "{0} out-skilled by {0}.",
-    "{0} got fucked by {0}. #REKT.",
-    "{0} deletes {0}. No refunds.",
-    "{0} is cooked, and {0} did the cooking.",
-    "{0} speedruns their own death.",
-    "{0} needed no help and accepted none.",
-    "The call is coming from inside {0}.",
-    "{0} beat {0}. Also {0} lost to {0}.",
-    "{0} is their own worst matchup.",
-    "{0} did that on purpose, apparently.",
-    "{0} unsubscribes from being alive.",
-    "{0} has achieved a negative record against themselves.",
-    "Nobody else touched {0}. Sit with that.",
-    "{0} handled it. Badly."
+    "Epstein didn't kill himself"
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Nobody helped with that one.",
+     "text": "Epsteined",
      "clipKey": "SelfKill_v00",
-     "hasClip": true
-    },
-    {
-     "index": 1,
-     "text": "Take a moment with that.",
-     "clipKey": "SelfKill_v01",
-     "hasClip": true
-    },
-    {
-     "index": 2,
-     "text": "Own goal. Spectacular.",
-     "clipKey": "SelfKill_v02",
-     "hasClip": true
-    },
-    {
-     "index": 3,
-     "text": "Ate their own ordnance. No notes.",
-     "clipKey": "SelfKill_v03",
-     "hasClip": true
-    },
-    {
-     "index": 4,
-     "text": "Out-skilled by themselves.",
-     "clipKey": "SelfKill_v04",
-     "hasClip": true
-    },
-    {
-     "index": 5,
-     "text": "Got fucked, by themselves.",
-     "clipKey": "SelfKill_v05",
-     "hasClip": true
-    },
-    {
-     "index": 6,
-     "text": "Cooked, and did the cooking.",
-     "clipKey": "SelfKill_v06",
-     "hasClip": true
-    },
-    {
-     "index": 7,
-     "text": "Speedran their own death.",
-     "clipKey": "SelfKill_v07",
-     "hasClip": true
-    },
-    {
-     "index": 8,
-     "text": "The call was coming from inside the house.",
-     "clipKey": "SelfKill_v08",
-     "hasClip": true
-    },
-    {
-     "index": 9,
-     "text": "Their own worst matchup.",
-     "clipKey": "SelfKill_v09",
-     "hasClip": true
-    },
-    {
-     "index": 10,
-     "text": "On purpose, apparently.",
-     "clipKey": "SelfKill_v10",
-     "hasClip": true
-    },
-    {
-     "index": 11,
-     "text": "Unsubscribed from being alive.",
-     "clipKey": "SelfKill_v11",
      "hasClip": true
     }
    ],
-   "shownCount": 19,
-   "spokenCount": 12,
-   "bakedCount": 12
+   "shownCount": 1,
+   "spokenCount": 1,
+   "bakedCount": 1
   },
   {
    "name": "FallDeath",
