@@ -406,6 +406,7 @@
    "set": "Core",
    "code": "Bt",
    "minPlayers": 2,
+   "art": "1",
    "primaryKeyword": "Projectile",
    "domain": "Offence",
    "keywords": [
@@ -440,6 +441,7 @@
    "set": "Core",
    "code": "Bk",
    "minPlayers": 2,
+   "art": "2",
    "primaryKeyword": "Multishot",
    "domain": "Offence",
    "keywords": [
@@ -512,6 +514,7 @@
    "set": "Core",
    "code": "Bo",
    "minPlayers": 2,
+   "art": "3",
    "primaryKeyword": "Ricochet",
    "domain": "Offence",
    "keywords": [
@@ -565,6 +568,7 @@
    "set": "Core",
    "code": "Oc",
    "minPlayers": 2,
+   "art": "4",
    "primaryKeyword": "Heavy",
    "domain": "Offence",
    "keywords": [
@@ -637,6 +641,7 @@
    "set": "Movement",
    "code": "Fe",
    "minPlayers": 2,
+   "art": "5",
    "primaryKeyword": "Mobility",
    "domain": "Movement",
    "keywords": [
@@ -689,6 +694,7 @@
    "set": "Movement",
    "code": "Dj",
    "minPlayers": 2,
+   "art": "6",
    "primaryKeyword": "Mobility",
    "domain": "Movement",
    "keywords": [
@@ -723,6 +729,7 @@
    "set": "Movement",
    "code": "Da",
    "minPlayers": 2,
+   "art": "7",
    "primaryKeyword": "Teleport",
    "domain": "Movement",
    "keywords": [
@@ -776,6 +783,7 @@
    "set": "Defence",
    "code": "Pa",
    "minPlayers": 2,
+   "art": "9",
    "primaryKeyword": "Block",
    "domain": "Protection",
    "keywords": [
@@ -846,6 +854,7 @@
    "set": "Core",
    "code": "Vm",
    "minPlayers": 2,
+   "art": "10",
    "primaryKeyword": "Lifesteal",
    "domain": "Protection",
    "keywords": [
@@ -898,6 +907,7 @@
    "set": "Core",
    "code": "Gl",
    "minPlayers": 2,
+   "art": "11",
    "primaryKeyword": "Heavy",
    "domain": "Offence",
    "keywords": [
@@ -951,6 +961,7 @@
    "set": "Chaos",
    "code": "Gr",
    "minPlayers": 2,
+   "art": "12",
    "primaryKeyword": "Explosive",
    "domain": "Offence",
    "keywords": [
@@ -1040,6 +1051,7 @@
    "set": "Gunplay",
    "code": "Ba",
    "minPlayers": 2,
+   "art": "20",
    "primaryKeyword": "Multishot",
    "domain": "Offence",
    "keywords": [
@@ -1130,6 +1142,7 @@
    "set": "Gunplay",
    "code": "Cb",
    "minPlayers": 2,
+   "art": "21",
    "primaryKeyword": "Heavy",
    "domain": "Offence",
    "keywords": [
@@ -1202,6 +1215,7 @@
    "set": "Gunplay",
    "code": "Fb",
    "minPlayers": 2,
+   "art": "22",
    "primaryKeyword": "Projectile",
    "domain": "Offence",
    "keywords": [
@@ -1256,6 +1270,7 @@
    "set": "Gunplay",
    "code": "Sp",
    "minPlayers": 2,
+   "art": "23",
    "primaryKeyword": "Rapid",
    "domain": "Offence",
    "keywords": [
@@ -1345,6 +1360,7 @@
    "set": "Gunplay",
    "code": "Cp",
    "minPlayers": 2,
+   "art": "24",
    "primaryKeyword": "Precision",
    "domain": "Offence",
    "keywords": [
@@ -1417,6 +1433,7 @@
    "set": "Gunplay",
    "code": "Bb",
    "minPlayers": 2,
+   "art": "25",
    "primaryKeyword": "Projectile",
    "domain": "Offence",
    "keywords": [
@@ -1470,6 +1487,7 @@
    "set": "Gunplay",
    "code": "Qr",
    "minPlayers": 2,
+   "art": "26",
    "primaryKeyword": "Reload",
    "domain": "Offence",
    "keywords": [
@@ -1504,6 +1522,7 @@
    "set": "Chaos",
    "code": "My",
    "minPlayers": 2,
+   "art": "27",
    "primaryKeyword": "Ricochet",
    "domain": "Offence",
    "keywords": [
@@ -1575,6 +1594,7 @@
    "set": "Gunplay",
    "code": "Th",
    "minPlayers": 2,
+   "art": "28",
    "primaryKeyword": "Knockback",
    "domain": "Control",
    "keywords": [
@@ -1627,6 +1647,7 @@
    "set": "Gunplay",
    "code": "Sn",
    "minPlayers": 2,
+   "art": "29",
    "primaryKeyword": "Precision",
    "domain": "Offence",
    "keywords": [
@@ -1734,6 +1755,7 @@
    "set": "Gunplay",
    "code": "Fk",
    "minPlayers": 2,
+   "art": "30",
    "primaryKeyword": "Multishot",
    "domain": "Offence",
    "keywords": [
@@ -1823,6 +1845,7 @@
    "set": "Gunplay",
    "code": "Hr",
    "minPlayers": 2,
+   "art": "31",
    "primaryKeyword": "Heavy",
    "domain": "Offence",
    "keywords": [
@@ -1912,6 +1935,7 @@
    "set": "Gunplay",
    "code": "Hw",
    "minPlayers": 2,
+   "art": "32",
    "primaryKeyword": "Explosive",
    "domain": "Offence",
    "keywords": [
@@ -1982,6 +2006,7 @@
    "set": "Core",
    "code": "Hu",
    "minPlayers": 2,
+   "art": "40",
    "primaryKeyword": "Vitality",
    "domain": "Protection",
    "keywords": [
@@ -2035,6 +2060,7 @@
    "set": "Core",
    "code": "Tk",
    "minPlayers": 2,
+   "art": "41",
    "primaryKeyword": "Vitality",
    "domain": "Protection",
    "keywords": [
@@ -2124,6 +2150,7 @@
    "set": "Core",
    "code": "Gc",
    "minPlayers": 2,
+   "art": "42",
    "primaryKeyword": "Heavy",
    "domain": "Offence",
    "keywords": [
@@ -2195,6 +2222,7 @@
    "set": "Defence",
    "code": "Rg",
    "minPlayers": 2,
+   "art": "43",
    "primaryKeyword": "Regeneration",
    "domain": "Protection",
    "keywords": [
@@ -2247,6 +2275,7 @@
    "set": "Movement",
    "code": "Sr",
    "minPlayers": 2,
+   "art": "44",
    "primaryKeyword": "Mobility",
    "domain": "Movement",
    "keywords": [
@@ -2318,6 +2347,7 @@
    "set": "Movement",
    "code": "An",
    "minPlayers": 2,
+   "art": "45",
    "primaryKeyword": "Heavy",
    "domain": "Offence",
    "keywords": [
@@ -2389,6 +2419,7 @@
    "set": "Movement",
    "code": "Ss",
    "minPlayers": 2,
+   "art": "46",
    "primaryKeyword": "Momentum",
    "domain": "Movement",
    "keywords": [
@@ -2460,6 +2491,7 @@
    "set": "Gunplay",
    "code": "Sc",
    "minPlayers": 2,
+   "art": "60",
    "primaryKeyword": "Reload",
    "domain": "Offence",
    "keywords": [
@@ -2512,6 +2544,7 @@
    "set": "Movement",
    "code": "Tb",
    "minPlayers": 2,
+   "art": "61",
    "primaryKeyword": "Momentum",
    "domain": "Movement",
    "keywords": [
@@ -2547,6 +2580,7 @@
    "set": "Defence",
    "code": "Bw",
    "minPlayers": 2,
+   "art": "62",
    "primaryKeyword": "Shield",
    "domain": "Protection",
    "keywords": [
@@ -2581,6 +2615,7 @@
    "set": "Defence",
    "code": "Rf",
    "minPlayers": 2,
+   "art": "63",
    "primaryKeyword": "Block",
    "domain": "Protection",
    "keywords": [
@@ -2616,6 +2651,7 @@
    "set": "Chaos",
    "code": "Vn",
    "minPlayers": 2,
+   "art": "64",
    "primaryKeyword": "Poison",
    "domain": "Control",
    "keywords": [
@@ -2669,6 +2705,7 @@
    "set": "Chaos",
    "code": "Cd",
    "minPlayers": 2,
+   "art": "65",
    "primaryKeyword": "Slow",
    "domain": "Control",
    "keywords": [
@@ -2704,6 +2741,7 @@
    "set": "Chaos",
    "code": "Dz",
    "minPlayers": 2,
+   "art": "66",
    "primaryKeyword": "Stun",
    "domain": "Control",
    "keywords": [
@@ -2757,6 +2795,7 @@
    "set": "Core",
    "code": "Ex",
    "minPlayers": 3,
+   "art": "67",
    "primaryKeyword": "Execute",
    "domain": "Offence",
    "keywords": [
@@ -2792,6 +2831,7 @@
    "set": "Defence",
    "code": "Sw",
    "minPlayers": 2,
+   "art": "80",
    "primaryKeyword": "Knockback",
    "domain": "Control",
    "keywords": [
@@ -2846,6 +2886,7 @@
    "set": "Defence",
    "code": "Im",
    "minPlayers": 2,
+   "art": "81",
    "primaryKeyword": "Knockback",
    "domain": "Control",
    "keywords": [
@@ -2900,6 +2941,7 @@
    "set": "Defence",
    "code": "Op",
    "minPlayers": 2,
+   "art": "82",
    "primaryKeyword": "Aura",
    "domain": "Control",
    "keywords": [
@@ -2953,6 +2995,7 @@
    "set": "Defence",
    "code": "Fs",
    "minPlayers": 2,
+   "art": "83",
    "primaryKeyword": "Slow",
    "domain": "Control",
    "keywords": [
@@ -3007,6 +3050,7 @@
    "set": "Defence",
    "code": "Tr",
    "minPlayers": 2,
+   "art": "84",
    "primaryKeyword": "Reload",
    "domain": "Offence",
    "keywords": [
@@ -3060,6 +3104,7 @@
    "set": "Movement",
    "code": "Tp",
    "minPlayers": 2,
+   "art": "85",
    "primaryKeyword": "Teleport",
    "domain": "Movement",
    "keywords": [
@@ -3114,6 +3159,7 @@
    "set": "Chaos",
    "code": "Bm",
    "minPlayers": 2,
+   "art": "86",
    "primaryKeyword": "Multishot",
    "domain": "Offence",
    "keywords": [
@@ -3167,6 +3213,7 @@
    "set": "Defence",
    "code": "Hf",
    "minPlayers": 2,
+   "art": "87",
    "primaryKeyword": "Regeneration",
    "domain": "Protection",
    "keywords": [
@@ -3220,6 +3267,7 @@
    "set": "Defence",
    "code": "Cs",
    "minPlayers": 2,
+   "art": "88",
    "primaryKeyword": "Block",
    "domain": "Protection",
    "keywords": [
@@ -3255,6 +3303,7 @@
    "set": "Defence",
    "code": "Df",
    "minPlayers": 2,
+   "art": "89",
    "primaryKeyword": "Block",
    "domain": "Protection",
    "keywords": [
@@ -3308,6 +3357,7 @@
    "set": "Defence",
    "code": "Sd",
    "minPlayers": 2,
+   "art": "90",
    "primaryKeyword": "Regeneration",
    "domain": "Protection",
    "keywords": [
@@ -3360,6 +3410,7 @@
    "set": "Defence",
    "code": "Bu",
    "minPlayers": 2,
+   "art": "91",
    "primaryKeyword": "Vitality",
    "domain": "Protection",
    "keywords": [
@@ -3431,6 +3482,7 @@
    "set": "Defence",
    "code": "Tm",
    "minPlayers": 2,
+   "art": "92",
    "primaryKeyword": "Thorns",
    "domain": "Protection",
    "keywords": [
@@ -3465,6 +3517,7 @@
    "set": "Chaos",
    "code": "Dp",
    "minPlayers": 2,
+   "art": "100",
    "primaryKeyword": "Rapid",
    "domain": "Offence",
    "keywords": [
@@ -3536,6 +3589,7 @@
    "set": "Chaos",
    "code": "Ra",
    "minPlayers": 2,
+   "art": "101",
    "primaryKeyword": "Multishot",
    "domain": "Offence",
    "keywords": [
@@ -3590,6 +3644,7 @@
    "set": "Defence",
    "code": "Rt",
    "minPlayers": 2,
+   "art": "102",
    "primaryKeyword": "Thorns",
    "domain": "Protection",
    "keywords": [
@@ -3625,6 +3680,7 @@
    "set": "Chaos",
    "code": "Cl",
    "minPlayers": 2,
+   "art": "103",
    "primaryKeyword": "Aura",
    "domain": "Control",
    "keywords": [
@@ -3678,6 +3734,7 @@
    "set": "Chaos",
    "code": "Bl",
    "minPlayers": 2,
+   "art": "104",
    "primaryKeyword": "Execute",
    "domain": "Offence",
    "keywords": [
@@ -3732,6 +3789,7 @@
    "set": "Chaos",
    "code": "Sm",
    "minPlayers": 2,
+   "art": "105",
    "primaryKeyword": "Multishot",
    "domain": "Offence",
    "keywords": [
@@ -3803,6 +3861,7 @@
    "set": "Chaos",
    "code": "Eh",
    "minPlayers": 2,
+   "art": "106",
    "primaryKeyword": "Knockback",
    "domain": "Control",
    "keywords": [
