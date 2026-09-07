@@ -161,6 +161,67 @@
   {
     "assets": [
       {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-af2b638/shoosting-linux64.zip",
+        "download_count": 0,
+        "name": "shoosting-linux64.zip",
+        "size": 58996862
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-af2b638/shoosting-web.zip",
+        "download_count": 0,
+        "name": "shoosting-web.zip",
+        "size": 11840335
+      },
+      {
+        "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-af2b638/shoosting-win64.zip",
+        "download_count": 0,
+        "name": "shoosting-win64.zip",
+        "size": 61876230
+      }
+    ],
+    "assets_url": "https://api.github.com/repos/tehrandom2/shoosting/releases/384364403/assets",
+    "author": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/47407013?v=4",
+      "events_url": "https://api.github.com/users/tehrandom2/events{/privacy}",
+      "followers_url": "https://api.github.com/users/tehrandom2/followers",
+      "following_url": "https://api.github.com/users/tehrandom2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tehrandom2/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/tehrandom2",
+      "id": 47407013,
+      "login": "tehrandom2",
+      "node_id": "MDQ6VXNlcjQ3NDA3MDEz",
+      "organizations_url": "https://api.github.com/users/tehrandom2/orgs",
+      "received_events_url": "https://api.github.com/users/tehrandom2/received_events",
+      "repos_url": "https://api.github.com/users/tehrandom2/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/tehrandom2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tehrandom2/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/tehrandom2",
+      "user_view_type": "public"
+    },
+    "body": "Escape now has Settings with Audio, Graphics and Input pages, usable mid-match; M mutes the music anywhere. The end-of-match vote takes a hold of about half a second with a fill, a tap does nothing, and the prompt names each button and what it votes. Windows, Linux and browser builds of the same commit. Protocol version 16, unchanged.",
+    "created_at": "2026-09-07T23:47:30Z",
+    "draft": false,
+    "html_url": "https://github.com/tehrandom2/shoosting/releases/tag/dev-af2b638",
+    "id": 384364403,
+    "immutable": false,
+    "name": "dev build - settings from the pause menu, M mutes music, hold to vote",
+    "node_id": "RE_kwDOUI8m0c4W6O9z",
+    "prerelease": true,
+    "published_at": "2026-09-07T23:50:42Z",
+    "tag_name": "dev-af2b638",
+    "tarball_url": "https://api.github.com/repos/tehrandom2/shoosting/tarball/dev-af2b638",
+    "target_commitish": "main",
+    "updated_at": "2026-09-07T23:50:42Z",
+    "upload_url": "https://uploads.github.com/repos/tehrandom2/shoosting/releases/384364403/assets{?name,label}",
+    "url": "https://api.github.com/repos/tehrandom2/shoosting/releases/384364403",
+    "zipball_url": "https://api.github.com/repos/tehrandom2/shoosting/zipball/dev-af2b638"
+  },
+  {
+    "assets": [
+      {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-70c961b/shoosting-web.zip",
         "download_count": 0,
         "name": "shoosting-web.zip",
@@ -272,7 +333,7 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-4e466c1/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 58992908
       },
@@ -284,7 +345,7 @@
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-4e466c1/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-win64.zip",
         "size": 61872150
       }
@@ -449,7 +510,7 @@
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-05cc574/shoosting-win64.zip",
-        "download_count": 2,
+        "download_count": 3,
         "name": "shoosting-win64.zip",
         "size": 61872114
       }
