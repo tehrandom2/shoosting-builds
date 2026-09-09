@@ -577,6 +577,106 @@ function neighboursFor(card) {
     return [pool[(at + 7) % pool.length], pool[(at + 23) % pool.length]];
 }
 
+/**
+ * A splice's price and what pays it, or - for an ordinary card - which splices this card
+ * feeds.
+ *
+ * Read-only, and that is a decision rather than a stage of the work. A recipe is in
+ * `CardPool.Hash`, so a community card carrying one the game did not ship would be refused
+ * at the join instead of played; SPLICE.md phase 2 says the editor learns recipes
+ * "read-only at first" for exactly that reason. What a community card *can* do already is
+ * feed one, through its keywords, and the second half of this is where somebody sees that.
+ */
+function renderRecipe(host, card) {
+    host.textContent = "";
+
+    const cards = state.data.cards;
+    const dealt = cards.filter((other) => !other.spliced);
+
+    if (card.spliced && card.recipe) {
+        const wrap = document.createElement("div");
+        wrap.className = "recipe";
+
+        const floor = card.recipe.floor === "Common"
+            ? "any rarity"
+            : `at least one ${card.recipe.floor}`;
+
+        const head = document.createElement("h3");
+        head.className = "recipe__head";
+        head.textContent = `Spliced from ${card.recipe.cost} cards - ${floor}`;
+        wrap.append(head);
+
+        const note = document.createElement("p");
+        note.className = "hint";
+        note.textContent = "A splice is never dealt. It is offered as a sixth tile, once a "
+            + "round, when the hand picking can pay for it - and taking it eats the cards "
+            + "that paid. Which card supplies a keyword does not matter, and one card "
+            + "settles one term.";
+        wrap.append(note);
+
+        for (const term of card.recipe.terms) {
+            const row = document.createElement("div");
+            row.className = "recipe__row";
+
+            const label = document.createElement("span");
+            label.className = "recipe__term";
+            label.textContent = `${term.count} x ${term.keyword}`;
+            row.append(label);
+
+            const pays = dealt.filter((other) => other.keywords.includes(term.keyword));
+
+            const list = document.createElement("span");
+            list.className = "recipe__pays";
+            list.textContent = pays.length === 0
+                ? "nothing in the pool carries this"
+                : pays.map((other) => other.name).join(", ");
+            row.append(list);
+
+            wrap.append(row);
+        }
+
+        host.append(wrap);
+        return;
+    }
+
+    // The other direction: an ordinary card, and the splices its keywords are a step
+    // toward. This is the half a community card already participates in.
+    const feeds = cards.filter((other) => other.spliced && other.recipe
+        && other.recipe.terms.some((term) => card.keywords.includes(term.keyword)));
+
+    if (feeds.length === 0) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "recipe";
+
+    const head = document.createElement("h3");
+    head.className = "recipe__head";
+    head.textContent = "Feeds";
+    wrap.append(head);
+
+    for (const splice of feeds) {
+        const row = document.createElement("div");
+        row.className = "recipe__row";
+
+        const label = document.createElement("span");
+        label.className = "recipe__term";
+        label.textContent = splice.name;
+        row.append(label);
+
+        const price = document.createElement("span");
+        price.className = "recipe__pays";
+        price.textContent = splice.recipe.terms
+            .map((term) => `${term.count} x ${term.keyword}`)
+            .join(", ")
+            + (splice.recipe.floor === "Common" ? "" : `, one ${splice.recipe.floor}`);
+        row.append(price);
+
+        wrap.append(row);
+    }
+
+    host.append(wrap);
+}
+
 function openSheet(card) {
     const dialog = $("#sheet");
     dialog.textContent = "";
@@ -592,6 +692,7 @@ function openSheet(card) {
       <h2 class="sheet__name"></h2>
       <p class="sheet__meta"></p>
       <div class="panel-host" id="sheetPanel"></div>
+      <div id="sheetRecipe"></div>
       <div class="sheet__stack">
         <label for="sheetHeld">Holding</label>
         <input type="range" id="sheetHeld" min="1" max="8" value="1">
@@ -615,6 +716,8 @@ function openSheet(card) {
         [card.set, card.rarity, card.code, ...card.keywords].join("  ·  ");
 
     dialog.append(wrap);
+
+    renderRecipe($("#sheetRecipe", wrap), card);
 
     const draw = (held) => {
         renderPanel($("#sheetPanel", wrap), card, {

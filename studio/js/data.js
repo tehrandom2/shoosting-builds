@@ -80,7 +80,35 @@ function normaliseCard(raw) {
         minPlayers: Number(pick(raw, "minPlayers", "minplayers") ?? 2),
         keywords: (pick(raw, "keywords") ?? []).slice(),
         effects: (pick(raw, "effects") ?? []).map(normaliseEffect),
+        spliced: Boolean(pick(raw, "spliced")),
+        recipe: normaliseRecipe(pick(raw, "recipe")),
         builtIn: true,
+    };
+}
+
+/**
+ * A splice's price, or null for every ordinary card.
+ *
+ * Read-only here on purpose: the studio shows what a recipe is and which cards feed it,
+ * and does not let anybody author one. A recipe decides what the simulation offers and
+ * which cards leave a hand, so it is in `CardPool.Hash` - a card carrying one that the
+ * game did not ship would be refused at the join rather than played, which is a worse
+ * outcome than not being able to write one.
+ */
+function normaliseRecipe(raw) {
+    if (!raw || typeof raw !== "object") return null;
+
+    const terms = (pick(raw, "terms") ?? []).map((term) => ({
+        keyword: String(pick(term, "keyword") ?? ""),
+        count: Number(pick(term, "count") ?? 0),
+    }));
+
+    if (terms.length === 0) return null;
+
+    return {
+        floor: String(pick(raw, "floor") ?? "Common"),
+        cost: Number(pick(raw, "cost") ?? terms.reduce((n, t) => n + t.count, 0)),
+        terms,
     };
 }
 

@@ -294,10 +294,10 @@
    "direction": "better",
    "integer": false,
    "default": {
-    "num": 90,
+    "num": 150,
     "den": 1,
-    "raw": 386547056640,
-    "decimal": 90
+    "raw": 644245094400,
+    "decimal": 150
    },
    "clamp": {
     "min": null,
@@ -462,13 +462,13 @@
    "direction": "worse",
    "integer": false,
    "default": {
-    "num": 4,
-    "den": 1,
-    "raw": 17179869184,
-    "decimal": 4
+    "num": 12,
+    "den": 5,
+    "raw": 10307921510,
+    "decimal": 2.3999999999999999
    },
    "clamp": {
-    "min": 0,
+    "min": 0.016666666604578495,
     "max": null
    },
    "ops": [
@@ -588,7 +588,7 @@
    },
    "clamp": {
     "min": 0,
-    "max": null
+    "max": 3
    },
    "ops": [
     "Multiply",
@@ -706,7 +706,7 @@
    },
    "clamp": {
     "min": 1,
-    "max": null
+    "max": 600
    },
    "ops": [
     "Multiply",
@@ -753,7 +753,7 @@
    },
    "clamp": {
     "min": 0.0099999997764825821,
-    "max": 3
+    "max": 6
    },
    "ops": [
     "Multiply",
@@ -848,8 +848,8 @@
     "decimal": 0.040000000000000001
    },
    "clamp": {
-    "min": null,
-    "max": null
+    "min": 0.001999999862164259,
+    "max": 1.5707963267341256
    },
    "ops": [
     "Multiply",

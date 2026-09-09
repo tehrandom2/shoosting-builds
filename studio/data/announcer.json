@@ -45,106 +45,84 @@
    "minChattiness": "Commentary",
    "category": "Kill",
    "shown": [
-    "{0} put {1} down.",
-    "{1} folds. {0} moves on.",
-    "That's {1} handled.",
-    "{0} says no.",
-    "{1} is DELETED.",
-    "{0} sends {1} back to the lobby.",
-    "Get fucked, {1}.",
-    "{1} has been resolved.",
-    "{0} closes the {1} account.",
-    "{1} is now a statistic.",
-    "{0} takes {1} off the board.",
-    "{1} out. No notes.",
-    "{0} removes {1} from the equation.",
-    "{1} did not have to be here.",
-    "{0} ends the {1} experience.",
-    "{1} logs off involuntarily.",
-    "{0} wins that argument.",
-    "{1} is cooked.",
-    "{0} deals with it.",
-    "{1} returns to spectating.",
-    "One less {1}.",
-    "{0} does the necessary."
+    "{0} just put {1} down.",
+    "and {1}'s gone.",
+    "{0} didn't even sell it, {1}'s just gone.",
+    "yep, {1}'s out.",
+    "{0} does that now, apparently.",
+    "{1} is not getting back up from that.",
+    "well, that's {1} done.",
+    "{0} again. shocking, I know.",
+    "{1} took the L there.",
+    "clean. {1}'s out.",
+    "{0} makes it look easy.",
+    "there goes {1}."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Down.",
+     "text": "Oh, he's gone.",
      "clipKey": "Kill_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Handled.",
+     "text": "Yep, that's a kill.",
      "clipKey": "Kill_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "Deleted.",
+     "text": "There it is.",
      "clipKey": "Kill_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Get fucked.",
+     "text": "Down he goes.",
      "clipKey": "Kill_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Resolved.",
+     "text": "Well, that happened.",
      "clipKey": "Kill_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Gone.",
+     "text": "Gone. Moving on.",
      "clipKey": "Kill_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "That's that.",
+     "text": "That's one.",
      "clipKey": "Kill_v06",
      "hasClip": true
     },
     {
      "index": 7,
-     "text": "Off the board.",
+     "text": "Clean kill, that.",
      "clipKey": "Kill_v07",
      "hasClip": true
     },
     {
      "index": 8,
-     "text": "Cooked.",
+     "text": "And he's done.",
      "clipKey": "Kill_v08",
      "hasClip": true
     },
     {
      "index": 9,
-     "text": "No notes.",
+     "text": "Yeah, no.",
      "clipKey": "Kill_v09",
-     "hasClip": true
-    },
-    {
-     "index": 10,
-     "text": "Sorted.",
-     "clipKey": "Kill_v10",
-     "hasClip": true
-    },
-    {
-     "index": 11,
-     "text": "Next.",
-     "clipKey": "Kill_v11",
      "hasClip": true
     }
    ],
-   "shownCount": 22,
-   "spokenCount": 12,
-   "bakedCount": 12
+   "shownCount": 12,
+   "spokenCount": 10,
+   "bakedCount": 10
   },
   {
    "name": "LongRangeKill",
@@ -154,67 +132,69 @@
    "minChattiness": "Normal",
    "category": "Skill",
    "shown": [
-    "{0} reaches across the whole map to end {1}!",
-    "From {2} metres out! {1} never saw the shot.",
-    "{0} calls that one from downtown. {1} is gone.",
-    "A shot from nowhere, and {1} is not standing any more.",
-    "{2} metres. #REKT, {1}.",
-    "{0} snipes {1} from another postcode.",
-    "{1} was not even on the same screen.",
-    "{0} hits that from a different time zone.",
-    "That shot had to file a flight plan. {1} is done.",
-    "{1} dies of long distance.",
-    "{0} sends one over the horizon and {1} catches it.",
-    "{1} got hit by post.",
-    "{0} did not need to be nearby for that.",
-    "{1} is killed from off-screen. Ruthless."
+    "{0} hit that from {2} metres out. sure.",
+    "{1} did not see that coming from over there.",
+    "that's a long way to hit a shot, {0}.",
+    "{0} called that shot from another zip code.",
+    "{1} got hit from off-screen. rough.",
+    "{2} metres. that's just mean.",
+    "{0} was not even close and still landed it.",
+    "{1} never had a chance, honestly, from that range.",
+    "that shot travelled further than my attention span.",
+    "{0} really said 'from here?' and did it anyway."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "From across the entire map!",
+     "text": "From way over there.",
      "clipKey": "LongRangeKill_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "A shot from nowhere!",
+     "text": "Didn't even see it coming.",
      "clipKey": "LongRangeKill_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "That was not even the same screen!",
+     "text": "That's a long way to hit.",
      "clipKey": "LongRangeKill_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "From another postcode!",
+     "text": "Off-screen. Brutal.",
      "clipKey": "LongRangeKill_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Death by long distance.",
+     "text": "That's just mean, honestly.",
      "clipKey": "LongRangeKill_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Hit from off-screen. Ruthless.",
+     "text": "He called that from nowhere.",
      "clipKey": "LongRangeKill_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "That shot needed a flight plan.",
+     "text": "Huge distance on that one.",
      "clipKey": "LongRangeKill_v06",
      "hasClip": true
+    },
+    {
+     "index": 7,
+     "text": "Yeah, that's a long shot.",
+     "clipKey": "LongRangeKill_v07",
+     "hasClip": false
     }
    ],
-   "shownCount": 14,
-   "spokenCount": 7,
+   "shownCount": 10,
+   "spokenCount": 8,
    "bakedCount": 7
   },
   {
@@ -225,59 +205,62 @@
    "minChattiness": "Normal",
    "category": "Skill",
    "shown": [
-    "{1} taken out of the air by {0}!",
+    "{1} was in the air. {0} didn't care.",
     "{0} shoots {1} clean out of the sky.",
-    "{1} was airborne. {1} is now decor.",
-    "{1} got air. {0} took it away.",
-    "Skeet shooting, and {1} is the skeet.",
-    "{1} went up. {0} decided that was enough of that.",
-    "{1} is now falling with a hole in them.",
-    "{0} clips {1} mid-hop. Rude.",
-    "{1} chose to be a target and {0} agreed.",
-    "Air {1}. Now ground {1}.",
-    "{1} hangs there like a bad decision. {0} punishes it.",
-    "{0} does not wait for {1} to land."
+    "{1} jumped. that was the mistake.",
+    "skeet. that's what that was.",
+    "{0} really just waited for {1} to be airborne, huh.",
+    "{1} hangs there for a second. then doesn't.",
+    "{0} didn't even let {1} land.",
+    "mid-air. {1} did not stick the landing.",
+    "{1} chose flight. {0} chose otherwise."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Out of the air!",
+     "text": "Out of the air.",
      "clipKey": "AirborneKill_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Straight out of the sky!",
+     "text": "That's skeet, honestly.",
      "clipKey": "AirborneKill_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "Airborne, and then decor.",
+     "text": "Didn't even land.",
      "clipKey": "AirborneKill_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Skeet shooting.",
+     "text": "Mid-air. Rough.",
      "clipKey": "AirborneKill_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Clipped mid-hop. Rude.",
+     "text": "Straight out of the sky.",
      "clipKey": "AirborneKill_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Didn't even wait for the landing.",
+     "text": "He just waited for that.",
      "clipKey": "AirborneKill_v05",
      "hasClip": true
+    },
+    {
+     "index": 6,
+     "text": "Airborne, and then not.",
+     "clipKey": "AirborneKill_v06",
+     "hasClip": false
     }
    ],
-   "shownCount": 12,
-   "spokenCount": 6,
+   "shownCount": 9,
+   "spokenCount": 7,
    "bakedCount": 6
   },
   {
@@ -288,73 +271,63 @@
    "minChattiness": "BigMoments",
    "category": "Skill",
    "shown": [
-    "{0} sends it straight back. {1} killed by their own bullet!",
-    "Returned to sender. {1} shot themselves via {0}.",
-    "{0} blocks and {1} eats it. Beautiful.",
-    "{1} shot first. {1} died first. Thanks, {0}.",
-    "No u. {1} is dead.",
-    "{1} shot at {0}. {0} returned it with interest.",
-    "{0} says: yours, I believe.",
-    "{1} is killed by {1}, assisted by {0}.",
-    "Refunded. {1} did not survive the refund.",
-    "{0} hands it back and {1} does not want it.",
-    "{1} versus {1}. {1} loses.",
-    "{0} caught that and threw it back. Get fucked, {1}.",
-    "{1} has been beaten with their own equipment."
+    "{0} just sent that right back at {1}.",
+    "{1} shot first. {1} died first. that's karma.",
+    "{0} blocked it and {1} walked into it. incredible.",
+    "returned to sender. {1} is not thrilled.",
+    "{1} versus {1}, basically. {1} lost.",
+    "{0} caught that and just... gave it back.",
+    "no notes. {0} beat {1} with {1}'s own shot.",
+    "{1} really shot themselves there, with help.",
+    "{0} said 'this is yours' and meant it."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Straight back where it came from!",
+     "text": "Sent right back.",
      "clipKey": "DeflectionKill_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Returned to sender.",
+     "text": "That's karma, that.",
      "clipKey": "DeflectionKill_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "Blocked, and eaten.",
+     "text": "Returned to sender.",
      "clipKey": "DeflectionKill_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Shot first. Died first.",
+     "text": "Shot first, died first.",
      "clipKey": "DeflectionKill_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "No u.",
+     "text": "Beaten with their own shot.",
      "clipKey": "DeflectionKill_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Returned with interest.",
+     "text": "He just gave it back.",
      "clipKey": "DeflectionKill_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "Refunded. Fatally.",
+     "text": "Incredible, honestly.",
      "clipKey": "DeflectionKill_v06",
-     "hasClip": true
-    },
-    {
-     "index": 7,
-     "text": "Beaten with their own equipment.",
-     "clipKey": "DeflectionKill_v07",
      "hasClip": true
     }
    ],
-   "shownCount": 13,
-   "spokenCount": 8,
-   "bakedCount": 8
+   "shownCount": 9,
+   "spokenCount": 7,
+   "bakedCount": 7
   },
   {
    "name": "SelfKill",
@@ -364,19 +337,41 @@
    "minChattiness": "BigMoments",
    "category": "Humiliation",
    "shown": [
-    "Epstein didn't kill himself"
+    "{0} did that to themselves. no help needed.",
+    "{0} really just... did that. okay.",
+    "nobody touched {0}. {0} did this alone.",
+    "{0} out here self-eliminating. bold strategy.",
+    "well that's one way to go out, {0}."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Epsteined",
+     "text": "Self-inflicted. Yikes.",
      "clipKey": "SelfKill_v00",
+     "hasClip": true
+    },
+    {
+     "index": 1,
+     "text": "No help needed there.",
+     "clipKey": "SelfKill_v01",
+     "hasClip": true
+    },
+    {
+     "index": 2,
+     "text": "Did that to themselves.",
+     "clipKey": "SelfKill_v02",
+     "hasClip": true
+    },
+    {
+     "index": 3,
+     "text": "Bold strategy, honestly.",
+     "clipKey": "SelfKill_v03",
      "hasClip": true
     }
    ],
-   "shownCount": 1,
-   "spokenCount": 1,
-   "bakedCount": 1
+   "shownCount": 5,
+   "spokenCount": 4,
+   "bakedCount": 4
   },
   {
    "name": "FallDeath",
@@ -386,100 +381,70 @@
    "minChattiness": "Normal",
    "category": "Humiliation",
    "shown": [
-    "{0} steps into the void. The void accepts.",
-    "{0} discovers the edge of the world.",
-    "Gravity remains undefeated. {0} falls.",
-    "{0} has left the arena. Downwards.",
-    "{0} yeets themselves off the map.",
-    "{0} is fucking gone. Straight down.",
-    "{0} takes the express route down.",
-    "{0} touched grass. There is no grass.",
-    "{0} exits stage down.",
-    "{0} chose violence and gravity chose {0}.",
-    "{0} did not fall. {0} committed.",
-    "The floor was right there, {0}.",
-    "{0} has been deleted by geometry.",
-    "Nobody shot {0}. That is the sad part.",
-    "{0} goes down and takes nothing with them.",
-    "{0} found the bottom of the level."
+    "{0} found the edge of the map. the hard way.",
+    "{0} just walked off. nobody pushed them.",
+    "gravity wins again. {0} falls.",
+    "{0} is gone. straight down, no drama.",
+    "nobody shot {0}. that's the sad part.",
+    "{0} really just stepped off there.",
+    "{0} discovered there's a bottom to this level.",
+    "the floor was right there, {0}.",
+    "{0} took the world's worst shortcut.",
+    "{0} is down. way down."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Into the void. The void accepts.",
+     "text": "Fell off. Classic.",
      "clipKey": "FallDeath_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Found the edge of the world.",
+     "text": "Nobody shot him. Sad, really.",
      "clipKey": "FallDeath_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "Gravity remains undefeated.",
+     "text": "Gravity wins again.",
      "clipKey": "FallDeath_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Left the arena. Downwards.",
+     "text": "Straight down. No drama.",
      "clipKey": "FallDeath_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Yeeted, self-inflicted.",
+     "text": "Found the edge, the hard way.",
      "clipKey": "FallDeath_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Fucking gone. Straight down.",
+     "text": "The floor was right there.",
      "clipKey": "FallDeath_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "The express route.",
+     "text": "Just walked off, honestly.",
      "clipKey": "FallDeath_v06",
      "hasClip": true
     },
     {
      "index": 7,
-     "text": "Touched grass. There was no grass.",
+     "text": "Well, that's a fall.",
      "clipKey": "FallDeath_v07",
-     "hasClip": true
-    },
-    {
-     "index": 8,
-     "text": "Exit, stage down.",
-     "clipKey": "FallDeath_v08",
-     "hasClip": true
-    },
-    {
-     "index": 9,
-     "text": "Deleted by geometry.",
-     "clipKey": "FallDeath_v09",
-     "hasClip": true
-    },
-    {
-     "index": 10,
-     "text": "Nobody shot them. That's the sad part.",
-     "clipKey": "FallDeath_v10",
-     "hasClip": true
-    },
-    {
-     "index": 11,
-     "text": "The floor was right there.",
-     "clipKey": "FallDeath_v11",
      "hasClip": true
     }
    ],
-   "shownCount": 16,
-   "spokenCount": 12,
-   "bakedCount": 12
+   "shownCount": 10,
+   "spokenCount": 8,
+   "bakedCount": 8
   },
   {
    "name": "FallKill",
@@ -489,69 +454,68 @@
    "minChattiness": "Normal",
    "category": "Humiliation",
    "shown": [
-    "{0} knocks {1} clean off the map!",
-    "{0} doesn't shoot {1}, {0} just removes the floor plan.",
-    "{1} is punted into nothing by {0}.",
-    "{0} yeets {1} into the abyss!",
-    "{1} did not fall. {1} was launched. #REKT.",
-    "{0} converts {1} into a falling object.",
-    "{1} is airborne, uninvited, and getting smaller.",
-    "{0} did not kill {1}. The bottom of the map did.",
-    "{1} takes the long way down, courtesy of {0}.",
-    "{0} removes {1} from the premises. Vertically.",
-    "{0} shows {1} the door. The door was the floor."
+    "{0} knocked {1} clean off the map.",
+    "{0} didn't shoot {1}, just removed the floor.",
+    "{1} got launched. that's worse than shot, honestly.",
+    "{0} sent {1} into the void, no ceremony.",
+    "{1} is airborne and getting smaller. not great.",
+    "{0} showed {1} the door. the door was down.",
+    "{1} took the long way down, courtesy of {0}.",
+    "{0} didn't kill {1}. the map did. {0} helped.",
+    "{1} did not fall. {1} was sent.",
+    "{0} really just punted {1} off the edge."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Knocked clean off the map!",
+     "text": "Knocked clean off.",
      "clipKey": "FallKill_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Didn't shoot them, just removed the floor plan.",
+     "text": "That's a launch, not a fall.",
      "clipKey": "FallKill_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "Punted into nothing!",
+     "text": "Removed the floor, basically.",
      "clipKey": "FallKill_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Yeeted into the abyss!",
+     "text": "Sent him off the edge.",
      "clipKey": "FallKill_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "That wasn't a fall. That was a launch.",
+     "text": "Airborne. Not great.",
      "clipKey": "FallKill_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Converted into a falling object.",
+     "text": "The map got that one.",
      "clipKey": "FallKill_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "Airborne, uninvited, and getting smaller.",
+     "text": "Launched. Not shot, launched.",
      "clipKey": "FallKill_v06",
      "hasClip": true
     },
     {
      "index": 7,
-     "text": "Shown the door. The door was the floor.",
+     "text": "Punted off. Rough.",
      "clipKey": "FallKill_v07",
      "hasClip": true
     }
    ],
-   "shownCount": 11,
+   "shownCount": 10,
    "spokenCount": 8,
    "bakedCount": 8
   },
@@ -563,92 +527,77 @@
    "minChattiness": "BigMoments",
    "category": "Skill",
    "shown": [
-    "Blocked!",
-    "{0} reads it perfectly.",
-    "Denied.",
-    "{0} says not today.",
-    "Nope.",
-    "{0} said get fucked.",
-    "{0} says absolutely not.",
-    "Return to sender.",
-    "{0} was ready. {1} was not.",
-    "Rejected.",
+    "blocked. {0} read that early.",
+    "denied. {0} was just standing there, ready.",
+    "{0} said not today.",
+    "nope. {0} saw that coming.",
+    "{0} ate that shot for free.",
+    "rejected. {0} makes it look easy.",
     "{0} read that like a book.",
-    "Declined.",
-    "Nothing gets through {0}.",
-    "{0} eats that for breakfast."
+    "nothing's getting through {0} right now.",
+    "{0} was ready. {1} was not.",
+    "declined, with {0}'s compliments.",
+    "{0} just... blocked it. as one does."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Blocked!",
+     "text": "Blocked.",
      "clipKey": "Block_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Read perfectly.",
+     "text": "Denied.",
      "clipKey": "Block_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "Denied.",
+     "text": "Read that early.",
      "clipKey": "Block_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Not today.",
+     "text": "Nope.",
      "clipKey": "Block_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Nope.",
+     "text": "Not today.",
      "clipKey": "Block_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Get fucked.",
+     "text": "Saw that coming.",
      "clipKey": "Block_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "Absolutely not.",
+     "text": "Rejected.",
      "clipKey": "Block_v06",
      "hasClip": true
     },
     {
      "index": 7,
-     "text": "Return to sender.",
+     "text": "Nothing's getting through.",
      "clipKey": "Block_v07",
      "hasClip": true
     },
     {
      "index": 8,
-     "text": "Rejected.",
+     "text": "Well blocked, that.",
      "clipKey": "Block_v08",
-     "hasClip": true
-    },
-    {
-     "index": 9,
-     "text": "Declined.",
-     "clipKey": "Block_v09",
-     "hasClip": true
-    },
-    {
-     "index": 10,
-     "text": "Nothing gets through.",
-     "clipKey": "Block_v10",
      "hasClip": true
     }
    ],
-   "shownCount": 14,
-   "spokenCount": 11,
-   "bakedCount": 11
+   "shownCount": 11,
+   "spokenCount": 9,
+   "bakedCount": 9
   },
   {
    "name": "DoubleKill",
@@ -658,26 +607,25 @@
    "minChattiness": "BigMoments",
    "category": "Streak",
    "shown": [
-    "Double kill for {0}!",
-    "{0} takes two!",
-    "Two for one. {0} is on it.",
-    "{0} doubles up. Get fucked, everybody.",
-    "Two down. {0} is cooking.",
-    "{0} took two and did not blink.",
-    "Double. {0} is not sharing.",
-    "Two at once. Absolutely cooked.",
-    "{0} is being efficient about this."
+    "double kill for {0}. efficient.",
+    "{0} took two. didn't even blink.",
+    "two for one. {0}'s on a roll.",
+    "{0} doubles up. that's greedy, and I love it.",
+    "two down. {0}'s cooking.",
+    "{0} just got two in one breath.",
+    "double. {0}'s not sharing today.",
+    "two at once. that's just showing off."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Double kill!",
+     "text": "Double kill.",
      "clipKey": "DoubleKill_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Two!",
+     "text": "Two, just like that.",
      "clipKey": "DoubleKill_v01",
      "hasClip": true
     },
@@ -689,30 +637,30 @@
     },
     {
      "index": 3,
-     "text": "Doubled up. Get fucked, everybody.",
+     "text": "Didn't even blink.",
      "clipKey": "DoubleKill_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Two down, and cooking.",
+     "text": "That's greedy, honestly.",
      "clipKey": "DoubleKill_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Took two and didn't blink.",
+     "text": "He's cooking.",
      "clipKey": "DoubleKill_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "Not sharing.",
+     "text": "Not sharing today.",
      "clipKey": "DoubleKill_v06",
      "hasClip": true
     }
    ],
-   "shownCount": 9,
+   "shownCount": 8,
    "spokenCount": 7,
    "bakedCount": 7
   },
@@ -724,28 +672,27 @@
    "minChattiness": "BigMoments",
    "category": "Streak",
    "shown": [
-    "{2} in a row! {0} is not messing about.",
-    "{0} has killed {2} of you. Consider grouping up.",
-    "MULTI KILL. {0} owns this round.",
-    "{2} STRAIGHT. #REKT, all of you.",
-    "{0} is farming and you are the crop.",
-    "{0} is on a rampage!",
-    "Somebody stop {0}.",
-    "{0} is cooking and nobody has an extinguisher.",
-    "MULTI KILL. Get fucked, everybody.",
-    "{0} is not having a good game. {0} is having a great game, at your expense.",
-    "This is a massacre and {0} is the reason."
+    "{2} in a row. {0}'s not messing around.",
+    "{0}'s killed {2} of you. maybe group up.",
+    "multi kill. {0} owns this round.",
+    "{0}'s farming and you are, in fact, the crop.",
+    "{0}'s on a rampage. somebody stop them.",
+    "{0}'s having a great game, at everyone else's expense.",
+    "this is a massacre and {0}'s the reason.",
+    "{0}'s just running through people at this point.",
+    "{2} kills. the round's basically over.",
+    "somebody, anybody, deal with {0}."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "MULTI KILL!",
+     "text": "Multi kill.",
      "clipKey": "MultiKill_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "Rampage!",
+     "text": "He's on a rampage.",
      "clipKey": "MultiKill_v01",
      "hasClip": true
     },
@@ -757,36 +704,36 @@
     },
     {
      "index": 3,
-     "text": "Cooking, and nobody has an extinguisher.",
+     "text": "Farming, and you're the crop.",
      "clipKey": "MultiKill_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "MULTI KILL. Get fucked, everybody.",
+     "text": "This is a massacre.",
      "clipKey": "MultiKill_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Farming. And you are the crop.",
+     "text": "Not messing around.",
      "clipKey": "MultiKill_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "This is a massacre.",
+     "text": "Great game, at everyone's expense.",
      "clipKey": "MultiKill_v06",
      "hasClip": true
     },
     {
      "index": 7,
-     "text": "Not messing about!",
+     "text": "He's just running through people.",
      "clipKey": "MultiKill_v07",
      "hasClip": true
     }
    ],
-   "shownCount": 11,
+   "shownCount": 10,
    "spokenCount": 8,
    "bakedCount": 8
   },
@@ -799,16 +746,15 @@
    "category": "Round",
    "shown": [
     "{0} takes the round.",
-    "Round to {0}.",
-    "{0} again.",
-    "{0}. GG.",
-    "Round to {0}. Get fucked, everyone else.",
-    "{0} takes it.",
-    "That round belongs to {0}.",
-    "{0}. Again. Sorry.",
+    "round to {0}. again.",
+    "{0}. GG, that round.",
+    "that round belongs to {0}, apparently.",
     "{0} banks another one.",
-    "Round to {0}. Nothing to discuss.",
-    "{0} is up."
+    "{0}'s up. nothing else to say really.",
+    "round goes to {0}, no surprises there.",
+    "{0} takes it. moving on.",
+    "the round settles on {0}, as expected.",
+    "{0} keeps winning rounds. we've noticed."
    ],
    "spoken": [
     {
@@ -825,36 +771,36 @@
     },
     {
      "index": 2,
-     "text": "Again.",
+     "text": "Again. Sure.",
      "clipKey": "RoundWin_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "GG.",
+     "text": "GG, that round.",
      "clipKey": "RoundWin_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Round over. Get fucked, everyone else.",
+     "text": "Banked, another one.",
      "clipKey": "RoundWin_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Banked.",
+     "text": "Round goes to him.",
      "clipKey": "RoundWin_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "Nothing to discuss.",
+     "text": "He's up.",
      "clipKey": "RoundWin_v06",
      "hasClip": true
     }
    ],
-   "shownCount": 11,
+   "shownCount": 10,
    "spokenCount": 7,
    "bakedCount": 7
   },
@@ -866,69 +812,68 @@
    "minChattiness": "BigMoments",
    "category": "Match",
    "shown": [
-    "{0} takes the whole thing!",
-    "That's the match. {0} wins it.",
-    "It's over. {0} stands alone.",
-    "GG. {0} wins.",
-    "{0} ran the table. Everyone else, get fucked.",
-    "{0} takes the match and the moral high ground.",
-    "That is the match. {0} was simply better.",
-    "{0} wins. Everybody else was cooked.",
-    "It is done. {0} is the last one standing.",
-    "{0} closes it out. Get fucked, respectfully.",
-    "{0} wins. GG, and it was not easy."
+    "{0} takes the whole thing.",
+    "that's the match. {0} wins it.",
+    "it's over. {0}'s the last one standing.",
+    "GG. {0} wins, no arguments.",
+    "{0} ran the table, honestly.",
+    "that's the match. {0} was just better.",
+    "{0} wins. everyone else, better luck next time.",
+    "it's done. {0}'s what's left.",
+    "{0} closes it out. respect.",
+    "{0} wins. wasn't even close, kind of."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "That's the whole thing!",
+     "text": "That's the whole thing.",
      "clipKey": "MatchWin_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "That's the match!",
+     "text": "That's the match.",
      "clipKey": "MatchWin_v01",
      "hasClip": true
     },
     {
      "index": 2,
-     "text": "It's over. Last one standing.",
+     "text": "Last one standing.",
      "clipKey": "MatchWin_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "GG!",
+     "text": "GG.",
      "clipKey": "MatchWin_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Ran the table. Everyone else, get fucked.",
+     "text": "Ran the table.",
      "clipKey": "MatchWin_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Took the match and the moral high ground.",
+     "text": "Just better, honestly.",
      "clipKey": "MatchWin_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "Simply better.",
+     "text": "Better luck next time.",
      "clipKey": "MatchWin_v06",
      "hasClip": true
     },
     {
      "index": 7,
-     "text": "Everybody else was cooked.",
+     "text": "Wins it. Respect.",
      "clipKey": "MatchWin_v07",
      "hasClip": true
     }
    ],
-   "shownCount": 11,
+   "shownCount": 10,
    "spokenCount": 8,
    "bakedCount": 8
   },
@@ -940,16 +885,15 @@
    "minChattiness": "Normal",
    "category": "Round",
    "shown": [
-    "{0} claws one back.",
-    "{0} is not finished yet.",
-    "Still breathing. {0} takes one.",
-    "{0} is not dead yet. Unlucky.",
-    "Reverse sweep energy from {0}.",
-    "{0} is back from the dead.",
-    "{0} refuses to be a story about losing.",
-    "Do not count {0} out.",
-    "{0} was cooked. {0} is now un-cooked.",
-    "{0} is writing a comeback in real time."
+    "{0} claws one back. didn't see that coming.",
+    "{0}'s not finished yet, apparently.",
+    "still breathing. {0} takes one.",
+    "{0}'s not dead yet. unlucky for everyone else.",
+    "reverse sweep energy from {0}, maybe.",
+    "{0}'s back. weird, but okay.",
+    "do not count {0} out, it seems.",
+    "{0} was cooked. {0} is now, checks notes, not cooked.",
+    "{0}'s writing a comeback, live, right now."
    ],
    "spoken": [
     {
@@ -978,32 +922,26 @@
     },
     {
      "index": 4,
-     "text": "Reverse sweep energy.",
+     "text": "He's back. Weird.",
      "clipKey": "Comeback_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Back from the dead.",
+     "text": "Do not count him out.",
      "clipKey": "Comeback_v05",
      "hasClip": true
     },
     {
      "index": 6,
-     "text": "Do not count them out.",
+     "text": "Not cooked anymore, somehow.",
      "clipKey": "Comeback_v06",
-     "hasClip": true
-    },
-    {
-     "index": 7,
-     "text": "Was cooked. No longer cooked.",
-     "clipKey": "Comeback_v07",
      "hasClip": true
     }
    ],
-   "shownCount": 10,
-   "spokenCount": 8,
-   "bakedCount": 8
+   "shownCount": 9,
+   "spokenCount": 7,
+   "bakedCount": 7
   },
   {
    "name": "Shutout",
@@ -1013,25 +951,26 @@
    "minChattiness": "Normal",
    "category": "Round",
    "shown": [
-    "{1} has not won a single round. This is difficult to watch.",
-    "A clean sweep for {0}. {1} never got going.",
-    "{1}: zero. {0}: everything. #REKT.",
-    "{0} has not let {1} have one. Brutal.",
-    "{1} has zero. This is a documentary now.",
-    "{0} is not letting {1} have anything at all.",
-    "{1} has not won a round and it is starting to feel personal.",
-    "Nothing for {1}. Nothing at all."
+    "{1} has not won a single round. rough watch.",
+    "clean sweep for {0}. {1} never got going.",
+    "{1}: zero. {0}: everything.",
+    "{0}'s not letting {1} have anything. brutal.",
+    "{1} has zero rounds. that's a documentary now.",
+    "nothing for {1}. genuinely nothing.",
+    "{1} hasn't moved this game an inch.",
+    "this is starting to feel personal, for {1}.",
+    "{0}'s just not letting {1} breathe."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Not a single round. This is difficult to watch.",
+     "text": "Not a single round.",
      "clipKey": "Shutout_v00",
      "hasClip": true
     },
     {
      "index": 1,
-     "text": "A clean sweep.",
+     "text": "Clean sweep.",
      "clipKey": "Shutout_v01",
      "hasClip": true
     },
@@ -1043,7 +982,7 @@
     },
     {
      "index": 3,
-     "text": "Not one. Brutal.",
+     "text": "Brutal, honestly.",
      "clipKey": "Shutout_v03",
      "hasClip": true
     },
@@ -1055,12 +994,12 @@
     },
     {
      "index": 5,
-     "text": "It's starting to feel personal.",
+     "text": "Starting to feel personal.",
      "clipKey": "Shutout_v05",
      "hasClip": true
     }
    ],
-   "shownCount": 8,
+   "shownCount": 9,
    "spokenCount": 6,
    "bakedCount": 6
   },
@@ -1072,16 +1011,16 @@
    "minChattiness": "Normal",
    "category": "Colour",
    "shown": [
-    "{0} survives on nothing.",
-    "{0} is held together by optimism at this point.",
-    "One more hit and that was over for {0}.",
-    "{0} lives on one pixel of health.",
-    "{0} should be dead. {0} is not. Rude.",
-    "{0} is running on fumes and spite.",
+    "{0} survives on nothing. how.",
+    "{0}'s held together by optimism at this point.",
+    "one more hit and that's it for {0}.",
+    "{0}'s on one pixel of health. one.",
+    "{0} should be dead. {0} is not. rude, almost.",
+    "{0}'s running on fumes at this point.",
     "{0} has one hit point and a dream.",
-    "{0} is held together with tape.",
-    "That was very nearly the end of {0}.",
-    "{0} is fine. {0} is absolutely not fine."
+    "that was very nearly it for {0}.",
+    "{0}'s fine. {0} is extremely not fine.",
+    "barely still standing, {0}. barely."
    ],
    "spoken": [
     {
@@ -1098,25 +1037,25 @@
     },
     {
      "index": 2,
-     "text": "One more hit and that was over.",
+     "text": "One more hit and that's it.",
      "clipKey": "CloseCall_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Living on one pixel.",
+     "text": "One pixel of health.",
      "clipKey": "CloseCall_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "Should be dead. Isn't. Rude.",
+     "text": "Should be dead. Isn't.",
      "clipKey": "CloseCall_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "Running on fumes and spite.",
+     "text": "Running on fumes.",
      "clipKey": "CloseCall_v05",
      "hasClip": true
     },
@@ -1128,7 +1067,7 @@
     },
     {
      "index": 7,
-     "text": "Held together with tape.",
+     "text": "Barely still standing.",
      "clipKey": "CloseCall_v07",
      "hasClip": true
     }
@@ -1145,19 +1084,20 @@
    "minChattiness": "Commentary",
    "category": "Colour",
    "shown": [
-    "We are {2} rounds deep and nobody will end this.",
-    "Round {2}. Somebody please win.",
-    "{2} rounds. At this point it is a lifestyle.",
-    "Round {2}. Somebody get fucked already.",
-    "{2} rounds. This is a hostage situation.",
-    "Nobody is going to win this, are they.",
-    "We are all trapped here now.",
-    "This match has outlived several of my expectations."
+    "we're {2} rounds deep and nobody will end this.",
+    "round {2}. somebody, please, win.",
+    "{2} rounds. this is basically a lifestyle now.",
+    "nobody's winning this, are they.",
+    "we are all trapped here now, honestly.",
+    "this match has outlived my expectations, and my patience.",
+    "{2} rounds in. impressive, in a concerning way.",
+    "round {2}. I have grown old watching this.",
+    "still going. {2} rounds and counting."
    ],
    "spoken": [
     {
      "index": 0,
-     "text": "Nobody is going to end this.",
+     "text": "Nobody's ending this.",
      "clipKey": "LongMatch_v00",
      "hasClip": true
     },
@@ -1169,32 +1109,279 @@
     },
     {
      "index": 2,
-     "text": "At this point it is a lifestyle.",
+     "text": "This is a lifestyle now.",
      "clipKey": "LongMatch_v02",
      "hasClip": true
     },
     {
      "index": 3,
-     "text": "Somebody get fucked already.",
+     "text": "We are all trapped here.",
      "clipKey": "LongMatch_v03",
      "hasClip": true
     },
     {
      "index": 4,
-     "text": "This is a hostage situation.",
+     "text": "Still going, apparently.",
      "clipKey": "LongMatch_v04",
      "hasClip": true
     },
     {
      "index": 5,
-     "text": "We are all trapped here now.",
+     "text": "This is taking a while.",
      "clipKey": "LongMatch_v05",
      "hasClip": true
     }
    ],
-   "shownCount": 8,
+   "shownCount": 9,
    "spokenCount": 6,
    "bakedCount": 6
+  },
+  {
+   "name": "Bounce",
+   "trigger": "Not wired to a trigger yet. Would fire when the boundary throws a piece back toward the centre.",
+   "priority": 20,
+   "intensity": 0.40000000000000002,
+   "minChattiness": "Normal",
+   "category": "Colour",
+   "shown": [
+    "the board keeps {0}. not today.",
+    "not yet, {0}. sit back down.",
+    "{0} tried to leave. the board said no.",
+    "{0} almost left. almost.",
+    "nice try, {0}. back you go."
+   ],
+   "spoken": [
+    {
+     "index": 0,
+     "text": "Not yet.",
+     "clipKey": "Bounce_v00",
+     "hasClip": false
+    },
+    {
+     "index": 1,
+     "text": "Back to the table.",
+     "clipKey": "Bounce_v01",
+     "hasClip": false
+    },
+    {
+     "index": 2,
+     "text": "Nice try, though.",
+     "clipKey": "Bounce_v02",
+     "hasClip": false
+    },
+    {
+     "index": 3,
+     "text": "Sit back down.",
+     "clipKey": "Bounce_v03",
+     "hasClip": false
+    }
+   ],
+   "shownCount": 5,
+   "spokenCount": 4,
+   "bakedCount": 0
+  },
+  {
+   "name": "SpliceTaken",
+   "trigger": "Somebody paid a recipe and fused two edits into one. At most once a round, and the loudest thing short of a match ending - a splice that the announcer skipped because a kill was slightly more urgent would undo the whole point of it.",
+   "priority": 95,
+   "intensity": 1,
+   "minChattiness": "BigMoments",
+   "category": "Skill",
+   "shown": [
+    "two edits, fused. haven't seen this one before.",
+    "that combination's new. we're all finding out together.",
+    "spliced. no idea what that does yet.",
+    "{0} just made a card nobody's tried. bold."
+   ],
+   "spoken": [
+    {
+     "index": 0,
+     "text": "Spliced.",
+     "clipKey": "SpliceTaken_v00",
+     "hasClip": false
+    },
+    {
+     "index": 1,
+     "text": "That's a new one.",
+     "clipKey": "SpliceTaken_v01",
+     "hasClip": false
+    },
+    {
+     "index": 2,
+     "text": "No idea what that does yet.",
+     "clipKey": "SpliceTaken_v02",
+     "hasClip": false
+    },
+    {
+     "index": 3,
+     "text": "Never seen that combo.",
+     "clipKey": "SpliceTaken_v03",
+     "hasClip": false
+    }
+   ],
+   "shownCount": 4,
+   "spokenCount": 4,
+   "bakedCount": 0
+  },
+  {
+   "name": "CardPick",
+   "trigger": "Not wired to a trigger yet. Would fire when a player takes a card - every round, for every player, so it would want to be as quiet by default as Kill is.",
+   "priority": 15,
+   "intensity": 0.29999999999999999,
+   "minChattiness": "Commentary",
+   "category": "Colour",
+   "shown": [
+    "an edit is chosen.",
+    "{0} splices something new in.",
+    "we'll find out what that does in a second.",
+    "take the splice. why would you not take the splice."
+   ],
+   "spoken": [
+    {
+     "index": 0,
+     "text": "Edit taken.",
+     "clipKey": "CardPick_v00",
+     "hasClip": false
+    },
+    {
+     "index": 1,
+     "text": "New card, apparently.",
+     "clipKey": "CardPick_v01",
+     "hasClip": false
+    },
+    {
+     "index": 2,
+     "text": "We'll see what that does.",
+     "clipKey": "CardPick_v02",
+     "hasClip": false
+    },
+    {
+     "index": 3,
+     "text": "Take the splice.",
+     "clipKey": "CardPick_v03",
+     "hasClip": false
+    }
+   ],
+   "shownCount": 4,
+   "spokenCount": 4,
+   "bakedCount": 0
+  },
+  {
+   "name": "MutationArrives",
+   "trigger": "The board rolled an edit for the round about to be played, at the card pick. At most once a round, and it is the last thing said before a round that will be played under it - so it sits just under a splice and above everything ordinary. {3} is the mutation's name.",
+   "priority": 90,
+   "intensity": 1,
+   "minChattiness": "BigMoments",
+   "category": "Round",
+   "shown": [
+    "next round runs under {3}. everyone, no exceptions.",
+    "{3}. that's the game editing itself now, not you.",
+    "the board's picked {3} for next round. plan accordingly.",
+    "{3}, starting next round. wasn't aimed at anyone, apparently.",
+    "{3} round. cool cool cool."
+   ],
+   "spoken": [
+    {
+     "index": 0,
+     "text": "New rules next round.",
+     "clipKey": "MutationArrives_v00",
+     "hasClip": false
+    },
+    {
+     "index": 1,
+     "text": "This one's for everybody.",
+     "clipKey": "MutationArrives_v01",
+     "hasClip": false
+    },
+    {
+     "index": 2,
+     "text": "The board's been edited.",
+     "clipKey": "MutationArrives_v02",
+     "hasClip": false
+    },
+    {
+     "index": 3,
+     "text": "Patch notes, basically.",
+     "clipKey": "MutationArrives_v03",
+     "hasClip": false
+    }
+   ],
+   "shownCount": 5,
+   "spokenCount": 4,
+   "bakedCount": 0
+  },
+  {
+   "name": "MutationEnds",
+   "trigger": "A mutation's last round has been played, announced at the same pick tick as whatever replaced it - so it is deliberately quiet, and deliberately loses that race. {3} is the mutation's name.",
+   "priority": 35,
+   "intensity": 0.5,
+   "minChattiness": "Normal",
+   "category": "Round",
+   "shown": [
+    "{3} is over. back to normal, I guess.",
+    "that edit's rolled back. {3}, done.",
+    "{3} has run its course. nothing learned, really.",
+    "{3}'s finished. things go back to how they were."
+   ],
+   "spoken": [
+    {
+     "index": 0,
+     "text": "That edit's rolled back.",
+     "clipKey": "MutationEnds_v00",
+     "hasClip": false
+    },
+    {
+     "index": 1,
+     "text": "Back to normal.",
+     "clipKey": "MutationEnds_v01",
+     "hasClip": false
+    },
+    {
+     "index": 2,
+     "text": "Finished.",
+     "clipKey": "MutationEnds_v02",
+     "hasClip": false
+    }
+   ],
+   "shownCount": 4,
+   "spokenCount": 3,
+   "bakedCount": 0
+  },
+  {
+   "name": "RoundReset",
+   "trigger": "Not wired to a trigger yet. Would fire when the next round's stage finishes regrowing, the same boundary RoundWin already fires on.",
+   "priority": 48,
+   "intensity": 0.5,
+   "minChattiness": "Normal",
+   "category": "Round",
+   "shown": [
+    "new round. same game.",
+    "the board resets. try the new one.",
+    "here we go again."
+   ],
+   "spoken": [
+    {
+     "index": 0,
+     "text": "New round.",
+     "clipKey": "RoundReset_v00",
+     "hasClip": false
+    },
+    {
+     "index": 1,
+     "text": "Try the new one.",
+     "clipKey": "RoundReset_v01",
+     "hasClip": false
+    },
+    {
+     "index": 2,
+     "text": "Here we go again.",
+     "clipKey": "RoundReset_v02",
+     "hasClip": false
+    }
+   ],
+   "shownCount": 3,
+   "spokenCount": 3,
+   "bakedCount": 0
   }
  ]
 }

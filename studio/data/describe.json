@@ -96,7 +96,7 @@
      "lines": [
       "bullets per shot  +2",
       "spread  +220%",
-      "damage  -45%"
+      "damage  -55%"
      ],
      "fontSize": 21
     },
@@ -105,7 +105,7 @@
      "lines": [
       "bullets per shot  +2  each   →   +4 with 2",
       "spread  +220%  each   →   +924% with 2",
-      "damage  -45%  each   →   -69.8% with 2"
+      "damage  -55%  each   →   -79.8% with 2"
      ],
      "fontSize": 21
     },
@@ -114,7 +114,7 @@
      "lines": [
       "bullets per shot  +2  each   →   +6 with 3",
       "spread  +220%  each   →   +3177% with 3",
-      "damage  -45%  each   →   -83.4% with 3"
+      "damage  -55%  each   →   -90.9% with 3"
      ],
      "fontSize": 21
     },
@@ -123,7 +123,7 @@
      "lines": [
       "bullets per shot  +2  each   →   +8 with 4",
       "spread  +220%  each   →   +10386% with 4",
-      "damage  -45%  each   →   -90.8% with 4"
+      "damage  -55%  each   →   -95.9% with 4"
      ],
      "fontSize": 21
     },
@@ -132,7 +132,7 @@
      "lines": [
       "bullets per shot  +2  each   →   +10 with 5",
       "spread  +220%  each   →   +33454% with 5",
-      "damage  -45%  each   →   -95% with 5"
+      "damage  -55%  each   →   -98.2% with 5"
      ],
      "fontSize": 21
     },
@@ -141,7 +141,7 @@
      "lines": [
       "bullets per shot  +2  each   →   +12 with 6",
       "spread  +220%  each   →   +107274% with 6",
-      "damage  -45%  each   →   -97.2% with 6"
+      "damage  -55%  each   →   -99.2% with 6"
      ],
      "fontSize": 21
     },
@@ -150,7 +150,7 @@
      "lines": [
       "bullets per shot  +2  each   →   +14 with 7",
       "spread  +220%  each   →   +343497% with 7",
-      "damage  -45%  each   →   -98.5% with 7"
+      "damage  -55%  each   →   -99.6% with 7"
      ],
      "fontSize": 21
     },
@@ -159,7 +159,7 @@
      "lines": [
       "bullets per shot  +2  each   →   +16 with 8",
       "spread  +220%  each   →   +1099412% with 8",
-      "damage  -45%  each   →   -99.2% with 8"
+      "damage  -55%  each   →   -99.8% with 8"
      ],
      "fontSize": 21
     }
@@ -242,7 +242,7 @@
     {
      "held": 1,
      "lines": [
-      "damage  +80%",
+      "damage  +25%",
       "recoil  +160%",
       "attack cooldown  +30%"
      ],
@@ -251,7 +251,7 @@
     {
      "held": 2,
      "lines": [
-      "damage  +80%  each   →   +224% with 2",
+      "damage  +25%  each   →   +56.3% with 2",
       "recoil  +160%  each   →   +576% with 2",
       "attack cooldown  +30%  each   →   +69% with 2"
      ],
@@ -260,7 +260,7 @@
     {
      "held": 3,
      "lines": [
-      "damage  +80%  each   →   +483% with 3",
+      "damage  +25%  each   →   +95.3% with 3",
       "recoil  +160%  each   →   +1658% with 3",
       "attack cooldown  +30%  each   →   +120% with 3"
      ],
@@ -269,7 +269,7 @@
     {
      "held": 4,
      "lines": [
-      "damage  +80%  each   →   +950% with 4",
+      "damage  +25%  each   →   +144% with 4",
       "recoil  +160%  each   →   +4470% with 4",
       "attack cooldown  +30%  each   →   +186% with 4"
      ],
@@ -278,7 +278,7 @@
     {
      "held": 5,
      "lines": [
-      "damage  +80%  each   →   +1790% with 5",
+      "damage  +25%  each   →   +205% with 5",
       "recoil  +160%  each   →   +11781% with 5",
       "attack cooldown  +30%  each   →   +271% with 5"
      ],
@@ -287,7 +287,7 @@
     {
      "held": 6,
      "lines": [
-      "damage  +80%  each   →   +3301% with 6",
+      "damage  +25%  each   →   +281% with 6",
       "recoil  +160%  each   →   +30792% with 6",
       "attack cooldown  +30%  each   →   +383% with 6"
      ],
@@ -296,7 +296,7 @@
     {
      "held": 7,
      "lines": [
-      "damage  +80%  each   →   +6022% with 7",
+      "damage  +25%  each   →   +377% with 7",
       "recoil  +160%  each   →   +80218% with 7",
       "attack cooldown  +30%  each   →   +527% with 7"
      ],
@@ -305,7 +305,7 @@
     {
      "held": 8,
      "lines": [
-      "damage  +80%  each   →   +10920% with 8",
+      "damage  +25%  each   →   +496% with 8",
       "recoil  +160%  each   →   +208727% with 8",
       "attack cooldown  +30%  each   →   +716% with 8"
      ],
@@ -320,64 +320,72 @@
     {
      "held": 1,
      "lines": [
-      "gravity scale  -28%",
-      "air control  +40%"
+      "gravity scale  -40%",
+      "air control  +55%",
+      "wall cling time  +50%"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "gravity scale  -28%  each   →   -48.2% with 2",
-      "air control  +40%  each   →   +96% with 2"
+      "gravity scale  -40%  each   →   -64% with 2",
+      "air control  +55%  each   →   +140% with 2",
+      "wall cling time  +50%  each   →   +125% with 2"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "gravity scale  -28%  each   →   -62.7% with 3",
-      "air control  +40%  each   →   +174% with 3"
+      "gravity scale  -40%  each   →   -78.4% with 3",
+      "air control  +55%  each   →   +272% with 3",
+      "wall cling time  +50%  each   →   +238% with 3"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "gravity scale  -28%  each   →   -73.1% with 4",
-      "air control  +40%  each   →   +284% with 4"
+      "gravity scale  -40%  each   →   -87% with 4",
+      "air control  +55%  each   →   +477% with 4",
+      "wall cling time  +50%  each   →   +406% with 4"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "gravity scale  -28%  each   →   -80.7% with 5",
-      "air control  +40%  each   →   +438% with 5"
+      "gravity scale  -40%  each   →   -92.2% with 5",
+      "air control  +55%  each   →   +795% with 5",
+      "wall cling time  +50%  each   →   +659% with 5"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "gravity scale  -28%  each   →   -86.1% with 6",
-      "air control  +40%  each   →   +653% with 6"
+      "gravity scale  -40%  each   →   -95.3% with 6",
+      "air control  +55%  each   →   +1287% with 6",
+      "wall cling time  +50%  each   →   +1039% with 6"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "gravity scale  -28%  each   →   -90% with 7",
-      "air control  +40%  each   →   +954% with 7"
+      "gravity scale  -40%  each   →   -97.2% with 7",
+      "air control  +55%  each   →   +2049% with 7",
+      "wall cling time  +50%  each   →   +1609% with 7"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "gravity scale  -28%  each   →   -92.8% with 8",
-      "air control  +40%  each   →   +1376% with 8"
+      "gravity scale  -40%  each   →   -98.3% with 8",
+      "air control  +55%  each   →   +3232% with 8",
+      "wall cling time  +50%  each   →   +2463% with 8"
      ],
      "fontSize": 21
     }
@@ -390,56 +398,72 @@
     {
      "held": 1,
      "lines": [
-      "extra jumps  +1"
+      "extra jumps  +1",
+      "air control  +25%",
+      "jump speed  +10%"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "extra jumps  +1  each   →   +2 with 2"
+      "extra jumps  +1  each   →   +2 with 2",
+      "air control  +25%  each   →   +56.3% with 2",
+      "jump speed  +10%  each   →   +21% with 2"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "extra jumps  +1  each   →   +3 with 3"
+      "extra jumps  +1  each   →   +3 with 3",
+      "air control  +25%  each   →   +95.3% with 3",
+      "jump speed  +10%  each   →   +33.1% with 3"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "extra jumps  +1  each   →   +4 with 4"
+      "extra jumps  +1  each   →   +4 with 4",
+      "air control  +25%  each   →   +144% with 4",
+      "jump speed  +10%  each   →   +46.4% with 4"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "extra jumps  +1  each   →   +5 with 5"
+      "extra jumps  +1  each   →   +5 with 5",
+      "air control  +25%  each   →   +205% with 5",
+      "jump speed  +10%  each   →   +61.1% with 5"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "extra jumps  +1  each   →   +6 with 6"
+      "extra jumps  +1  each   →   +6 with 6",
+      "air control  +25%  each   →   +281% with 6",
+      "jump speed  +10%  each   →   +77.2% with 6"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "extra jumps  +1  each   →   +7 with 7"
+      "extra jumps  +1  each   →   +7 with 7",
+      "air control  +25%  each   →   +377% with 7",
+      "jump speed  +10%  each   →   +94.9% with 7"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "extra jumps  +1  each   →   +8 with 8"
+      "extra jumps  +1  each   →   +8 with 8",
+      "air control  +25%  each   →   +496% with 8",
+      "jump speed  +10%  each   →   +114% with 8"
      ],
      "fontSize": 21
     }
@@ -453,7 +477,8 @@
      "held": 1,
      "lines": [
       "blink charges  +1",
-      "blink cooldown  -35%"
+      "blink cooldown  -50%",
+      "blink speed  +20%"
      ],
      "fontSize": 21
     },
@@ -461,7 +486,8 @@
      "held": 2,
      "lines": [
       "blink charges  +1  each   →   +2 with 2",
-      "blink cooldown  -35%  each   →   -57.8% with 2"
+      "blink cooldown  -50%  each   →   -75% with 2",
+      "blink speed  +20%  each   →   +44% with 2"
      ],
      "fontSize": 21
     },
@@ -469,7 +495,8 @@
      "held": 3,
      "lines": [
       "blink charges  +1  each   →   +3 with 3",
-      "blink cooldown  -35%  each   →   -72.5% with 3"
+      "blink cooldown  -50%  each   →   -87.5% with 3",
+      "blink speed  +20%  each   →   +72.8% with 3"
      ],
      "fontSize": 21
     },
@@ -477,7 +504,8 @@
      "held": 4,
      "lines": [
       "blink charges  +1  each   →   +4 with 4",
-      "blink cooldown  -35%  each   →   -82.1% with 4"
+      "blink cooldown  -50%  each   →   -93.8% with 4",
+      "blink speed  +20%  each   →   +107% with 4"
      ],
      "fontSize": 21
     },
@@ -485,7 +513,8 @@
      "held": 5,
      "lines": [
       "blink charges  +1  each   →   +5 with 5",
-      "blink cooldown  -35%  each   →   -88.4% with 5"
+      "blink cooldown  -50%  each   →   -96.9% with 5",
+      "blink speed  +20%  each   →   +149% with 5"
      ],
      "fontSize": 21
     },
@@ -493,7 +522,8 @@
      "held": 6,
      "lines": [
       "blink charges  +1  each   →   +6 with 6",
-      "blink cooldown  -35%  each   →   -92.5% with 6"
+      "blink cooldown  -50%  each   →   -98.4% with 6",
+      "blink speed  +20%  each   →   +199% with 6"
      ],
      "fontSize": 21
     },
@@ -501,7 +531,8 @@
      "held": 7,
      "lines": [
       "blink charges  +1  each   →   +7 with 7",
-      "blink cooldown  -35%  each   →   -95.1% with 7"
+      "blink cooldown  -50%  each   →   -99.2% with 7",
+      "blink speed  +20%  each   →   +258% with 7"
      ],
      "fontSize": 21
     },
@@ -509,7 +540,8 @@
      "held": 8,
      "lines": [
       "blink charges  +1  each   →   +8 with 8",
-      "blink cooldown  -35%  each   →   -96.8% with 8"
+      "blink cooldown  -50%  each   →   -99.6% with 8",
+      "blink speed  +20%  each   →   +330% with 8"
      ],
      "fontSize": 21
     }
@@ -670,64 +702,64 @@
     {
      "held": 1,
      "lines": [
-      "damage  +70%",
-      "damage taken scale  +75%"
+      "damage  +24%",
+      "damage taken scale  +35%"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "damage  +70%  each   →   +189% with 2",
-      "damage taken scale  +75%  each   →   +206% with 2"
+      "damage  +24%  each   →   +53.8% with 2",
+      "damage taken scale  +35%  each   →   +82.2% with 2"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "damage  +70%  each   →   +391% with 3",
-      "damage taken scale  +75%  each   →   +436% with 3"
+      "damage  +24%  each   →   +90.7% with 3",
+      "damage taken scale  +35%  each   →   +146% with 3"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "damage  +70%  each   →   +735% with 4",
-      "damage taken scale  +75%  each   →   +838% with 4"
+      "damage  +24%  each   →   +136% with 4",
+      "damage taken scale  +35%  each   →   +232% with 4"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "damage  +70%  each   →   +1320% with 5",
-      "damage taken scale  +75%  each   →   +1541% with 5"
+      "damage  +24%  each   →   +193% with 5",
+      "damage taken scale  +35%  each   →   +348% with 5"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "damage  +70%  each   →   +2314% with 6",
-      "damage taken scale  +75%  each   →   +2772% with 6"
+      "damage  +24%  each   →   +264% with 6",
+      "damage taken scale  +35%  each   →   +505% with 6"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "damage  +70%  each   →   +4003% with 7",
-      "damage taken scale  +75%  each   →   +4927% with 7"
+      "damage  +24%  each   →   +351% with 7",
+      "damage taken scale  +35%  each   →   +717% with 7"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "damage  +70%  each   →   +6876% with 8",
-      "damage taken scale  +75%  each   →   +8696% with 8"
+      "damage  +24%  each   →   +459% with 8",
+      "damage taken scale  +35%  each   →   +1003% with 8"
      ],
      "fontSize": 21
     }
@@ -743,7 +775,7 @@
       "bullet gravity scale  +0.85",
       "blast radius  +3",
       "bullet speed  -22%",
-      "attack cooldown  +40%"
+      "attack cooldown  +15%"
      ],
      "fontSize": 21
     },
@@ -753,7 +785,7 @@
       "bullet gravity scale  +0.85  each   →   +1.7 with 2",
       "blast radius  +3  each   →   +6 with 2",
       "bullet speed  -22%  each   →   -39.2% with 2",
-      "attack cooldown  +40%  each   →   +96% with 2"
+      "attack cooldown  +15%  each   →   +32.2% with 2"
      ],
      "fontSize": 21
     },
@@ -763,7 +795,7 @@
       "bullet gravity scale  +0.85  each   →   +2.55 with 3",
       "blast radius  +3  each   →   +9 with 3",
       "bullet speed  -22%  each   →   -52.5% with 3",
-      "attack cooldown  +40%  each   →   +174% with 3"
+      "attack cooldown  +15%  each   →   +52.1% with 3"
      ],
      "fontSize": 21
     },
@@ -773,7 +805,7 @@
       "bullet gravity scale  +0.85  each   →   +3.4 with 4",
       "blast radius  +3  each   →   +12 with 4",
       "bullet speed  -22%  each   →   -63% with 4",
-      "attack cooldown  +40%  each   →   +284% with 4"
+      "attack cooldown  +15%  each   →   +74.9% with 4"
      ],
      "fontSize": 21
     },
@@ -783,7 +815,7 @@
       "bullet gravity scale  +0.85  each   →   +4.25 with 5",
       "blast radius  +3  each   →   +15 with 5",
       "bullet speed  -22%  each   →   -71.1% with 5",
-      "attack cooldown  +40%  each   →   +438% with 5"
+      "attack cooldown  +15%  each   →   +101% with 5"
      ],
      "fontSize": 21
     },
@@ -793,7 +825,7 @@
       "bullet gravity scale  +0.85  each   →   +5.1 with 6",
       "blast radius  +3  each   →   +18 with 6",
       "bullet speed  -22%  each   →   -77.5% with 6",
-      "attack cooldown  +40%  each   →   +653% with 6"
+      "attack cooldown  +15%  each   →   +131% with 6"
      ],
      "fontSize": 21
     },
@@ -803,7 +835,7 @@
       "bullet gravity scale  +0.85  each   →   +5.95 with 7",
       "blast radius  +3  each   →   +21 with 7",
       "bullet speed  -22%  each   →   -82.4% with 7",
-      "attack cooldown  +40%  each   →   +954% with 7"
+      "attack cooldown  +15%  each   →   +166% with 7"
      ],
      "fontSize": 21
     },
@@ -813,7 +845,7 @@
       "bullet gravity scale  +0.85  each   →   +6.8 with 8",
       "blast radius  +3  each   →   +24 with 8",
       "bullet speed  -22%  each   →   -86.3% with 8",
-      "attack cooldown  +40%  each   →   +1376% with 8"
+      "attack cooldown  +15%  each   →   +206% with 8"
      ],
      "fontSize": 21
     }
@@ -828,7 +860,7 @@
      "lines": [
       "bullets per shot  +4",
       "magazine size  +5",
-      "damage  -70%",
+      "damage  -77%",
       "reload time  +25%"
      ],
      "fontSize": 21
@@ -838,7 +870,7 @@
      "lines": [
       "bullets per shot  +4  each   →   +8 with 2",
       "magazine size  +5  each   →   +10 with 2",
-      "damage  -70%  each   →   -91% with 2",
+      "damage  -77%  each   →   -94.7% with 2",
       "reload time  +25%  each   →   +56.3% with 2"
      ],
      "fontSize": 21
@@ -848,7 +880,7 @@
      "lines": [
       "bullets per shot  +4  each   →   +12 with 3",
       "magazine size  +5  each   →   +15 with 3",
-      "damage  -70%  each   →   -97.3% with 3",
+      "damage  -77%  each   →   -98.8% with 3",
       "reload time  +25%  each   →   +95.3% with 3"
      ],
      "fontSize": 21
@@ -858,7 +890,7 @@
      "lines": [
       "bullets per shot  +4  each   →   +16 with 4",
       "magazine size  +5  each   →   +20 with 4",
-      "damage  -70%  each   →   -99.2% with 4",
+      "damage  -77%  each   →   -99.7% with 4",
       "reload time  +25%  each   →   +144% with 4"
      ],
      "fontSize": 21
@@ -868,7 +900,7 @@
      "lines": [
       "bullets per shot  +4  each   →   +20 with 5",
       "magazine size  +5  each   →   +25 with 5",
-      "damage  -70%  each   →   -99.8% with 5",
+      "damage  -77%  each   →   -99.9% with 5",
       "reload time  +25%  each   →   +205% with 5"
      ],
      "fontSize": 21
@@ -878,7 +910,7 @@
      "lines": [
       "bullets per shot  +4  each   →   +24 with 6",
       "magazine size  +5  each   →   +30 with 6",
-      "damage  -70%  each   →   -99.9% with 6",
+      "damage  -77%  each   →   -100% with 6",
       "reload time  +25%  each   →   +281% with 6"
      ],
      "fontSize": 21
@@ -888,7 +920,7 @@
      "lines": [
       "bullets per shot  +4  each   →   +28 with 7",
       "magazine size  +5  each   →   +35 with 7",
-      "damage  -70%  each   →   -100% with 7",
+      "damage  -77%  each   →   -100% with 7",
       "reload time  +25%  each   →   +377% with 7"
      ],
      "fontSize": 21
@@ -898,7 +930,7 @@
      "lines": [
       "bullets per shot  +4  each   →   +32 with 8",
       "magazine size  +5  each   →   +40 with 8",
-      "damage  -70%  each   →   -100% with 8",
+      "damage  -77%  each   →   -100% with 8",
       "reload time  +25%  each   →   +496% with 8"
      ],
      "fontSize": 21
@@ -912,7 +944,7 @@
     {
      "held": 1,
      "lines": [
-      "damage  +100%",
+      "damage  +30%",
       "magazine size  -2",
       "reload time  +50%"
      ],
@@ -921,7 +953,7 @@
     {
      "held": 2,
      "lines": [
-      "damage  +100%  each   →   +300% with 2",
+      "damage  +30%  each   →   +69% with 2",
       "magazine size  -2  each   →   -4 with 2",
       "reload time  +50%  each   →   +125% with 2"
      ],
@@ -930,7 +962,7 @@
     {
      "held": 3,
      "lines": [
-      "damage  +100%  each   →   +700% with 3",
+      "damage  +30%  each   →   +120% with 3",
       "magazine size  -2  each   →   -6 with 3",
       "reload time  +50%  each   →   +238% with 3"
      ],
@@ -939,7 +971,7 @@
     {
      "held": 4,
      "lines": [
-      "damage  +100%  each   →   +1500% with 4",
+      "damage  +30%  each   →   +186% with 4",
       "magazine size  -2  each   →   -8 with 4",
       "reload time  +50%  each   →   +406% with 4"
      ],
@@ -948,7 +980,7 @@
     {
      "held": 5,
      "lines": [
-      "damage  +100%  each   →   +3100% with 5",
+      "damage  +30%  each   →   +271% with 5",
       "magazine size  -2  each   →   -10 with 5",
       "reload time  +50%  each   →   +659% with 5"
      ],
@@ -957,7 +989,7 @@
     {
      "held": 6,
      "lines": [
-      "damage  +100%  each   →   +6300% with 6",
+      "damage  +30%  each   →   +383% with 6",
       "magazine size  -2  each   →   -12 with 6",
       "reload time  +50%  each   →   +1039% with 6"
      ],
@@ -966,7 +998,7 @@
     {
      "held": 7,
      "lines": [
-      "damage  +100%  each   →   +12700% with 7",
+      "damage  +30%  each   →   +527% with 7",
       "magazine size  -2  each   →   -14 with 7",
       "reload time  +50%  each   →   +1609% with 7"
      ],
@@ -975,7 +1007,7 @@
     {
      "held": 8,
      "lines": [
-      "damage  +100%  each   →   +25500% with 8",
+      "damage  +30%  each   →   +716% with 8",
       "magazine size  -2  each   →   -16 with 8",
       "reload time  +50%  each   →   +2463% with 8"
      ],
@@ -991,7 +1023,7 @@
      "held": 1,
      "lines": [
       "bullet speed  +250%",
-      "attack cooldown  +50%"
+      "attack cooldown  +25%"
      ],
      "fontSize": 21
     },
@@ -999,7 +1031,7 @@
      "held": 2,
      "lines": [
       "bullet speed  +250%  each   →   +1125% with 2",
-      "attack cooldown  +50%  each   →   +125% with 2"
+      "attack cooldown  +25%  each   →   +56.3% with 2"
      ],
      "fontSize": 21
     },
@@ -1007,7 +1039,7 @@
      "held": 3,
      "lines": [
       "bullet speed  +250%  each   →   +4188% with 3",
-      "attack cooldown  +50%  each   →   +238% with 3"
+      "attack cooldown  +25%  each   →   +95.3% with 3"
      ],
      "fontSize": 21
     },
@@ -1015,7 +1047,7 @@
      "held": 4,
      "lines": [
       "bullet speed  +250%  each   →   +14906% with 4",
-      "attack cooldown  +50%  each   →   +406% with 4"
+      "attack cooldown  +25%  each   →   +144% with 4"
      ],
      "fontSize": 21
     },
@@ -1023,7 +1055,7 @@
      "held": 5,
      "lines": [
       "bullet speed  +250%  each   →   +52422% with 5",
-      "attack cooldown  +50%  each   →   +659% with 5"
+      "attack cooldown  +25%  each   →   +205% with 5"
      ],
      "fontSize": 21
     },
@@ -1031,7 +1063,7 @@
      "held": 6,
      "lines": [
       "bullet speed  +250%  each   →   +183727% with 6",
-      "attack cooldown  +50%  each   →   +1039% with 6"
+      "attack cooldown  +25%  each   →   +281% with 6"
      ],
      "fontSize": 21
     },
@@ -1039,7 +1071,7 @@
      "held": 7,
      "lines": [
       "bullet speed  +250%  each   →   +643293% with 7",
-      "attack cooldown  +50%  each   →   +1609% with 7"
+      "attack cooldown  +25%  each   →   +377% with 7"
      ],
      "fontSize": 21
     },
@@ -1047,7 +1079,7 @@
      "held": 8,
      "lines": [
       "bullet speed  +250%  each   →   +2251775% with 8",
-      "attack cooldown  +50%  each   →   +2463% with 8"
+      "attack cooldown  +25%  each   →   +496% with 8"
      ],
      "fontSize": 21
     }
@@ -1146,7 +1178,7 @@
     {
      "held": 1,
      "lines": [
-      "damage  +100%",
+      "damage  +30%",
       "attack cooldown  +100%",
       "reload time  +50%"
      ],
@@ -1155,7 +1187,7 @@
     {
      "held": 2,
      "lines": [
-      "damage  +100%  each   →   +300% with 2",
+      "damage  +30%  each   →   +69% with 2",
       "attack cooldown  +100%  each   →   +300% with 2",
       "reload time  +50%  each   →   +125% with 2"
      ],
@@ -1164,7 +1196,7 @@
     {
      "held": 3,
      "lines": [
-      "damage  +100%  each   →   +700% with 3",
+      "damage  +30%  each   →   +120% with 3",
       "attack cooldown  +100%  each   →   +700% with 3",
       "reload time  +50%  each   →   +238% with 3"
      ],
@@ -1173,7 +1205,7 @@
     {
      "held": 4,
      "lines": [
-      "damage  +100%  each   →   +1500% with 4",
+      "damage  +30%  each   →   +186% with 4",
       "attack cooldown  +100%  each   →   +1500% with 4",
       "reload time  +50%  each   →   +406% with 4"
      ],
@@ -1182,7 +1214,7 @@
     {
      "held": 5,
      "lines": [
-      "damage  +100%  each   →   +3100% with 5",
+      "damage  +30%  each   →   +271% with 5",
       "attack cooldown  +100%  each   →   +3100% with 5",
       "reload time  +50%  each   →   +659% with 5"
      ],
@@ -1191,7 +1223,7 @@
     {
      "held": 6,
      "lines": [
-      "damage  +100%  each   →   +6300% with 6",
+      "damage  +30%  each   →   +383% with 6",
       "attack cooldown  +100%  each   →   +6300% with 6",
       "reload time  +50%  each   →   +1039% with 6"
      ],
@@ -1200,7 +1232,7 @@
     {
      "held": 7,
      "lines": [
-      "damage  +100%  each   →   +12700% with 7",
+      "damage  +30%  each   →   +527% with 7",
       "attack cooldown  +100%  each   →   +12700% with 7",
       "reload time  +50%  each   →   +1609% with 7"
      ],
@@ -1209,7 +1241,7 @@
     {
      "held": 8,
      "lines": [
-      "damage  +100%  each   →   +25500% with 8",
+      "damage  +30%  each   →   +716% with 8",
       "attack cooldown  +100%  each   →   +25500% with 8",
       "reload time  +50%  each   →   +2463% with 8"
      ],
@@ -1504,88 +1536,88 @@
     {
      "held": 1,
      "lines": [
-      "damage  +110%",
+      "damage  +30%",
       "bullet speed  +50%",
       "spread  -90%",
-      "attack cooldown  +130%",
-      "magazine size  -60%"
+      "attack cooldown  +40%",
+      "magazine size  -33%"
      ],
      "fontSize": 16
     },
     {
      "held": 2,
      "lines": [
-      "damage  +110%  each   →   +341% with 2",
+      "damage  +30%  each   →   +69% with 2",
       "bullet speed  +50%  each   →   +125% with 2",
       "spread  -90%  each   →   -99% with 2",
-      "attack cooldown  +130%  each   →   +429% with 2",
-      "magazine size  -60%  each   →   -84% with 2"
+      "attack cooldown  +40%  each   →   +96% with 2",
+      "magazine size  -33%  each   →   -55.1% with 2"
      ],
      "fontSize": 16
     },
     {
      "held": 3,
      "lines": [
-      "damage  +110%  each   →   +826% with 3",
+      "damage  +30%  each   →   +120% with 3",
       "bullet speed  +50%  each   →   +238% with 3",
       "spread  -90%  each   →   -99.9% with 3",
-      "attack cooldown  +130%  each   →   +1117% with 3",
-      "magazine size  -60%  each   →   -93.6% with 3"
+      "attack cooldown  +40%  each   →   +174% with 3",
+      "magazine size  -33%  each   →   -69.9% with 3"
      ],
      "fontSize": 16
     },
     {
      "held": 4,
      "lines": [
-      "damage  +110%  each   →   +1845% with 4",
+      "damage  +30%  each   →   +186% with 4",
       "bullet speed  +50%  each   →   +406% with 4",
       "spread  -90%  each   →   -100% with 4",
-      "attack cooldown  +130%  each   →   +2698% with 4",
-      "magazine size  -60%  each   →   -97.4% with 4"
+      "attack cooldown  +40%  each   →   +284% with 4",
+      "magazine size  -33%  each   →   -79.8% with 4"
      ],
      "fontSize": 16
     },
     {
      "held": 5,
      "lines": [
-      "damage  +110%  each   →   +3984% with 5",
+      "damage  +30%  each   →   +271% with 5",
       "bullet speed  +50%  each   →   +659% with 5",
       "spread  -90%  each   →   -100% with 5",
-      "attack cooldown  +130%  each   →   +6336% with 5",
-      "magazine size  -60%  each   →   -99% with 5"
+      "attack cooldown  +40%  each   →   +438% with 5",
+      "magazine size  -33%  each   →   -86.5% with 5"
      ],
      "fontSize": 16
     },
     {
      "held": 6,
      "lines": [
-      "damage  +110%  each   →   +8477% with 6",
+      "damage  +30%  each   →   +383% with 6",
       "bullet speed  +50%  each   →   +1039% with 6",
       "spread  -90%  each   →   -100% with 6",
-      "attack cooldown  +130%  each   →   +14704% with 6",
-      "magazine size  -60%  each   →   -99.6% with 6"
+      "attack cooldown  +40%  each   →   +653% with 6",
+      "magazine size  -33%  each   →   -91% with 6"
      ],
      "fontSize": 16
     },
     {
      "held": 7,
      "lines": [
-      "damage  +110%  each   →   +17911% with 7",
+      "damage  +30%  each   →   +527% with 7",
       "bullet speed  +50%  each   →   +1609% with 7",
       "spread  -90%  each   →   -100% with 7",
-      "attack cooldown  +130%  each   →   +33948% with 7",
-      "magazine size  -60%  each   →   -99.8% with 7"
+      "attack cooldown  +40%  each   →   +954% with 7",
+      "magazine size  -33%  each   →   -93.9% with 7"
      ],
      "fontSize": 16
     },
     {
      "held": 8,
      "lines": [
-      "damage  +110%  each   →   +37723% with 8",
+      "damage  +30%  each   →   +716% with 8",
       "bullet speed  +50%  each   →   +2463% with 8",
       "spread  -90%  each   →   -100% with 8",
-      "attack cooldown  +130%  each   →   +78211% with 8",
-      "magazine size  -60%  each   →   -99.9% with 8"
+      "attack cooldown  +40%  each   →   +1376% with 8",
+      "magazine size  -33%  each   →   -95.9% with 8"
      ],
      "fontSize": 16
     }
@@ -1599,7 +1631,7 @@
      "held": 1,
      "lines": [
       "bullets per shot  +5",
-      "damage  -65%",
+      "damage  -77%",
       "spread  +160%",
       "bullet lifetime  -55%"
      ],
@@ -1609,7 +1641,7 @@
      "held": 2,
      "lines": [
       "bullets per shot  +5  each   →   +10 with 2",
-      "damage  -65%  each   →   -87.8% with 2",
+      "damage  -77%  each   →   -94.7% with 2",
       "spread  +160%  each   →   +576% with 2",
       "bullet lifetime  -55%  each   →   -79.8% with 2"
      ],
@@ -1619,7 +1651,7 @@
      "held": 3,
      "lines": [
       "bullets per shot  +5  each   →   +15 with 3",
-      "damage  -65%  each   →   -95.7% with 3",
+      "damage  -77%  each   →   -98.8% with 3",
       "spread  +160%  each   →   +1658% with 3",
       "bullet lifetime  -55%  each   →   -90.9% with 3"
      ],
@@ -1629,7 +1661,7 @@
      "held": 4,
      "lines": [
       "bullets per shot  +5  each   →   +20 with 4",
-      "damage  -65%  each   →   -98.5% with 4",
+      "damage  -77%  each   →   -99.7% with 4",
       "spread  +160%  each   →   +4470% with 4",
       "bullet lifetime  -55%  each   →   -95.9% with 4"
      ],
@@ -1639,7 +1671,7 @@
      "held": 5,
      "lines": [
       "bullets per shot  +5  each   →   +25 with 5",
-      "damage  -65%  each   →   -99.5% with 5",
+      "damage  -77%  each   →   -99.9% with 5",
       "spread  +160%  each   →   +11781% with 5",
       "bullet lifetime  -55%  each   →   -98.2% with 5"
      ],
@@ -1649,7 +1681,7 @@
      "held": 6,
      "lines": [
       "bullets per shot  +5  each   →   +30 with 6",
-      "damage  -65%  each   →   -99.8% with 6",
+      "damage  -77%  each   →   -100% with 6",
       "spread  +160%  each   →   +30792% with 6",
       "bullet lifetime  -55%  each   →   -99.2% with 6"
      ],
@@ -1659,7 +1691,7 @@
      "held": 7,
      "lines": [
       "bullets per shot  +5  each   →   +35 with 7",
-      "damage  -65%  each   →   -99.9% with 7",
+      "damage  -77%  each   →   -100% with 7",
       "spread  +160%  each   →   +80218% with 7",
       "bullet lifetime  -55%  each   →   -99.6% with 7"
      ],
@@ -1669,7 +1701,7 @@
      "held": 8,
      "lines": [
       "bullets per shot  +5  each   →   +40 with 8",
-      "damage  -65%  each   →   -100% with 8",
+      "damage  -77%  each   →   -100% with 8",
       "spread  +160%  each   →   +208727% with 8",
       "bullet lifetime  -55%  each   →   -99.8% with 8"
      ],
@@ -1685,7 +1717,7 @@
      "held": 1,
      "lines": [
       "bullet radius  +120%",
-      "damage  +35%",
+      "damage  +12%",
       "knockback  +60%",
       "bullet speed  -40%"
      ],
@@ -1695,7 +1727,7 @@
      "held": 2,
      "lines": [
       "bullet radius  +120%  each   →   +384% with 2",
-      "damage  +35%  each   →   +82.2% with 2",
+      "damage  +12%  each   →   +25.4% with 2",
       "knockback  +60%  each   →   +156% with 2",
       "bullet speed  -40%  each   →   -64% with 2"
      ],
@@ -1705,7 +1737,7 @@
      "held": 3,
      "lines": [
       "bullet radius  +120%  each   →   +965% with 3",
-      "damage  +35%  each   →   +146% with 3",
+      "damage  +12%  each   →   +40.5% with 3",
       "knockback  +60%  each   →   +310% with 3",
       "bullet speed  -40%  each   →   -78.4% with 3"
      ],
@@ -1715,7 +1747,7 @@
      "held": 4,
      "lines": [
       "bullet radius  +120%  each   →   +2243% with 4",
-      "damage  +35%  each   →   +232% with 4",
+      "damage  +12%  each   →   +57.4% with 4",
       "knockback  +60%  each   →   +555% with 4",
       "bullet speed  -40%  each   →   -87% with 4"
      ],
@@ -1725,7 +1757,7 @@
      "held": 5,
      "lines": [
       "bullet radius  +120%  each   →   +5054% with 5",
-      "damage  +35%  each   →   +348% with 5",
+      "damage  +12%  each   →   +76.2% with 5",
       "knockback  +60%  each   →   +949% with 5",
       "bullet speed  -40%  each   →   -92.2% with 5"
      ],
@@ -1735,7 +1767,7 @@
      "held": 6,
      "lines": [
       "bullet radius  +120%  each   →   +11238% with 6",
-      "damage  +35%  each   →   +505% with 6",
+      "damage  +12%  each   →   +97.4% with 6",
       "knockback  +60%  each   →   +1578% with 6",
       "bullet speed  -40%  each   →   -95.3% with 6"
      ],
@@ -1745,7 +1777,7 @@
      "held": 7,
      "lines": [
       "bullet radius  +120%  each   →   +24844% with 7",
-      "damage  +35%  each   →   +717% with 7",
+      "damage  +12%  each   →   +121% with 7",
       "knockback  +60%  each   →   +2584% with 7",
       "bullet speed  -40%  each   →   -97.2% with 7"
      ],
@@ -1755,7 +1787,7 @@
      "held": 8,
      "lines": [
       "bullet radius  +120%  each   →   +54776% with 8",
-      "damage  +35%  each   →   +1003% with 8",
+      "damage  +12%  each   →   +148% with 8",
       "knockback  +60%  each   →   +4195% with 8",
       "bullet speed  -40%  each   →   -98.3% with 8"
      ],
@@ -1848,7 +1880,7 @@
     {
      "held": 1,
      "lines": [
-      "max health  +80%",
+      "max health  +45%",
       "radius  +25%"
      ],
      "fontSize": 21
@@ -1856,7 +1888,7 @@
     {
      "held": 2,
      "lines": [
-      "max health  +80%  each   →   +224% with 2",
+      "max health  +45%  each   →   +110% with 2",
       "radius  +25%  each   →   +56.3% with 2"
      ],
      "fontSize": 21
@@ -1864,7 +1896,7 @@
     {
      "held": 3,
      "lines": [
-      "max health  +80%  each   →   +483% with 3",
+      "max health  +45%  each   →   +205% with 3",
       "radius  +25%  each   →   +95.3% with 3"
      ],
      "fontSize": 21
@@ -1872,7 +1904,7 @@
     {
      "held": 4,
      "lines": [
-      "max health  +80%  each   →   +950% with 4",
+      "max health  +45%  each   →   +342% with 4",
       "radius  +25%  each   →   +144% with 4"
      ],
      "fontSize": 21
@@ -1880,7 +1912,7 @@
     {
      "held": 5,
      "lines": [
-      "max health  +80%  each   →   +1790% with 5",
+      "max health  +45%  each   →   +541% with 5",
       "radius  +25%  each   →   +205% with 5"
      ],
      "fontSize": 21
@@ -1888,7 +1920,7 @@
     {
      "held": 6,
      "lines": [
-      "max health  +80%  each   →   +3301% with 6",
+      "max health  +45%  each   →   +829% with 6",
       "radius  +25%  each   →   +281% with 6"
      ],
      "fontSize": 21
@@ -1896,7 +1928,7 @@
     {
      "held": 7,
      "lines": [
-      "max health  +80%  each   →   +6022% with 7",
+      "max health  +45%  each   →   +1248% with 7",
       "radius  +25%  each   →   +377% with 7"
      ],
      "fontSize": 21
@@ -1904,7 +1936,7 @@
     {
      "held": 8,
      "lines": [
-      "max health  +80%  each   →   +10920% with 8",
+      "max health  +45%  each   →   +1854% with 8",
       "radius  +25%  each   →   +496% with 8"
      ],
      "fontSize": 21
@@ -1918,7 +1950,7 @@
     {
      "held": 1,
      "lines": [
-      "max health  +100%",
+      "max health  +80%",
       "attack cooldown  +25%",
       "reload time  +50%",
       "move speed  -12%"
@@ -1928,7 +1960,7 @@
     {
      "held": 2,
      "lines": [
-      "max health  +100%  each   →   +300% with 2",
+      "max health  +80%  each   →   +224% with 2",
       "attack cooldown  +25%  each   →   +56.3% with 2",
       "reload time  +50%  each   →   +125% with 2",
       "move speed  -12%  each   →   -22.6% with 2"
@@ -1938,7 +1970,7 @@
     {
      "held": 3,
      "lines": [
-      "max health  +100%  each   →   +700% with 3",
+      "max health  +80%  each   →   +483% with 3",
       "attack cooldown  +25%  each   →   +95.3% with 3",
       "reload time  +50%  each   →   +238% with 3",
       "move speed  -12%  each   →   -31.9% with 3"
@@ -1948,7 +1980,7 @@
     {
      "held": 4,
      "lines": [
-      "max health  +100%  each   →   +1500% with 4",
+      "max health  +80%  each   →   +950% with 4",
       "attack cooldown  +25%  each   →   +144% with 4",
       "reload time  +50%  each   →   +406% with 4",
       "move speed  -12%  each   →   -40% with 4"
@@ -1958,7 +1990,7 @@
     {
      "held": 5,
      "lines": [
-      "max health  +100%  each   →   +3100% with 5",
+      "max health  +80%  each   →   +1790% with 5",
       "attack cooldown  +25%  each   →   +205% with 5",
       "reload time  +50%  each   →   +659% with 5",
       "move speed  -12%  each   →   -47.2% with 5"
@@ -1968,7 +2000,7 @@
     {
      "held": 6,
      "lines": [
-      "max health  +100%  each   →   +6300% with 6",
+      "max health  +80%  each   →   +3301% with 6",
       "attack cooldown  +25%  each   →   +281% with 6",
       "reload time  +50%  each   →   +1039% with 6",
       "move speed  -12%  each   →   -53.6% with 6"
@@ -1978,7 +2010,7 @@
     {
      "held": 7,
      "lines": [
-      "max health  +100%  each   →   +12700% with 7",
+      "max health  +80%  each   →   +6022% with 7",
       "attack cooldown  +25%  each   →   +377% with 7",
       "reload time  +50%  each   →   +1609% with 7",
       "move speed  -12%  each   →   -59.1% with 7"
@@ -1988,7 +2020,7 @@
     {
      "held": 8,
      "lines": [
-      "max health  +100%  each   →   +25500% with 8",
+      "max health  +80%  each   →   +10920% with 8",
       "attack cooldown  +25%  each   →   +496% with 8",
       "reload time  +50%  each   →   +2463% with 8",
       "move speed  -12%  each   →   -64% with 8"
@@ -2004,8 +2036,8 @@
     {
      "held": 1,
      "lines": [
-      "damage  +100%",
-      "max health  -55%",
+      "damage  +30%",
+      "max health  -30%",
       "reload time  +20%"
      ],
      "fontSize": 21
@@ -2013,8 +2045,8 @@
     {
      "held": 2,
      "lines": [
-      "damage  +100%  each   →   +300% with 2",
-      "max health  -55%  each   →   -79.8% with 2",
+      "damage  +30%  each   →   +69% with 2",
+      "max health  -30%  each   →   -51% with 2",
       "reload time  +20%  each   →   +44% with 2"
      ],
      "fontSize": 21
@@ -2022,8 +2054,8 @@
     {
      "held": 3,
      "lines": [
-      "damage  +100%  each   →   +700% with 3",
-      "max health  -55%  each   →   -90.9% with 3",
+      "damage  +30%  each   →   +120% with 3",
+      "max health  -30%  each   →   -65.7% with 3",
       "reload time  +20%  each   →   +72.8% with 3"
      ],
      "fontSize": 21
@@ -2031,8 +2063,8 @@
     {
      "held": 4,
      "lines": [
-      "damage  +100%  each   →   +1500% with 4",
-      "max health  -55%  each   →   -95.9% with 4",
+      "damage  +30%  each   →   +186% with 4",
+      "max health  -30%  each   →   -76% with 4",
       "reload time  +20%  each   →   +107% with 4"
      ],
      "fontSize": 21
@@ -2040,8 +2072,8 @@
     {
      "held": 5,
      "lines": [
-      "damage  +100%  each   →   +3100% with 5",
-      "max health  -55%  each   →   -98.2% with 5",
+      "damage  +30%  each   →   +271% with 5",
+      "max health  -30%  each   →   -83.2% with 5",
       "reload time  +20%  each   →   +149% with 5"
      ],
      "fontSize": 21
@@ -2049,8 +2081,8 @@
     {
      "held": 6,
      "lines": [
-      "damage  +100%  each   →   +6300% with 6",
-      "max health  -55%  each   →   -99.2% with 6",
+      "damage  +30%  each   →   +383% with 6",
+      "max health  -30%  each   →   -88.2% with 6",
       "reload time  +20%  each   →   +199% with 6"
      ],
      "fontSize": 21
@@ -2058,8 +2090,8 @@
     {
      "held": 7,
      "lines": [
-      "damage  +100%  each   →   +12700% with 7",
-      "max health  -55%  each   →   -99.6% with 7",
+      "damage  +30%  each   →   +527% with 7",
+      "max health  -30%  each   →   -91.8% with 7",
       "reload time  +20%  each   →   +258% with 7"
      ],
      "fontSize": 21
@@ -2067,8 +2099,8 @@
     {
      "held": 8,
      "lines": [
-      "damage  +100%  each   →   +25500% with 8",
-      "max health  -55%  each   →   -99.8% with 8",
+      "damage  +30%  each   →   +716% with 8",
+      "max health  -30%  each   →   -94.2% with 8",
       "reload time  +20%  each   →   +330% with 8"
      ],
      "fontSize": 21
@@ -2083,7 +2115,7 @@
      "held": 1,
      "lines": [
       "regeneration  +4",
-      "max health  +15%"
+      "max health  +35%"
      ],
      "fontSize": 21
     },
@@ -2091,7 +2123,7 @@
      "held": 2,
      "lines": [
       "regeneration  +4  each   →   +8 with 2",
-      "max health  +15%  each   →   +32.2% with 2"
+      "max health  +35%  each   →   +82.2% with 2"
      ],
      "fontSize": 21
     },
@@ -2099,7 +2131,7 @@
      "held": 3,
      "lines": [
       "regeneration  +4  each   →   +12 with 3",
-      "max health  +15%  each   →   +52.1% with 3"
+      "max health  +35%  each   →   +146% with 3"
      ],
      "fontSize": 21
     },
@@ -2107,7 +2139,7 @@
      "held": 4,
      "lines": [
       "regeneration  +4  each   →   +16 with 4",
-      "max health  +15%  each   →   +74.9% with 4"
+      "max health  +35%  each   →   +232% with 4"
      ],
      "fontSize": 21
     },
@@ -2115,7 +2147,7 @@
      "held": 5,
      "lines": [
       "regeneration  +4  each   →   +20 with 5",
-      "max health  +15%  each   →   +101% with 5"
+      "max health  +35%  each   →   +348% with 5"
      ],
      "fontSize": 21
     },
@@ -2123,7 +2155,7 @@
      "held": 6,
      "lines": [
       "regeneration  +4  each   →   +24 with 6",
-      "max health  +15%  each   →   +131% with 6"
+      "max health  +35%  each   →   +505% with 6"
      ],
      "fontSize": 21
     },
@@ -2131,7 +2163,7 @@
      "held": 7,
      "lines": [
       "regeneration  +4  each   →   +28 with 7",
-      "max health  +15%  each   →   +166% with 7"
+      "max health  +35%  each   →   +717% with 7"
      ],
      "fontSize": 21
     },
@@ -2139,7 +2171,7 @@
      "held": 8,
      "lines": [
       "regeneration  +4  each   →   +32 with 8",
-      "max health  +15%  each   →   +206% with 8"
+      "max health  +35%  each   →   +1003% with 8"
      ],
      "fontSize": 21
     }
@@ -2152,72 +2184,72 @@
     {
      "held": 1,
      "lines": [
-      "move speed  +40%",
+      "move speed  +50%",
       "acceleration  +30%",
-      "air control  -30%"
+      "air control  -15%"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "move speed  +40%  each   →   +96% with 2",
+      "move speed  +50%  each   →   +125% with 2",
       "acceleration  +30%  each   →   +69% with 2",
-      "air control  -30%  each   →   -51% with 2"
+      "air control  -15%  each   →   -27.8% with 2"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "move speed  +40%  each   →   +174% with 3",
+      "move speed  +50%  each   →   +238% with 3",
       "acceleration  +30%  each   →   +120% with 3",
-      "air control  -30%  each   →   -65.7% with 3"
+      "air control  -15%  each   →   -38.6% with 3"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "move speed  +40%  each   →   +284% with 4",
+      "move speed  +50%  each   →   +406% with 4",
       "acceleration  +30%  each   →   +186% with 4",
-      "air control  -30%  each   →   -76% with 4"
+      "air control  -15%  each   →   -47.8% with 4"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "move speed  +40%  each   →   +438% with 5",
+      "move speed  +50%  each   →   +659% with 5",
       "acceleration  +30%  each   →   +271% with 5",
-      "air control  -30%  each   →   -83.2% with 5"
+      "air control  -15%  each   →   -55.6% with 5"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "move speed  +40%  each   →   +653% with 6",
+      "move speed  +50%  each   →   +1039% with 6",
       "acceleration  +30%  each   →   +383% with 6",
-      "air control  -30%  each   →   -88.2% with 6"
+      "air control  -15%  each   →   -62.3% with 6"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "move speed  +40%  each   →   +954% with 7",
+      "move speed  +50%  each   →   +1609% with 7",
       "acceleration  +30%  each   →   +527% with 7",
-      "air control  -30%  each   →   -91.8% with 7"
+      "air control  -15%  each   →   -67.9% with 7"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "move speed  +40%  each   →   +1376% with 8",
+      "move speed  +50%  each   →   +2463% with 8",
       "acceleration  +30%  each   →   +716% with 8",
-      "air control  -30%  each   →   -94.2% with 8"
+      "air control  -15%  each   →   -72.8% with 8"
      ],
      "fontSize": 21
     }
@@ -2231,8 +2263,8 @@
      "held": 1,
      "lines": [
       "gravity scale  +55%",
-      "max health  +20%",
-      "jump speed  +15%"
+      "jump speed  +15%",
+      "impact damage scale  -50%"
      ],
      "fontSize": 21
     },
@@ -2240,8 +2272,8 @@
      "held": 2,
      "lines": [
       "gravity scale  +55%  each   →   +140% with 2",
-      "max health  +20%  each   →   +44% with 2",
-      "jump speed  +15%  each   →   +32.2% with 2"
+      "jump speed  +15%  each   →   +32.2% with 2",
+      "impact damage scale  -50%  each   →   -75% with 2"
      ],
      "fontSize": 21
     },
@@ -2249,8 +2281,8 @@
      "held": 3,
      "lines": [
       "gravity scale  +55%  each   →   +272% with 3",
-      "max health  +20%  each   →   +72.8% with 3",
-      "jump speed  +15%  each   →   +52.1% with 3"
+      "jump speed  +15%  each   →   +52.1% with 3",
+      "impact damage scale  -50%  each   →   -87.5% with 3"
      ],
      "fontSize": 21
     },
@@ -2258,8 +2290,8 @@
      "held": 4,
      "lines": [
       "gravity scale  +55%  each   →   +477% with 4",
-      "max health  +20%  each   →   +107% with 4",
-      "jump speed  +15%  each   →   +74.9% with 4"
+      "jump speed  +15%  each   →   +74.9% with 4",
+      "impact damage scale  -50%  each   →   -93.8% with 4"
      ],
      "fontSize": 21
     },
@@ -2267,8 +2299,8 @@
      "held": 5,
      "lines": [
       "gravity scale  +55%  each   →   +795% with 5",
-      "max health  +20%  each   →   +149% with 5",
-      "jump speed  +15%  each   →   +101% with 5"
+      "jump speed  +15%  each   →   +101% with 5",
+      "impact damage scale  -50%  each   →   -96.9% with 5"
      ],
      "fontSize": 21
     },
@@ -2276,8 +2308,8 @@
      "held": 6,
      "lines": [
       "gravity scale  +55%  each   →   +1287% with 6",
-      "max health  +20%  each   →   +199% with 6",
-      "jump speed  +15%  each   →   +131% with 6"
+      "jump speed  +15%  each   →   +131% with 6",
+      "impact damage scale  -50%  each   →   -98.4% with 6"
      ],
      "fontSize": 21
     },
@@ -2285,8 +2317,8 @@
      "held": 7,
      "lines": [
       "gravity scale  +55%  each   →   +2049% with 7",
-      "max health  +20%  each   →   +258% with 7",
-      "jump speed  +15%  each   →   +166% with 7"
+      "jump speed  +15%  each   →   +166% with 7",
+      "impact damage scale  -50%  each   →   -99.2% with 7"
      ],
      "fontSize": 21
     },
@@ -2294,8 +2326,8 @@
      "held": 8,
      "lines": [
       "gravity scale  +55%  each   →   +3232% with 8",
-      "max health  +20%  each   →   +330% with 8",
-      "jump speed  +15%  each   →   +206% with 8"
+      "jump speed  +15%  each   →   +206% with 8",
+      "impact damage scale  -50%  each   →   -99.6% with 8"
      ],
      "fontSize": 21
     }
@@ -2844,56 +2876,344 @@
     {
      "held": 1,
      "lines": [
-      "on kill: heal"
+      "on kill: heal",
+      "regeneration  +1.5"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on kill: heal  ·  2x"
+      "on kill: heal  ·  2x",
+      "regeneration  +1.5  each   →   +3 with 2"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on kill: heal  ·  3x"
+      "on kill: heal  ·  3x",
+      "regeneration  +1.5  each   →   +4.5 with 3"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on kill: heal  ·  4x"
+      "on kill: heal  ·  4x",
+      "regeneration  +1.5  each   →   +6 with 4"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on kill: heal  ·  5x"
+      "on kill: heal  ·  5x",
+      "regeneration  +1.5  each   →   +7.5 with 5"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on kill: heal  ·  6x"
+      "on kill: heal  ·  6x",
+      "regeneration  +1.5  each   →   +9 with 6"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on kill: heal  ·  7x"
+      "on kill: heal  ·  7x",
+      "regeneration  +1.5  each   →   +10.5 with 7"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on kill: heal  ·  8x"
+      "on kill: heal  ·  8x",
+      "regeneration  +1.5  each   →   +12 with 8"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 68,
+   "name": "Blight",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on hit player: poison target",
+      "damage  -15%"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on hit player: poison target  ·  2x",
+      "damage  -15%  each   →   -27.8% with 2"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on hit player: poison target  ·  3x",
+      "damage  -15%  each   →   -38.6% with 3"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on hit player: poison target  ·  4x",
+      "damage  -15%  each   →   -47.8% with 4"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on hit player: poison target  ·  5x",
+      "damage  -15%  each   →   -55.6% with 5"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on hit player: poison target  ·  6x",
+      "damage  -15%  each   →   -62.3% with 6"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on hit player: poison target  ·  7x",
+      "damage  -15%  each   →   -67.9% with 7"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on hit player: poison target  ·  8x",
+      "damage  -15%  each   →   -72.8% with 8"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 69,
+   "name": "Concussion",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on block success: stun target"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on block success: stun target  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on block success: stun target  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on block success: stun target  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on block success: stun target  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on block success: stun target  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on block success: stun target  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on block success: stun target  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "name": "Siphon",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "life steal  +0.28",
+      "max health  -15%"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "life steal  +0.28  each   →   +0.56 with 2",
+      "max health  -15%  each   →   -27.8% with 2"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "life steal  +0.28  each   →   +0.84 with 3",
+      "max health  -15%  each   →   -38.6% with 3"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "life steal  +0.28  each   →   +1.12 with 4",
+      "max health  -15%  each   →   -47.8% with 4"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "life steal  +0.28  each   →   +1.4 with 5",
+      "max health  -15%  each   →   -55.6% with 5"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "life steal  +0.28  each   →   +1.68 with 6",
+      "max health  -15%  each   →   -62.3% with 6"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "life steal  +0.28  each   →   +1.96 with 7",
+      "max health  -15%  each   →   -67.9% with 7"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "life steal  +0.28  each   →   +2.24 with 8",
+      "max health  -15%  each   →   -72.8% with 8"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 71,
+   "name": "Slipgate",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "blink charges  +2",
+      "blink cooldown  -45%",
+      "ground friction  -50%"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "blink charges  +2  each   →   +4 with 2",
+      "blink cooldown  -45%  each   →   -69.8% with 2",
+      "ground friction  -50%  each   →   -75% with 2"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "blink charges  +2  each   →   +6 with 3",
+      "blink cooldown  -45%  each   →   -83.4% with 3",
+      "ground friction  -50%  each   →   -87.5% with 3"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "blink charges  +2  each   →   +8 with 4",
+      "blink cooldown  -45%  each   →   -90.8% with 4",
+      "ground friction  -50%  each   →   -93.8% with 4"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "blink charges  +2  each   →   +10 with 5",
+      "blink cooldown  -45%  each   →   -95% with 5",
+      "ground friction  -50%  each   →   -96.9% with 5"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "blink charges  +2  each   →   +12 with 6",
+      "blink cooldown  -45%  each   →   -97.2% with 6",
+      "ground friction  -50%  each   →   -98.4% with 6"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "blink charges  +2  each   →   +14 with 7",
+      "blink cooldown  -45%  each   →   -98.5% with 7",
+      "ground friction  -50%  each   →   -99.2% with 7"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "blink charges  +2  each   →   +16 with 8",
+      "blink cooldown  -45%  each   →   -99.2% with 8",
+      "ground friction  -50%  each   →   -99.6% with 8"
      ],
      "fontSize": 21
     }
@@ -2906,64 +3226,56 @@
     {
      "held": 1,
      "lines": [
-      "on block: push nearby",
-      "max health  +30%"
+      "on block: push nearby"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on block: push nearby  ·  2x",
-      "max health  +30%  each   →   +69% with 2"
+      "on block: push nearby  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on block: push nearby  ·  3x",
-      "max health  +30%  each   →   +120% with 3"
+      "on block: push nearby  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on block: push nearby  ·  4x",
-      "max health  +30%  each   →   +186% with 4"
+      "on block: push nearby  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on block: push nearby  ·  5x",
-      "max health  +30%  each   →   +271% with 5"
+      "on block: push nearby  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on block: push nearby  ·  6x",
-      "max health  +30%  each   →   +383% with 6"
+      "on block: push nearby  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on block: push nearby  ·  7x",
-      "max health  +30%  each   →   +527% with 7"
+      "on block: push nearby  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on block: push nearby  ·  8x",
-      "max health  +30%  each   →   +716% with 8"
+      "on block: push nearby  ·  8x"
      ],
      "fontSize": 21
     }
@@ -2976,64 +3288,56 @@
     {
      "held": 1,
      "lines": [
-      "on block: pull nearby",
-      "max health  +50%"
+      "on block: pull nearby"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on block: pull nearby  ·  2x",
-      "max health  +50%  each   →   +125% with 2"
+      "on block: pull nearby  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on block: pull nearby  ·  3x",
-      "max health  +50%  each   →   +238% with 3"
+      "on block: pull nearby  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on block: pull nearby  ·  4x",
-      "max health  +50%  each   →   +406% with 4"
+      "on block: pull nearby  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on block: pull nearby  ·  5x",
-      "max health  +50%  each   →   +659% with 5"
+      "on block: pull nearby  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on block: pull nearby  ·  6x",
-      "max health  +50%  each   →   +1039% with 6"
+      "on block: pull nearby  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on block: pull nearby  ·  7x",
-      "max health  +50%  each   →   +1609% with 7"
+      "on block: pull nearby  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on block: pull nearby  ·  8x",
-      "max health  +50%  each   →   +2463% with 8"
+      "on block: pull nearby  ·  8x"
      ],
      "fontSize": 21
     }
@@ -3046,64 +3350,56 @@
     {
      "held": 1,
      "lines": [
-      "on block: damage nearby",
-      "max health  +30%"
+      "on block: damage nearby"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on block: damage nearby  ·  2x",
-      "max health  +30%  each   →   +69% with 2"
+      "on block: damage nearby  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on block: damage nearby  ·  3x",
-      "max health  +30%  each   →   +120% with 3"
+      "on block: damage nearby  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on block: damage nearby  ·  4x",
-      "max health  +30%  each   →   +186% with 4"
+      "on block: damage nearby  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on block: damage nearby  ·  5x",
-      "max health  +30%  each   →   +271% with 5"
+      "on block: damage nearby  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on block: damage nearby  ·  6x",
-      "max health  +30%  each   →   +383% with 6"
+      "on block: damage nearby  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on block: damage nearby  ·  7x",
-      "max health  +30%  each   →   +527% with 7"
+      "on block: damage nearby  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on block: damage nearby  ·  8x",
-      "max health  +30%  each   →   +716% with 8"
+      "on block: damage nearby  ·  8x"
      ],
      "fontSize": 21
     }
@@ -3116,64 +3412,56 @@
     {
      "held": 1,
      "lines": [
-      "on block: slow nearby",
-      "max health  +30%"
+      "on block: slow nearby"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on block: slow nearby  ·  2x",
-      "max health  +30%  each   →   +69% with 2"
+      "on block: slow nearby  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on block: slow nearby  ·  3x",
-      "max health  +30%  each   →   +120% with 3"
+      "on block: slow nearby  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on block: slow nearby  ·  4x",
-      "max health  +30%  each   →   +186% with 4"
+      "on block: slow nearby  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on block: slow nearby  ·  5x",
-      "max health  +30%  each   →   +271% with 5"
+      "on block: slow nearby  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on block: slow nearby  ·  6x",
-      "max health  +30%  each   →   +383% with 6"
+      "on block: slow nearby  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on block: slow nearby  ·  7x",
-      "max health  +30%  each   →   +527% with 7"
+      "on block: slow nearby  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on block: slow nearby  ·  8x",
-      "max health  +30%  each   →   +716% with 8"
+      "on block: slow nearby  ·  8x"
      ],
      "fontSize": 21
     }
@@ -3326,64 +3614,56 @@
     {
      "held": 1,
      "lines": [
-      "on block: spawn ring",
-      "max health  +30%"
+      "on block: spawn ring"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on block: spawn ring  ·  2x",
-      "max health  +30%  each   →   +69% with 2"
+      "on block: spawn ring  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on block: spawn ring  ·  3x",
-      "max health  +30%  each   →   +120% with 3"
+      "on block: spawn ring  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on block: spawn ring  ·  4x",
-      "max health  +30%  each   →   +186% with 4"
+      "on block: spawn ring  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on block: spawn ring  ·  5x",
-      "max health  +30%  each   →   +271% with 5"
+      "on block: spawn ring  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on block: spawn ring  ·  6x",
-      "max health  +30%  each   →   +383% with 6"
+      "on block: spawn ring  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on block: spawn ring  ·  7x",
-      "max health  +30%  each   →   +527% with 7"
+      "on block: spawn ring  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on block: spawn ring  ·  8x",
-      "max health  +30%  each   →   +716% with 8"
+      "on block: spawn ring  ·  8x"
      ],
      "fontSize": 21
     }
@@ -3528,64 +3808,64 @@
     {
      "held": 1,
      "lines": [
-      "block cooldown  -40%",
-      "max health  +30%"
+      "block cooldown  -60%",
+      "block window  +25%"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "block cooldown  -40%  each   →   -64% with 2",
-      "max health  +30%  each   →   +69% with 2"
+      "block cooldown  -60%  each   →   -84% with 2",
+      "block window  +25%  each   →   +56.3% with 2"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "block cooldown  -40%  each   →   -78.4% with 3",
-      "max health  +30%  each   →   +120% with 3"
+      "block cooldown  -60%  each   →   -93.6% with 3",
+      "block window  +25%  each   →   +95.3% with 3"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "block cooldown  -40%  each   →   -87% with 4",
-      "max health  +30%  each   →   +186% with 4"
+      "block cooldown  -60%  each   →   -97.4% with 4",
+      "block window  +25%  each   →   +144% with 4"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "block cooldown  -40%  each   →   -92.2% with 5",
-      "max health  +30%  each   →   +271% with 5"
+      "block cooldown  -60%  each   →   -99% with 5",
+      "block window  +25%  each   →   +205% with 5"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "block cooldown  -40%  each   →   -95.3% with 6",
-      "max health  +30%  each   →   +383% with 6"
+      "block cooldown  -60%  each   →   -99.6% with 6",
+      "block window  +25%  each   →   +281% with 6"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "block cooldown  -40%  each   →   -97.2% with 7",
-      "max health  +30%  each   →   +527% with 7"
+      "block cooldown  -60%  each   →   -99.8% with 7",
+      "block window  +25%  each   →   +377% with 7"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "block cooldown  -40%  each   →   -98.3% with 8",
-      "max health  +30%  each   →   +716% with 8"
+      "block cooldown  -60%  each   →   -99.9% with 8",
+      "block window  +25%  each   →   +496% with 8"
      ],
      "fontSize": 21
     }
@@ -3668,8 +3948,8 @@
     {
      "held": 1,
      "lines": [
-      "max health  +50%",
-      "damage taken scale  -25%",
+      "max health  +70%",
+      "damage taken scale  -15%",
       "move speed  -20%"
      ],
      "fontSize": 21
@@ -3677,8 +3957,8 @@
     {
      "held": 2,
      "lines": [
-      "max health  +50%  each   →   +125% with 2",
-      "damage taken scale  -25%  each   →   -43.8% with 2",
+      "max health  +70%  each   →   +189% with 2",
+      "damage taken scale  -15%  each   →   -27.8% with 2",
       "move speed  -20%  each   →   -36% with 2"
      ],
      "fontSize": 21
@@ -3686,8 +3966,8 @@
     {
      "held": 3,
      "lines": [
-      "max health  +50%  each   →   +238% with 3",
-      "damage taken scale  -25%  each   →   -57.8% with 3",
+      "max health  +70%  each   →   +391% with 3",
+      "damage taken scale  -15%  each   →   -38.6% with 3",
       "move speed  -20%  each   →   -48.8% with 3"
      ],
      "fontSize": 21
@@ -3695,8 +3975,8 @@
     {
      "held": 4,
      "lines": [
-      "max health  +50%  each   →   +406% with 4",
-      "damage taken scale  -25%  each   →   -68.4% with 4",
+      "max health  +70%  each   →   +735% with 4",
+      "damage taken scale  -15%  each   →   -47.8% with 4",
       "move speed  -20%  each   →   -59% with 4"
      ],
      "fontSize": 21
@@ -3704,8 +3984,8 @@
     {
      "held": 5,
      "lines": [
-      "max health  +50%  each   →   +659% with 5",
-      "damage taken scale  -25%  each   →   -76.3% with 5",
+      "max health  +70%  each   →   +1320% with 5",
+      "damage taken scale  -15%  each   →   -55.6% with 5",
       "move speed  -20%  each   →   -67.2% with 5"
      ],
      "fontSize": 21
@@ -3713,8 +3993,8 @@
     {
      "held": 6,
      "lines": [
-      "max health  +50%  each   →   +1039% with 6",
-      "damage taken scale  -25%  each   →   -82.2% with 6",
+      "max health  +70%  each   →   +2314% with 6",
+      "damage taken scale  -15%  each   →   -62.3% with 6",
       "move speed  -20%  each   →   -73.8% with 6"
      ],
      "fontSize": 21
@@ -3722,8 +4002,8 @@
     {
      "held": 7,
      "lines": [
-      "max health  +50%  each   →   +1609% with 7",
-      "damage taken scale  -25%  each   →   -86.7% with 7",
+      "max health  +70%  each   →   +4003% with 7",
+      "damage taken scale  -15%  each   →   -67.9% with 7",
       "move speed  -20%  each   →   -79% with 7"
      ],
      "fontSize": 21
@@ -3731,8 +4011,8 @@
     {
      "held": 8,
      "lines": [
-      "max health  +50%  each   →   +2463% with 8",
-      "damage taken scale  -25%  each   →   -90% with 8",
+      "max health  +70%  each   →   +6876% with 8",
+      "damage taken scale  -15%  each   →   -72.8% with 8",
       "move speed  -20%  each   →   -83.2% with 8"
      ],
      "fontSize": 21
@@ -3746,56 +4026,56 @@
     {
      "held": 1,
      "lines": [
-      "on take damage: damage nearby"
+      "on take damage: damage source"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on take damage: damage nearby  ·  2x"
+      "on take damage: damage source  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on take damage: damage nearby  ·  3x"
+      "on take damage: damage source  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on take damage: damage nearby  ·  4x"
+      "on take damage: damage source  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on take damage: damage nearby  ·  5x"
+      "on take damage: damage source  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on take damage: damage nearby  ·  6x"
+      "on take damage: damage source  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on take damage: damage nearby  ·  7x"
+      "on take damage: damage source  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on take damage: damage nearby  ·  8x"
+      "on take damage: damage source  ·  8x"
      ],
      "fontSize": 21
     }
@@ -3886,64 +4166,56 @@
     {
      "held": 1,
      "lines": [
-      "on reload: spawn ring",
-      "max health  +30%"
+      "on reload: spawn ring"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on reload: spawn ring  ·  2x",
-      "max health  +30%  each   →   +69% with 2"
+      "on reload: spawn ring  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on reload: spawn ring  ·  3x",
-      "max health  +30%  each   →   +120% with 3"
+      "on reload: spawn ring  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on reload: spawn ring  ·  4x",
-      "max health  +30%  each   →   +186% with 4"
+      "on reload: spawn ring  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on reload: spawn ring  ·  5x",
-      "max health  +30%  each   →   +271% with 5"
+      "on reload: spawn ring  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on reload: spawn ring  ·  6x",
-      "max health  +30%  each   →   +383% with 6"
+      "on reload: spawn ring  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on reload: spawn ring  ·  7x",
-      "max health  +30%  each   →   +527% with 7"
+      "on reload: spawn ring  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on reload: spawn ring  ·  8x",
-      "max health  +30%  each   →   +716% with 8"
+      "on reload: spawn ring  ·  8x"
      ],
      "fontSize": 21
     }
@@ -3956,56 +4228,56 @@
     {
      "held": 1,
      "lines": [
-      "on take damage: push nearby"
+      "on take damage: push source"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on take damage: push nearby  ·  2x"
+      "on take damage: push source  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on take damage: push nearby  ·  3x"
+      "on take damage: push source  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on take damage: push nearby  ·  4x"
+      "on take damage: push source  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on take damage: push nearby  ·  5x"
+      "on take damage: push source  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on take damage: push nearby  ·  6x"
+      "on take damage: push source  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on take damage: push nearby  ·  7x"
+      "on take damage: push source  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on take damage: push nearby  ·  8x"
+      "on take damage: push source  ·  8x"
      ],
      "fontSize": 21
     }
@@ -4018,64 +4290,56 @@
     {
      "held": 1,
      "lines": [
-      "on fire: slow nearby",
-      "max health  +25%"
+      "on fire: slow nearby"
      ],
      "fontSize": 21
     },
     {
      "held": 2,
      "lines": [
-      "on fire: slow nearby  ·  2x",
-      "max health  +25%  each   →   +56.3% with 2"
+      "on fire: slow nearby  ·  2x"
      ],
      "fontSize": 21
     },
     {
      "held": 3,
      "lines": [
-      "on fire: slow nearby  ·  3x",
-      "max health  +25%  each   →   +95.3% with 3"
+      "on fire: slow nearby  ·  3x"
      ],
      "fontSize": 21
     },
     {
      "held": 4,
      "lines": [
-      "on fire: slow nearby  ·  4x",
-      "max health  +25%  each   →   +144% with 4"
+      "on fire: slow nearby  ·  4x"
      ],
      "fontSize": 21
     },
     {
      "held": 5,
      "lines": [
-      "on fire: slow nearby  ·  5x",
-      "max health  +25%  each   →   +205% with 5"
+      "on fire: slow nearby  ·  5x"
      ],
      "fontSize": 21
     },
     {
      "held": 6,
      "lines": [
-      "on fire: slow nearby  ·  6x",
-      "max health  +25%  each   →   +281% with 6"
+      "on fire: slow nearby  ·  6x"
      ],
      "fontSize": 21
     },
     {
      "held": 7,
      "lines": [
-      "on fire: slow nearby  ·  7x",
-      "max health  +25%  each   →   +377% with 7"
+      "on fire: slow nearby  ·  7x"
      ],
      "fontSize": 21
     },
     {
      "held": 8,
      "lines": [
-      "on fire: slow nearby  ·  8x",
-      "max health  +25%  each   →   +496% with 8"
+      "on fire: slow nearby  ·  8x"
      ],
      "fontSize": 21
     }
@@ -4238,7 +4502,7 @@
      "lines": [
       "on block: pull nearby",
       "on block: damage nearby",
-      "block cooldown  +60%"
+      "block cooldown  +20%"
      ],
      "fontSize": 21
     },
@@ -4247,7 +4511,7 @@
      "lines": [
       "on block: pull nearby  ·  2x",
       "on block: damage nearby  ·  2x",
-      "block cooldown  +60%  each   →   +156% with 2"
+      "block cooldown  +20%  each   →   +44% with 2"
      ],
      "fontSize": 21
     },
@@ -4256,7 +4520,7 @@
      "lines": [
       "on block: pull nearby  ·  3x",
       "on block: damage nearby  ·  3x",
-      "block cooldown  +60%  each   →   +310% with 3"
+      "block cooldown  +20%  each   →   +72.8% with 3"
      ],
      "fontSize": 21
     },
@@ -4265,7 +4529,7 @@
      "lines": [
       "on block: pull nearby  ·  4x",
       "on block: damage nearby  ·  4x",
-      "block cooldown  +60%  each   →   +555% with 4"
+      "block cooldown  +20%  each   →   +107% with 4"
      ],
      "fontSize": 21
     },
@@ -4274,7 +4538,7 @@
      "lines": [
       "on block: pull nearby  ·  5x",
       "on block: damage nearby  ·  5x",
-      "block cooldown  +60%  each   →   +949% with 5"
+      "block cooldown  +20%  each   →   +149% with 5"
      ],
      "fontSize": 21
     },
@@ -4283,7 +4547,7 @@
      "lines": [
       "on block: pull nearby  ·  6x",
       "on block: damage nearby  ·  6x",
-      "block cooldown  +60%  each   →   +1578% with 6"
+      "block cooldown  +20%  each   →   +199% with 6"
      ],
      "fontSize": 21
     },
@@ -4292,7 +4556,7 @@
      "lines": [
       "on block: pull nearby  ·  7x",
       "on block: damage nearby  ·  7x",
-      "block cooldown  +60%  each   →   +2584% with 7"
+      "block cooldown  +20%  each   →   +258% with 7"
      ],
      "fontSize": 21
     },
@@ -4301,7 +4565,1007 @@
      "lines": [
       "on block: pull nearby  ·  8x",
       "on block: damage nearby  ·  8x",
-      "block cooldown  +60%  each   →   +4195% with 8"
+      "block cooldown  +20%  each   →   +330% with 8"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 200,
+   "name": "Graft",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on block: grow plank"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on block: grow plank  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on block: grow plank  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on block: grow plank  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on block: grow plank  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on block: grow plank  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on block: grow plank  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on block: grow plank  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 201,
+   "name": "Decoy",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on blink: leave decoy",
+      "blink charges  +1"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on blink: leave decoy  ·  2x",
+      "blink charges  +1  each   →   +2 with 2"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on blink: leave decoy  ·  3x",
+      "blink charges  +1  each   →   +3 with 3"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on blink: leave decoy  ·  4x",
+      "blink charges  +1  each   →   +4 with 4"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on blink: leave decoy  ·  5x",
+      "blink charges  +1  each   →   +5 with 5"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on blink: leave decoy  ·  6x",
+      "blink charges  +1  each   →   +6 with 6"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on blink: leave decoy  ·  7x",
+      "blink charges  +1  each   →   +7 with 7"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on blink: leave decoy  ·  8x",
+      "blink charges  +1  each   →   +8 with 8"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 202,
+   "name": "Rot",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on kill: rot"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on kill: rot  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on kill: rot  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on kill: rot  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on kill: rot  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on kill: rot  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on kill: rot  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on kill: rot  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 203,
+   "name": "Contagion",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on passive: release mutation"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on passive: release mutation  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on passive: release mutation  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on passive: release mutation  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on passive: release mutation  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on passive: release mutation  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on passive: release mutation  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on passive: release mutation  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 204,
+   "name": "Recall",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on reload: home in flight"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on reload: home in flight  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on reload: home in flight  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on reload: home in flight  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on reload: home in flight  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on reload: home in flight  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on reload: home in flight  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on reload: home in flight  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 205,
+   "name": "Cluster",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on hit terrain: split on terrain"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on hit terrain: split on terrain  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on hit terrain: split on terrain  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on hit terrain: split on terrain  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on hit terrain: split on terrain  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on hit terrain: split on terrain  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on hit terrain: split on terrain  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on hit terrain: split on terrain  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 206,
+   "name": "Undertow",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on fire: slow projectiles"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on fire: slow projectiles  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on fire: slow projectiles  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on fire: slow projectiles  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on fire: slow projectiles  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on fire: slow projectiles  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on fire: slow projectiles  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on fire: slow projectiles  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 207,
+   "name": "Displace",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on hit player: swap with target"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on hit player: swap with target  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on hit player: swap with target  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on hit player: swap with target  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on hit player: swap with target  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on hit player: swap with target  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on hit player: swap with target  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on hit player: swap with target  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 208,
+   "name": "Runaway",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on hit player: momentum damage"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on hit player: momentum damage  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on hit player: momentum damage  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on hit player: momentum damage  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on hit player: momentum damage  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on hit player: momentum damage  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on hit player: momentum damage  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on hit player: momentum damage  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 209,
+   "name": "Aftershock",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on blink: blast at"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on blink: blast at  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on blink: blast at  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on blink: blast at  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on blink: blast at  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on blink: blast at  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on blink: blast at  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on blink: blast at  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 210,
+   "name": "Deadfall",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on hit player: pin target"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on hit player: pin target  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on hit player: pin target  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on hit player: pin target  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on hit player: pin target  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on hit player: pin target  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on hit player: pin target  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on hit player: pin target  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 211,
+   "name": "Arrears",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on take damage: borrow health"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on take damage: borrow health  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on take damage: borrow health  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on take damage: borrow health  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on take damage: borrow health  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on take damage: borrow health  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on take damage: borrow health  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on take damage: borrow health  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 212,
+   "name": "Tithe",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on take damage: drain source"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on take damage: drain source  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on take damage: drain source  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on take damage: drain source  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on take damage: drain source  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on take damage: drain source  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on take damage: drain source  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on take damage: drain source  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 213,
+   "name": "Surfeit",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on kill: overheal"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on kill: overheal  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on kill: overheal  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on kill: overheal  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on kill: overheal  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on kill: overheal  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on kill: overheal  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on kill: overheal  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 214,
+   "name": "Backwash",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on block: turn projectiles"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on block: turn projectiles  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on block: turn projectiles  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on block: turn projectiles  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on block: turn projectiles  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on block: turn projectiles  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on block: turn projectiles  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on block: turn projectiles  ·  8x"
+     ],
+     "fontSize": 21
+    }
+   ]
+  },
+  {
+   "id": 215,
+   "name": "Standstill",
+   "renders": [
+    {
+     "held": 1,
+     "lines": [
+      "on blink: stun nearby"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 2,
+     "lines": [
+      "on blink: stun nearby  ·  2x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 3,
+     "lines": [
+      "on blink: stun nearby  ·  3x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 4,
+     "lines": [
+      "on blink: stun nearby  ·  4x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 5,
+     "lines": [
+      "on blink: stun nearby  ·  5x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 6,
+     "lines": [
+      "on blink: stun nearby  ·  6x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 7,
+     "lines": [
+      "on blink: stun nearby  ·  7x"
+     ],
+     "fontSize": 21
+    },
+    {
+     "held": 8,
+     "lines": [
+      "on blink: stun nearby  ·  8x"
      ],
      "fontSize": 21
     }
