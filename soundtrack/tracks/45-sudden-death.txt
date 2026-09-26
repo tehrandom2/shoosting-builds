@@ -1,0 +1,6 @@
+title: Sudden Death
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Heavy brostep dubstep, 140 bpm, half-time drop every 32 bars, tense staccato growls, no breakdown, back-to-back drops, urgent, relentless filthy tearout bass, screeching distorted growls stacked on a fat sub, no mercy, punchy sidechained kick, aggressive but readable arrangement with clear build and drop sections, instrumental, no vocals
+seed: 100045
+date: 2026-09-08

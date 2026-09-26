@@ -1,0 +1,6 @@
+title: Riddim Protocol
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Riddim dubstep, 140 bpm, half-time drop every 32 bars, robotic vowel-formant wobble bass, sparse rhythmic stutters, growling sub bass, tight percussive gaps, aggressive but readable arrangement, instrumental, no vocals
+seed: 100002
+date: 2026-09-06

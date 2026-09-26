@@ -1,0 +1,6 @@
+title: Queue Time
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Chill wubby dubstep at half energy, 70 bpm half-time feel, soft growling sub bass wobble, airy melodic synth motif, understated percussion, steady looping groove with no drop, instrumental, no vocals
+seed: 200002
+date: 2026-09-06

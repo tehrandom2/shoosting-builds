@@ -1,0 +1,6 @@
+title: Big Bullet
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Heavy brostep dubstep, 140 bpm, half-time drop every 32 bars, huge slow growling sub bass, thick distorted wubs, heavy stomping rhythm, filthy grimy bass with extra saturation and a nasty talking-bass growl, the dirtiest drop on the record, punchy sidechained kick, aggressive but readable arrangement with clear build and drop sections, instrumental, no vocals
+seed: 100032
+date: 2026-09-08

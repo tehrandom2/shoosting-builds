@@ -64,19 +64,19 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-e57153b/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-linux64.zip",
         "size": 120413568
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-e57153b/shoosting-web.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-web.zip",
         "size": 11920731
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-e57153b/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 5,
         "name": "shoosting-win64.zip",
         "size": 123285913
       }
@@ -1017,13 +1017,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-56d5e84/shoosting-linux64.zip",
-        "download_count": 2,
+        "download_count": 3,
         "name": "shoosting-linux64.zip",
         "size": 32257319
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-56d5e84/shoosting-win64.zip",
-        "download_count": 3,
+        "download_count": 5,
         "name": "shoosting-win64.zip",
         "size": 34887289
       }
@@ -1408,7 +1408,7 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-9fdaced/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 1,
         "name": "shoosting-win64.zip",
         "size": 34886095
       }
@@ -1457,13 +1457,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-972d3d7/shoosting-linux64.zip",
-        "download_count": 1,
+        "download_count": 2,
         "name": "shoosting-linux64.zip",
         "size": 32204049
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-972d3d7/shoosting-win64.zip",
-        "download_count": 1,
+        "download_count": 3,
         "name": "shoosting-win64.zip",
         "size": 34867924
       }
@@ -1567,7 +1567,7 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-7a89daa/shoosting-win64.zip",
-        "download_count": 1,
+        "download_count": 2,
         "name": "shoosting-win64.zip",
         "size": 34885275
       }
@@ -1671,13 +1671,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-4df3318/shoosting-linux64.zip",
-        "download_count": 0,
+        "download_count": 2,
         "name": "shoosting-linux64.zip",
         "size": 32200983
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-4df3318/shoosting-win64.zip",
-        "download_count": 0,
+        "download_count": 2,
         "name": "shoosting-win64.zip",
         "size": 34865324
       }
@@ -1726,13 +1726,13 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-40cf32d/shoosting-linux64.zip",
-        "download_count": 1,
+        "download_count": 2,
         "name": "shoosting-linux64.zip",
         "size": 32198339
       },
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-40cf32d/shoosting-win64.zip",
-        "download_count": 3,
+        "download_count": 4,
         "name": "shoosting-win64.zip",
         "size": 34862701
       }
@@ -2802,7 +2802,7 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-712b589/shoosting-linux64.zip",
-        "download_count": 1,
+        "download_count": 2,
         "name": "shoosting-linux64.zip",
         "size": 29701267
       }
@@ -3212,7 +3212,7 @@
     "assets": [
       {
         "browser_download_url": "https://github.com/tehrandom2/shoosting-builds/releases/download/dev-e4dc2e4/shoosting-linux64.zip",
-        "download_count": 1,
+        "download_count": 2,
         "name": "shoosting-linux64.zip",
         "size": 29672318
       },

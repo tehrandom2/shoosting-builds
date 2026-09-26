@@ -1,0 +1,6 @@
+title: Splice Table
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Laid-back dubstep at half energy, 70 bpm half-time feel, warm growling sub bass wobble kept low and smooth, soft glassy synth pads, steady looping groove with no drop, relaxed neon-lit atmosphere, instrumental, no vocals
+seed: 100046
+date: 2026-09-08

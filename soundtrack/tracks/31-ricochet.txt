@@ -1,0 +1,6 @@
+title: Ricochet
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Heavy brostep dubstep, 140 bpm, half-time drop every 32 bars, growling reese sub bass, sharp metallic stabs that bounce between speakers, punchy sidechained kick, aggressive but readable arrangement with clear build and drop sections, instrumental, no vocals
+seed: 100031
+date: 2026-09-08

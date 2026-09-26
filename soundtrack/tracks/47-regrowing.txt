@@ -1,0 +1,6 @@
+title: Regrowing
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Chill wubby dubstep at half energy, 70 bpm half-time feel, soft growling sub bass wobble, slowly blooming synth pads, gentle rising motion, steady looping groove with no drop, relaxed neon-lit atmosphere, instrumental, no vocals
+seed: 100047
+date: 2026-09-08

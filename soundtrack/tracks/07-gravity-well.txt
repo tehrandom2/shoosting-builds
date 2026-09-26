@@ -1,0 +1,6 @@
+title: Gravity Well
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Heavy brostep dubstep, 140 bpm, half-time drop every 32 bars, deep growling sub bass with pitch-bent wubs, wide distorted synth layers, arena-scale aggressive but readable drop, instrumental, no vocals
+seed: 100007
+date: 2026-09-06

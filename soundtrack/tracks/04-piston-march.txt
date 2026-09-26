@@ -1,0 +1,6 @@
+title: Piston March
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Drumstep, 140 bpm, half-time drop every 32 bars, double-time breakbeat drums under a growling wubby sub bass, mechanical percussion fills, aggressive but readable energy, instrumental, no vocals
+seed: 100004
+date: 2026-09-06

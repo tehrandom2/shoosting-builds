@@ -1,0 +1,6 @@
+title: Glass Cannon
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Melodic dubstep, 140 bpm, half-time drop every 32 bars, bright soaring synth lead over a growling sub bass, fragile crystalline plucks in the breakdown, punchy sidechained kick, aggressive but readable arrangement with clear build and drop sections, instrumental, no vocals
+seed: 100035
+date: 2026-09-08
