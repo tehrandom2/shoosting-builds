@@ -1,0 +1,10 @@
+title: Cut to Ribbons
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Soul sample riddim, a warm crackly sixties soul vocal phrase looped and pitched up, then cut to ribbons by a robotic vowel-formant wobble bass and a buzzing sawtooth lead that answer each sampled phrase. Half-time dubstep drums, dry and punchy, sparse rhythmic stutters, tight percussive gaps, growling sub bass. Each drop removes more of the sample until only a single chopped syllable is left. Tender and filthy at the same time.
+seed: 400073
+date: 2026-10-01
+bpm: 140
+script: [Intro - soul sample] / Ooh, baby, ooh / [Build] / [Drop - wobble bass] / Ooh. (ooh) Ba. (ba) / [Breakdown - soul sample] / Ooh, baby, ooh / [Build] / [Drop - wobble bass] / Ooh. Ooh. Ba. / [Outro] / Ooh
+why: Goal: the riddim prompt you liked, with a soul sample to cut into. It keeps the vowel-formant wobble, stutters and gaps from Riddim Protocol and adds a looped vocal phrase plus a sawtooth lead that answer each other. The script shortens the sampled phrase at each drop so the track has a direction.
+disc: Claude's choice

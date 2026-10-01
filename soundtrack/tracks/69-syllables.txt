@@ -1,0 +1,10 @@
+title: Syllables
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Glitch hop beat tape, a rapper's voice and a soul singer's voice sliced into single syllables and replayed on sampler pads as percussion and melody, never forming a whole word. Swung, slightly drunk boom-bap drums with a dusty snare and an off-grid kick, chopped electric piano jazz chords that stutter and restart mid-phrase, warm upright bass, vinyl crackle, sudden half-beat silences and rewinds. Head-nodding, intricate, warm, restless, human hands on a drum machine.
+seed: 400069
+date: 2026-10-01
+bpm: 92
+script: [Intro - vinyl crackle] / [Verse - vocal chops] / Ka. Da-da. Uh. / Wha. Ba. Da. Uh-uh. / Ka-da. Ooh. Wha. / Ba-ba. Da. Uh. / [Chorus - vocal chops] / Ooh-wha. Ooh-wha. / Da-da-da. Uh. / [Breakdown - electric piano] / [Verse - vocal chops] / Ka. Da-da. Uh. / Wha. Ba. Da. Uh-uh. / [Chorus - vocal chops] / Ooh-wha. Ooh-wha. / Da-da-da. Uh. / [Outro]
+why: Goal: a voice used as a drum kit. The caption says the voices are cut into single syllables that never form a word, and the script is written as isolated syllables with full stops so each lands as a separate hit. Swung drums and chords that restart mid-phrase supply the stumble the style depends on. This is the least certain of the ten.
+disc: Claude's choice

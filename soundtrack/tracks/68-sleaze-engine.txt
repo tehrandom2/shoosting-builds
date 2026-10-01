@@ -1,0 +1,10 @@
+title: Sleaze Engine
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Industrial dance rock, late-eighties sleazy party music for a warehouse: a rubbery sequenced funk bassline, a cheap distorted drum machine with a gated snare the size of the room, clanging sheet-metal hits and cowbell, chugging muted fuzz guitar, and a collage of sampled shouts, whoops and barked single words cut up and thrown around the stereo field like a rowdy bar crowd. Dirty, overdriven, tape-saturated, lecherous and funny, built to dance to.
+seed: 400068
+date: 2026-10-01
+bpm: 118
+script: [Intro - drum machine] / [Verse - shouted samples] / Hey! Hey! / Get up! (get up) / Hey! Hey! / Whoo! / [Chorus - gang shouts] / GO! GO! GO! / Hey! (hey) Hey! (hey) / [Breakdown - bass and metal percussion] / [Verse - shouted samples] / Hey! Hey! / Get up! (get up) / [Chorus - gang shouts] / GO! GO! GO! / Hey! (hey) Hey! (hey) / [Outro]
+why: Goal: late-eighties industrial dance music that is still a party record. A sequenced funk bass and an overdriven drum machine carry it, and the caption describes the vocal samples as a crowd spread across the stereo field so the model produces many voices. The script is only short shouts in capitals, which the model reads as louder.
+disc: Claude's choice

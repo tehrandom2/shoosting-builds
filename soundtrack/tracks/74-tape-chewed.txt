@@ -1,0 +1,10 @@
+title: Tape Chewed
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Lo-fi gospel beat, a cassette of a church organ and a small choir that is being chewed by the tape machine: wow and flutter, sagging pitch, dropouts and hiss. A heavy boom-bap kick and a cracking snare pump the whole sample down with every hit. Overdriven sub bass, chopped choir stabs retriggered like a sampler, and a distorted fuzz bass line that takes over in the second half. Nostalgic, woozy, warm, slowly falling apart.
+seed: 400074
+date: 2026-10-01
+bpm: 80
+script: [Intro - tape hiss and organ] / [Verse - choir chops] / Ahh. Ah-ah. / Ahh. Ah-ah. / [Chorus - choir] / Aaaah, aaaah / [Breakdown - organ] / [Verse - choir chops and fuzz bass] / Ahh. Ah-ah. / Ahh. Ah-ah. / [Chorus - choir] / Aaaah, aaaah / [Outro - tape slowing down]
+why: Goal: a gospel organ and choir on a failing cassette, driven by a hip hop beat. The tape faults are listed by name (wow, flutter, sag, dropouts, hiss) because single adjectives like lo-fi give a mild result. A fuzz bass is scripted to enter in the second half so the track changes instead of looping.
+disc: Claude's choice

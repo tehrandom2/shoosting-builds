@@ -668,6 +668,7 @@ function trackRow(t, i) {
     </div>
     <div class="track__notes"><div>
       <div class="notes">
+        ${t.why ? `<p class="notes__label">The thinking</p><p class="notes__why">${esc(t.why)}</p>` : ""}
         <p class="notes__label">The prompt</p>
         <p class="notes__prompt">${esc(t.prompt)}</p>
         <div class="notes__meta">
@@ -695,11 +696,13 @@ function renderList() {
   host.innerHTML = discs
     .map(([date, list], d) => {
       const runtime = list.reduce((a, t) => a + t.duration, 0);
+      // A disc is named by a `disc:` line in any of its tracks' licence files.
+      const name = (list.find((t) => t.disc) || {}).disc;
       return `
       <section class="disc">
         <header class="disc__head">
           <span class="disc__num">${pad2(d + 1)}</span>
-          <span class="disc__label"><b>Disc ${words[d] || d + 1}</b><span>${esc(niceDate(date))} &middot; ${list.length} tracks &middot; ${fmtRuntime(runtime)}</span></span>
+          <span class="disc__label"><b>Disc ${words[d] || d + 1}${name ? ` &middot; ${esc(name)}` : ""}</b><span>${esc(niceDate(date))} &middot; ${list.length} tracks &middot; ${fmtRuntime(runtime)}</span></span>
         </header>
         <ol class="tracks">${list.map((t) => trackRow(t, i++)).join("")}</ol>
       </section>`;

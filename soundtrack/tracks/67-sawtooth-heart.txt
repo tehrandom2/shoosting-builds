@@ -1,0 +1,10 @@
+title: Sawtooth Heart
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Electro house with a broken heart, opening on a lonely, slightly detuned upright piano playing four sad minor chords in an empty room. Then a gigantic raw buzzing sawtooth synth bass rips in underneath, unfiltered, gritty and overdriven, playing a stabbing syncopated riff over a hard four-on-the-floor kick, sharp claps and heavy sidechain pumping. The piano keeps playing over the top the whole time. The quiet sections pull back to piano and kick, the loud sections are all sawtooth. Bitter, urgent, danceable, heart on sleeve, instrumental.
+seed: 400067
+date: 2026-10-01
+bpm: 126
+script: [Intro - piano] / [Build] / [Drop - sawtooth bass] / [Breakdown - piano] / [Build] / [Drop - sawtooth bass] / [Outro - piano]
+why: Goal: the entrance of a big raw sawtooth bass under a small sad piano. The prompt is built around that contrast, and the script leaves the piano alone in the intro, breakdown and outro so the bass has somewhere to arrive from twice. Instrumental, because the bass is the lead.
+disc: Claude's choice

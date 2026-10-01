@@ -1,0 +1,10 @@
+title: Choir in the Compressor
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Destroyed gospel, with no drums at all. An electric guitar chord is gated, clipped and chopped into huge stuttering blocks of white-hot distortion that slam on and off in rhythm, with total silence between them. Over that, two clear unprocessed voices, a man and a woman, sing a simple slow hymn in close harmony, untouched by the noise. The contrast is the point: pristine voices, annihilated instrument. Stark, bright, ecstatic, overwhelming.
+seed: 400072
+date: 2026-10-01
+bpm: 100
+script: [Intro - distorted guitar blocks] / [Verse - harmonies] / Hold the line, hold the line / What is broken still can shine / [Chorus - harmonies] / Oh, what will remain / When the signal turns to rain / [Breakdown] / [Verse - harmonies] / Hold the line, hold the line / All this noise was always mine / [Chorus - harmonies] / Oh, what will remain / When the signal turns to rain / [Outro]
+why: Goal: clean voices against a destroyed instrument, with silence as the third element. There are no drums; a gated guitar chord provides rhythm by switching on and off. This is the one track with real words, four short lines I wrote for it, kept to two rhymes so the harmony stays simple.
+disc: Claude's choice

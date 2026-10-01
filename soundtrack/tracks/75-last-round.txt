@@ -1,0 +1,10 @@
+title: Last Round
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Three-act finale, starting as a quiet wordless hymn for two voices over tape hiss, becoming a pounding electro track when a raw buzzing sawtooth bass and a four-on-the-floor kick crash in, and ending as a blown-out triumphant brass fanfare with chopped vocal shouts over everything. One long climb with no way back down, the distortion increasing section by section until the final chorus is clipping. Cathartic, huge, closing-credits energy.
+seed: 400075
+date: 2026-10-01
+bpm: 128
+script: [Intro - quiet hymn] / Ooooh, ooooh / [Verse - harmonies] / Ooooh, aaaah / [Build] / [Drop - sawtooth bass] / (hey!) / [Build] / [Chorus - brass fanfare and vocal chops] / Hey! Hey! / Ooh-ah. Ooh-ah. / Hey! Hey! / [Outro - explosive] / Hey!
+why: Goal: a closer that moves through three states in order. ACE-Step's guidance says conflicting styles work when written as a sequence, so the caption is one sentence of then, then, then: quiet hymn, sawtooth electro, brass fanfare. The script mirrors that order and ends on the loudest section.
+disc: Claude's choice

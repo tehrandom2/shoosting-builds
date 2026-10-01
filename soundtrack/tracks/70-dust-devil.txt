@@ -1,0 +1,10 @@
+title: Dust Devil
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Psychedelic beat-scene hip hop, a heavy fuzzed-out live drum break recorded far too hot, a looped Anatolian psych-rock sample of electric saz and wah guitar drenched in spring reverb and tape echo, a wailing wordless female vocal sample chopped and pitched, ominous cinematic strings, and a sub bass that shakes the room. Sudden dropouts, reversed cymbals, dub sirens, everything overdriven to tape. Dark, smoky, hypnotic, a desert ritual at half speed.
+seed: 400070
+date: 2026-10-01
+bpm: 86
+script: [Intro - reversed cymbals] / [Verse - drum break and saz loop] / (aaah) / [Chorus - wailing vocal chops] / Aaah-yah. Aaah-yah. / Haaa. / [Breakdown - strings and tape echo] / [Verse - drum break and saz loop] / (aaah) / [Chorus - wailing vocal chops] / Aaah-yah. Aaah-yah. / Haaa. / [Outro - tape echo]
+why: Goal: a dusty psychedelic beat built on one loop. A live drum break recorded too hot, a reverb-heavy saz and wah guitar loop, and a wordless wailing voice are the three layers; the script alternates loop sections with vocal sections and gives the strings their own breakdown. Dub effects are named individually so they show up as events.
+disc: Claude's choice

@@ -1,0 +1,10 @@
+title: Brass Knuckles
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Maximalist trap anthem, colossal detuned synth-brass fanfares stabbing like a marching band from the future, a sped-up, pitched-high soul singer sample chopped into a looping hook, booming distorted 808 bass slides, half-time drums with rattling triplet hi-hats and a snare like a gunshot, orchestral hits and glittering arpeggios. Every element is too loud and too bright on purpose. Triumphant, ridiculous, euphoric, stadium-sized, a victory lap.
+seed: 400071
+date: 2026-10-01
+bpm: 140
+script: [Intro - soul sample] / Ooh, ooh-ooh / [Build] / [Drop - brass fanfare] / (hey!) / [Verse - chopped soul sample] / Ooh, ooh-ooh / Yeah, yeah / [Build] / [Drop - brass fanfare] / (hey!) / [Outro - soul sample] / Ooh, ooh-ooh
+why: Goal: maximalist trap where the horns are the hook. The caption asks for brass fanfares as stabs, a pitched-up soul sample as a second hook, and says outright that everything is too loud and bright on purpose, to push the model away from a polite mix. The script places the fanfare on the drops and the sample around them.
+disc: Claude's choice

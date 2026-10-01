@@ -1,0 +1,10 @@
+title: Hymn for a Blown Speaker
+model: ACE-Step 1.5 (acestep-v15-xl-sft, 50 steps, CFG 7.0, LM acestep-5Hz-lm-4B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Distorted ambient hymn, a slow two-part harmony of a man and a woman singing long wordless vowels like a church duet, buried inside a wall of clipped, overdriven, bit-crushed static. The whole mix is brutally sidechained so the noise gulps and ducks on every slow pulse of a huge sub-bass thud, as if the recording is being fed through a blown speaker and a failing compressor. No drum kit, only the pulse. Digital dropouts, tape saturation, a beautiful melody underneath an ugly texture, patient, devastating, tender, enormous.
+seed: 400066
+date: 2026-10-01
+bpm: 68
+script: [Intro - low energy] / (ooh) / [Verse - harmonies] / Ooooh, ooooh / Aaaah, aaaah / [Build] / [Chorus - harmonies] / Ooooh, aaaah / Ooooh, aaaah / [Breakdown] / [Chorus - harmonies] / Ooooh, aaaah / Ooooh, aaaah / [Outro]
+why: Goal: a slow two-voice hymn where heavy distortion is the setting, not an effect. The caption names the melody first and then describes the damage as a physical fault with a pulse, so the pumping noise carries the rhythm and no drum kit is needed. The script gives the voices only vowels so nothing is sung cleanly as words.
+disc: Claude's choice
