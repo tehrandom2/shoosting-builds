@@ -1,0 +1,6 @@
+title: Ebony
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Slow dark electro with trap drums, 90 bpm, booming 808 kick and long sub bass slides, sparse ticking hi-hats, eerie whistling high synth lead playing a simple haunting melody, cold empty space between hits, sinister and stylish, minimal arrangement, instrumental, no vocals
+seed: 100063
+date: 2026-09-30

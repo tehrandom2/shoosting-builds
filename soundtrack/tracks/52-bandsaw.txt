@@ -1,0 +1,6 @@
+title: Bandsaw
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Dirty electro house, 128 bpm, four-on-the-floor kick, rasping distorted square wave bassline with a slow filter sweep opening over sixteen bars, heavy sidechain pumping, sparse dry claps, a single stuttering synth hook, minimal arrangement that adds one element at a time, sleazy late-night club energy, instrumental, no vocals
+seed: 100052
+date: 2026-09-30

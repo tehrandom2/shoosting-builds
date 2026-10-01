@@ -1,0 +1,6 @@
+title: Hits to Kill
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Aggressive dark techno, 128 bpm, punishing overdriven kick, serrated distorted synth stabs answering each other, rumbling sub bass, rapid closed hi-hats, alarm-like siren lead, hostile and relentless, tight four-bar phrases with abrupt cuts and hard re-entries, instrumental, no vocals
+seed: 100062
+date: 2026-09-30

@@ -1,0 +1,6 @@
+title: Black Lacquer
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Dark electro techno, 110 bpm, slow heavy stomping kick, screeching high-pitched distorted synth lead that slides between notes, deep growling analog bass, cold reverb-soaked snare, ominous and theatrical, minimal arrangement with long tense pauses, elegant and violent, instrumental, no vocals
+seed: 100058
+date: 2026-09-30

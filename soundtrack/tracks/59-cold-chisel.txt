@@ -1,0 +1,6 @@
+title: Cold Chisel
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Industrial EBM techno, 120 bpm, pounding kick drum, grinding acid bassline with a harsh resonant squelch, sixteenth-note sequenced analog bass, metal-on-metal percussion, cold monochrome mood, relentless mechanical drive with a stripped breakdown of bass alone, instrumental, no vocals
+seed: 100059
+date: 2026-09-30

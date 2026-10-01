@@ -1,0 +1,6 @@
+title: Plank Walk
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Minimal electro house, 128 bpm, dry four-on-the-floor kick, fat compressed sawtooth bass walking up and down a four-note riff, exaggerated sidechain pump, almost nothing else in the mix, occasional metallic percussion hit, long hypnotic build that opens the filter and slams back in, instrumental, no vocals
+seed: 100056
+date: 2026-09-30

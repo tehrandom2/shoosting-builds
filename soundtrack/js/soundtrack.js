@@ -735,7 +735,7 @@ function showAlbum() {
     $(".js-dock-cover").src = S.album.cover;
   }
   $(".js-hero-title").textContent = "The whole soundtrack";
-  $(".js-hero-genre").textContent = "Brostep, riddim and neon-lit half-time";
+  $(".js-hero-genre").textContent = "Brostep, riddim, electro house and dark techno";
   $(".js-hero-chips").innerHTML = [
     `<span class="chip chip--accent"><b>${S.tracks.length}</b> tracks</span>`,
     `<span class="chip"><b>${fmtRuntime(total)}</b></span>`,

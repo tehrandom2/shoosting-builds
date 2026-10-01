@@ -1,0 +1,6 @@
+title: Pursuit Line
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Dark industrial techno, 125 bpm, hard distorted four-on-the-floor kick, cold stabbing analog synth riff in a minor key, metallic clanging percussion, tense rising noise sweeps, sparse and menacing arrangement with sudden drops to near silence before the kick returns, black and chrome warehouse atmosphere, instrumental, no vocals
+seed: 100057
+date: 2026-09-30

@@ -1,0 +1,6 @@
+title: Nail Gun
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Fidget electro house, 132 bpm, four-on-the-floor kick, staccato overdriven sawtooth stabs fired in tight sixteenth-note bursts, rubbery pitch-bent bass, hard sidechain pumping, snappy claps, playful aggressive and bouncy, clear eight-bar phrases with a filtered breakdown and a hard return, instrumental, no vocals
+seed: 100054
+date: 2026-09-30

@@ -1,0 +1,6 @@
+title: Drill Press
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Hard electro house, 130 bpm, pounding four-on-the-floor kick, grinding buzzsaw synth bass chopped into a syncopated one-bar riff, pumping compressor breathing between kicks, crisp offbeat hi-hats, short noise risers into each section, raw mechanical repetitive hook, instrumental, no vocals
+seed: 100053
+date: 2026-09-30

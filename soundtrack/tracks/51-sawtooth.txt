@@ -1,0 +1,6 @@
+title: Sawtooth
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Early 2000s electro house, 130 bpm, four-on-the-floor kick, one buzzing detuned sawtooth bass riff repeated hypnotically, extreme sidechain compression pumping on every beat, dry minimal drums with sharp claps and open hi-hats, gritty overdriven analog synth, stripped back and relentless club groove, instrumental, no vocals
+seed: 100051
+date: 2026-09-30

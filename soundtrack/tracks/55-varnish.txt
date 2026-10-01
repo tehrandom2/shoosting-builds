@@ -1,0 +1,6 @@
+title: Varnish
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Slick electroclash house, 126 bpm, four-on-the-floor kick, glossy buzzing analog bass riff with slow resonant filter movement, pumping sidechain, robotic vocoder-like synth lead playing a simple two-note hook without words, dry drum machine claps and hats, cool detached swagger, instrumental, no vocals
+seed: 100055
+date: 2026-09-30

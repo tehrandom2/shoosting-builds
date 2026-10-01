@@ -1,0 +1,6 @@
+title: Wall of Grain
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Melancholic dark synth electro, 105 bpm, soft muted kick, slow repeating minor-key analog arpeggio, cold wide pads, distant distorted bass swell, restrained and mournful, steady looping groove with no drop, late-night empty city atmosphere, instrumental, no vocals
+seed: 100064
+date: 2026-09-30

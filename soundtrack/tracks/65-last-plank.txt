@@ -1,0 +1,6 @@
+title: Last Plank
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Dark ambient techno, 100 bpm, low pulsing analog bass drone, slow evolving cold synth pads, faint mechanical ticking percussion, occasional distant metallic hit, ominous and patient, no drums beyond a muted heartbeat kick, steady looping atmosphere with no drop, instrumental, no vocals
+seed: 100065
+date: 2026-09-30

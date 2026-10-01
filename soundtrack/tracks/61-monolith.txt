@@ -1,0 +1,6 @@
+title: Monolith
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Brutalist industrial techno, 118 bpm, enormous distorted kick drum, single low detuned synth note hammered in a slow rhythm, harsh white noise snares, dissonant metallic drones, huge empty reverb space, oppressive and monumental, very few elements each one massive, instrumental, no vocals
+seed: 100061
+date: 2026-09-30

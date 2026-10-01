@@ -1,0 +1,6 @@
+title: Graft
+model: ACE-Step 1.5 (acestep-v15-turbo, LM acestep-5Hz-lm-1.7B)
+licence: Apache 2.0 model weights; output generated locally by mh, no third-party rights claimed
+prompt: Dark melodic techno, 122 bpm, driving four-on-the-floor kick, urgent minor-key analog arpeggio that builds layer by layer, distorted bass pulsing underneath, sharp snare cracks, cold cinematic string pads rising behind it, tense and propulsive, a full drop-out to the arpeggio alone before everything returns, instrumental, no vocals
+seed: 100060
+date: 2026-09-30
