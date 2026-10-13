@@ -872,8 +872,8 @@
     "decimal": 4
    },
    "clamp": {
-    "min": null,
-    "max": null
+    "min": 0,
+    "max": 56
    },
    "ops": [
     "Multiply",
@@ -896,8 +896,8 @@
     "decimal": 6
    },
    "clamp": {
-    "min": null,
-    "max": null
+    "min": 0,
+    "max": 30
    },
    "ops": [
     "Multiply",
